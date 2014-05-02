@@ -1,4 +1,4 @@
-1398721543
+1398806311
 AddAdminToUsers	C:/Sites/rails_projects/tmun_app/db/migrate/20140422211933_add_admin_to_users.rb	class AddAdminToUsers 
 AddIndexToUsersEmail	C:/Sites/rails_projects/tmun_app/db/migrate/2_add_index_to_users_email.rb	class AddIndexToUsersEmail 
 AddPasswordDigestToUsers	C:/Sites/rails_projects/tmun_app/db/migrate/3_add_password_digest_to_users.rb	class AddPasswordDigestToUsers 

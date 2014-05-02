@@ -19,5 +19,9 @@ class StaticPagesController < ApplicationController
   def tritonmun
   end
 
+  def x
+
+  end
+
 
 end

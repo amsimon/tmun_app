@@ -10,6 +10,11 @@ TmunApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  match '/x',    to: 'static_pages#x',    via: 'get'
+  match '/commitees',    to: 'static_pages#commitees',    via: 'get'
+  match '/staff',    to: 'static_pages#staff',    via: 'get'
+  match '/register',    to: 'static_pages#register',    via: 'get'
+
   match '/travelteam',    to: 'static_pages#travelteam',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/tritonmun', to: 'static_pages#tritonmun', via: 'get'

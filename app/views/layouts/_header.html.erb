@@ -1,20 +1,23 @@
 <header class="navbar">
   <div id="navbar-inner">
     <nav>
-      <%= link_to image_tag("logo1.png", style: "width:50px", alt: "UCSD Model United Nations"),
-                  root_path, id: "logo" %>
+      <%= link_to image_tag("logo1.png", alt: "UCSD Model United Nations",
+                            id: "logo"), root_path, id: "logo"
+      %>
+
       <ul>
-        <%= link_to(travelteam_path, class: "nav-link") do %>
+        <!--
+        <%# link_to(travelteam_path, class: "nav-link") do %>
             <li class="c">
               test
             </li>
-        <% end %>
+        <%# end %>
+        -->
         <li><%= link_to "Travel",    travelteam_path, class: "nav-link" %></li>
         <li><%= link_to "TritonMUN",    tritonmun_path, class: "nav-link" %></li>
         <li><%= link_to "About", about_path, class: "nav-link" %></li>
 
         <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -24,12 +27,13 @@
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                  <%= link_to "Sign out", signout_path, method: "delete", class: "nav-link",
+                              id: "signout" %>
                 </li>
               </ul>
             </li>
         <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Sign in", signin_path, class: "nav-link", id: "signin"   %></li>
         <% end %>
       </ul>
     </nav>

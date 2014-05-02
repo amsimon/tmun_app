@@ -14,3 +14,9 @@ open_files:
   - app/views/users/new.html.erb
   - app/views/users/edit.html.erb
   - .gitignore
+  - app/controllers/application_controller.rb
+  - app/controllers/microposts_controller.rb
+  - app/helpers/static_pages_helper.rb
+  - app/views/shared/_feed.html.erb
+  - app/views/shared/_feed_item.html.erb
+  - app/views/microposts/_micropost.html.erb

@@ -1,11 +1,14 @@
 
 $grayMediumLight: #eaeaea;
+$headerHeight: 6em;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+
 
 /* Users index */
 
@@ -145,67 +148,92 @@ html, body {
   padding: 0px;
   margin: 0px;
   font-family: 'Georgia';
+  font-size: 16px;
+  background: #F2F2F2;
 }
 
-header {
+header.navbar {
   width: 100%;
   background: #F2F2F2;
-  height: 70px;
+  height: $headerHeight;
+  border-bottom: 1px solid #E2E2E2;
 }
-nav {
-  overflow: hidden;
-  height: 100%;
-}
+
 div#navbar-inner {
-  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
   height: 100%;
   /*padding: 20px 0px 20px 0px;*/
 }
-.c {
-  height: 100%;
+
+nav {
+  overflow: hidden;
+  height: $headerHeight;
+  line-height: $headerHeight;
+
+
+  img#logo {
+    vertical-align: middle;
+    margin-bottom: 10px;
+    height: 75%;
+  }
 }
+
 nav ul{
   height: 100%;
   margin: 0px;
   list-style: none;
   display: inline-block;
   float: right;
-}
-nav ul li {
+  line-height: $headerHeight;
 
-  display: inline-block;
+
+  li {
+    display: inline-block;
+    padding: 0px 1em;
+    height: $headerHeight;
+
+
+  }
+  li:first-child {
+    padding-left: 0em;
+  }
+
+  li:last-child {
+    padding-right: 0em;
+  }
 }
 
-nav ul li:hover {
-  background: #B1B8FF;
-
-}
-
-/* no padding on middle links */
-/*
-nav li:first-child {
-  padding: 0px;
-}
-
-nav li:last-child {
-  padding: 0px;
-}
-*/
 a.nav-link {
-  color: black;
+  color: #A4A4A4;
   font-family: 'Georgia';
-  font-size: 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-shadow:  0px -.6px 0px rgba(0, 0, 0, .6);
   letter-spacing: 0em;
   height: 100%;
   margin-top: 0px;
   display: inline-block;
 
 }
+a.nav-link#signin {
+  text-shadow:  0px -.6px 0px rgba(115, 102, 47, .9);
+  color: #C7B052;
+}
+a.nav-link:hover {
+  text-shadow:  0px -.6px 0px rgba(0, 0, 0, 1);
+  color: #252E61;
+}
+a.nav-link#signin:hover {
+  text-shadow:  0px -.6px 0px #CAA200;
+  color: #FFCD00;
+}
 
 div.container {
-  width: 1000px;
   margin: 0 auto;
+}
+
+img#map {
+  opacity: .9;
 }
