@@ -6,26 +6,68 @@
     <%= form_for(@hconference) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :number %>
-        <%= f.text_field :number %>
+        <div class="form_line">
+          <%= f.label :number %>
+          <%= f.text_field :number %>
+        </div>
 
-        <%= f.label :season %>
-        <%= f.text_field :season %>
+        <div class="form_line">
+          <%= f.label :season %>
+          <%= f.text_field :season %>
+        </div>
 
-        <%= f.label :year %>
-        <%= f.text_field :year %>
 
-        <%= f.label :date %>
-        <%= f.text_field :date %>
+        <div class="form_line">
+          <%= f.label :year %>
+          <%= f.text_field :year %>
+        </div>
 
-        <%= f.label :location %>
-        <%= f.text_field :location %>
+        <div class="form_line">
+          <%= f.label :date %>
+          <%= f.text_field :date %>
+        </div>
 
-        <%= f.label :early_price, "Early Price" %>
-        <%= f.text_field :early_price %>
+        <div class="form_line">
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+        </div>
 
-        <%= f.label :normal_price, "Normal Price" %>
-        <%= f.text_field :normal_price %>
+        <div class="form_line">
+          <%= f.label :early_price, "Early Price" %>
+          $<%= f.text_field :early_price %>
+        </div>
+
+        <div class="form_line">
+          <%= f.label :early_date, "Early Price Deadline" %>
+          Before: <%= f.text_field :early_date %>
+        </div>
+
+        <div class="form_line">
+          <%= f.label :normal_price, "Normal Price" %>
+          $<%= f.text_field :normal_price %>
+        </div>
+
+
+        <div class="form_line">
+          <%= f.label :normal_date, "Normal Price Deadline" %>
+          Before: <%= f.text_field :normal_date %>
+        </div>
+
+        <div class="form_line">
+          <%= f.label :late_price, "Late Price" %>
+          $<%= f.text_field :late_price %>
+        </div>
+
+
+        <div class="form_line">
+          <%= f.label :late_date, "Late Price Deadline" %>
+          Before: <%= f.text_field :late_date %>
+        </div>
+
+        <div class="form_line">
+          <%= f.label :delegation_fee, "Delegation Fee" %>
+          $<%= f.text_field :delegation_fee %>
+        </div>
 
 
         <%= f.submit "Create Conference", class: "btn btn-large btn-primary" %>
