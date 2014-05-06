@@ -54,17 +54,38 @@ aside {
 }
 
 /* forms */
+div.row {
+  text-align: center;
+}
+div.form {
+  display: inline-block;
+  margin: 0 auto;
+  div.form_line {
 
-input, textarea, select, .uneditable-input {
+    text-align: right;
+
+    input {
+      padding: 15px;
+      width: 200px;
+    }
+    label {
+      display: inline-block;
+      margin-right: 25px;
+    }
+  }
+
+
+
+}
+
+
+textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
-}
 #error_explanation {
   color: #f00;
   ul {

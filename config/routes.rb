@@ -1,14 +1,29 @@
 TmunApp::Application.routes.draw do
   resources :users
+  resources :hconferences, :path => 'tritonmun'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
-  
+
+
+
   root 'static_pages#home'
+
+  match '/tritonmun/:number',  to: 'hconferences#show',         via: 'get'
+
+  match '/tritonmun/:id/register',    to: 'hconferences#register',     via: 'get'
+  match '/tritonmun/:id/committees',  to: 'hconferences#committees',   via: 'get'
+  match '/tritonmun/:id/speakers',  to: 'hconferences#speakers',   via: 'get'
+  match '/tritonmun/:id/position_papers',  to: 'hconferences#position_papers',   via: 'get'
+  match '/tritonmun/:id/research',  to: 'hconferences#research',   via: 'get'
 
   match '/signup',  to: 'users#new',              via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+  # match '/tritonmun/new',  to: 'hconferences#create',         via: 'get'
+  #match '/tritonmun/all',  to: 'hconferences#index',         via: 'get'
+  # match '/tritonmun/:number',  to: 'hconferences#show',         via: 'get'
 
   match '/x',    to: 'static_pages#x',    via: 'get'
   match '/commitees',    to: 'static_pages#commitees',    via: 'get'
@@ -17,7 +32,9 @@ TmunApp::Application.routes.draw do
 
   match '/travelteam',    to: 'static_pages#travelteam',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/tritonmun', to: 'static_pages#tritonmun', via: 'get'
+  match '/tritonmun', to: 'hconferences#index', via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

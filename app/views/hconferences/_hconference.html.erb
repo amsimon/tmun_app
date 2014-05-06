@@ -1,0 +1,10 @@
+<li>
+  <%= link_to hconference.number, tritonmun_path + "/" + (hconference.number).to_s %>
+
+  <% if signed_in? %>
+      <% if current_user.admin? %>
+          | <%= link_to "delete", hconference, method: :delete,
+                        data: { confirm: "You sure?" } %>
+      <% end %>
+  <% end %>
+</li>

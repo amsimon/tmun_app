@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425212509) do
+ActiveRecord::Schema.define(version: 20140506052510) do
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "hconferences", force: true do |t|
+    t.string   "season"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "year"
+    t.string   "date"
+    t.string   "location"
+    t.integer  "early_price"
+    t.integer  "normal_price"
+    t.string   "early_date"
+    t.string   "normal_date"
+    t.string   "late_date"
+    t.string   "late_price"
+    t.integer  "delegation_fee"
+  end
+
+  add_index "hconferences", ["number"], name: "index_hconferences_on_number", unique: true
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -19,6 +51,16 @@ ActiveRecord::Schema.define(version: 20140425212509) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "questions", force: true do |t|
+    t.string   "q"
+    t.string   "a"
+    t.integer  "hconference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["hconference_id", "created_at"], name: "index_questions_on_hconference_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -28,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140425212509) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

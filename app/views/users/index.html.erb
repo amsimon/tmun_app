@@ -3,7 +3,14 @@
 
 <%= will_paginate %>
 
+<!--
+ <#%= collection_select_tag(:user, :role, User.all,
+                         :id, :role, {}, {:name=>'user_filter'}) %>
+
+-->
+
 <ul class="users">
+
   <%= render @users %>
 </ul>
 

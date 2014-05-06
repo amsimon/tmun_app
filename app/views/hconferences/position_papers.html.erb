@@ -1,0 +1,127 @@
+<h1 id="tritonmun">
+  <span id="main">Position Papers</span>
+</h1>
+<!-- render roman, season, year here -->
+
+<h2 id="season">TritonMUN
+    <span id="roman">
+        <%= to_roman @hconference %>
+    </span>
+</h2>
+
+<div class="conf_cont">
+
+  <div id="buttonBox">
+
+    <%= link_to (conf_path(@hconference)) do %>
+        <div class="button">Overview</div>
+    <% end %>
+
+    <%= link_to (conf_button_path( "committees", @hconference )) do %>
+        <div class="button">Committees</div>
+    <% end %>
+
+    <%= link_to (conf_button_path( "speakers", @hconference )) do %>
+        <div class="button">Speakers</div>
+    <% end %>
+
+    <%= link_to (conf_button_path( "research", @hconference )) do %>
+        <div class="button">Research</div>
+    <% end %>
+
+    <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
+        <div class="current button">Position Papers</div>
+    <% end %>
+
+    <%= link_to (conf_button_path( "register", @hconference )) do %>
+        <div class="button" id="register">Register</div>
+    <% end %>
+
+  </div>
+
+  <div id="pp_top">
+    <p id="dead">Submission Deadline: <strong>October 19th, 2014 at 11:59pm.</strong></p>
+
+    <p id="dead2"><em> Late position papers will NOT be accepted. You must turn in a
+      position paper by the deadline in order to be eligible for committee awards.</em></p>
+  </div>
+
+
+  <div class="outer">
+
+
+    <div class="innerBox" style="text-align:left;">
+      <h2><span>Submission Instructions</span></h2>
+
+      <ol class="pos">
+        <li>
+          Save your paper as .doc, .docx or .pdf file:<br><br>
+          <em>Committee-Country.pdf</em><br>
+          <br>
+          1st-Afghanistan.pdf<br>
+          UNDP-Brazil.pdf<br>
+          UNESCO-DPRK.pdf<br>
+          SC-China.pdf<br>
+        </li>
+        <li>
+          Email to <strong>tritonpositionpapers@gmail.com</strong><br>
+          In the SUBJECT of your email, include your Committee and your Country Name
+        </li>
+        <li>
+          Save your email and the receipt. All submissions will receive an official receipt.
+          If you did not get an official receipt within 24 hours, we did not receive your position paper.
+          Failure to format or submit position papers correctly may result in lost position papers.
+        </li>
+      </ol>
+    </div>
+
+    <div class="innerBox" style="text-align:left;">
+      <h2><span>Formatting Requirements</span></h2>
+      <ul class="pos">
+        <li>Position papers should be Times New Roman 12, and 1,000-1,500 words. </li>
+        <li>All position papers MUST include a bibliography, and in-text citations. </li>
+        <li>Plagiarism of any kind will not be tolerated and may greatly affect your eligibility for a committee award. </li>
+        <li>Please follow all of the formatting in the example paper below. You will be graded on your ability to follow directions. </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div id="example_paper">
+    Committee: __________<br>
+    Country:  ____________<br>
+    Topic: ______________<br>
+    Delegate: ____________<br>
+                                  <div style="text-align:center;">Title of Position Paper</div>
+    I.&emsp;&emsp;Background<br>
+    In paragraph form, please write a detailed description of the origins of the topic. We are looking for
+    information on not only how the problem began, but also who is involved and why this is an issue to bring
+    attention to the rest of the world. Be sure to reference your sources with in-text citations in MLA format.
+    <br><br>
+    II.&emsp;&emsp;UN Involvement<br>
+    What nation, group or individual first presented the problem to the United Nations? What actions have been
+    done since then and are they effective? Feel free to look up resolutions, conferences and non-governmental
+    organizations that have played a part.
+    <br><br>
+    III.&emsp;&emsp;Country Policy<br>
+    We want to know what your nation has done or been a part of in relation to this topic. If you have
+    not been a part of proceedings, resolutions or have not contributed aid, let us know why. We want to
+    know that you have discovered your nation’s story and can keep that in mind during debate. Most significantly,
+    you are representing this nation, so it would be wise to keep your perspective in first person plural, using
+    pronouns such as “we” and “our” when not using your nation’s formal name.
+    <br><br>
+    IV.&emsp;&emsp;Solutions<br>
+    This is perhaps the most interesting part of your paper! While still staying true to your country policy,
+    we would like to see your creativity come alive as you discover ways to address this topic. Whether they are
+    simple but effective, or elaborate and thorough is up to you. Just try to make it as specific and detailed as
+    possible, while still being to the point. Your chair will thank you for being concise and also look forward
+    to listening to you discuss the ideas you’ve already ignited here! Good luck!
+    <br><br>
+    V.&emsp;&emsp;Bibliography<br>
+    In this section, please cite ALL sources in MLA format so that we can see your research and possibly refer back
+    if need be. It keeps your paper honest and our inquiries satisfied. Do not forget this section!
+    Refer to this site for help with formatting: <a href="http://www.citationmachine.net/mla">http://www.citationmachine.net/mla</a>
+  </div>
+
+
+</div>

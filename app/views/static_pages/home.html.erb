@@ -1,31 +1,15 @@
-<% if signed_in? %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    
-    <div class="span8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
-<% else %>
+
   <div class="center hero-unit">
     <h1 id="home_h1">Model United Nations at UCSD </h1>
 
     <div class="outer">
 
       <div class="inner">
-        <img class="slide" src="http://placehold.it/1000x500">
+        <%= image_tag("f1.jpg", alt: "Travel Team", class: "slide") %>
       </div>
 
       <div class="inner">
-        <img class="slide" style="opacity: .5;" src="http://placehold.it/1000x500">
+        <%= image_tag("f2.jpg", alt: "TritonMUN", class: "slide") %>
       </div>
 
       <div class="innerBox">
@@ -33,67 +17,21 @@
 
           <div class="updatesBox">
 
-            <a href="#">
+    <!--
             <div class="nextConf">
                 <span class="next">UPCOMING:</span>
               ChicagoXII
             </div>
             </a>
-
+-->
 
             <br>
             <div class="updates">
 
                 <ul>
-                  <li>
-                    <div class="date">Apr. 30 2014</div>
-                    <div class="des">
-                      <a href="#"> Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                      </a>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="date">Apr. 30 2014</div>
-                    <div class="des">
-                      <a href="#">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-                      </a>
-                    </div>
-                 </li>
-
-                  <li>
-                    <div class="date">Apr. 30 2014</div>
-                    <div class="des">
-                      <a href="#"> Andy is awesome. He is the best in the world.
-                      </a>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="date">Apr. 30 2014</div>
-                    <div class="des">
-                      <a href="#"> Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                      </a>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="date">Apr. 30 2014</div>
-                    <div class="des">
-                      <a href="#"> Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                        Andy is awesome. He is the best in the world.
-                      </a>
-                    </div>
-                  </li>
 
                 </ul>
-              <div class="more"><a href="#">VIEW MORE</a></div>
+              <!--<div class="more"><a href="#">VIEW MORE</a></div>-->
 
 
 
@@ -106,7 +44,7 @@
 
         <div class="updatesBox">
 
-          <a href="#">
+          <a href="/tritonmun/10">
             <div class="nextConf">
               <span class="next">UPCOMING:</span>
               TritonMUN X
@@ -119,64 +57,17 @@
 
             <ul>
               <li>
-                <div class="date">Apr. 30 2014</div>
+                <div class="date">May 5, 2014</div>
                 <div class="des">
-                  <a href="#"> Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
+                  <a href="/tritonmun/10">
+                    TritonMUN X has been posted!
                   </a>
                 </div>
               </li>
 
-              <li>
-                <div class="date">Apr. 30 2014</div>
-                <div class="des">
-                  <a href="#"> Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                  </a>
-                </div>
-              </li>
-
-              <li>
-                <div class="date">Apr. 30 2014</div>
-                <div class="des">
-                  <a href="#"> Andy is awesome. He is the best in the world.
-                  </a>
-                </div>
-              </li>
-
-              <li>
-                <div class="date">Apr. 30 2014</div>
-                <div class="des">
-                  <a href="#"> Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                  </a>
-                </div>
-              </li>
-
-              <li>
-                <div class="date">Apr. 30 2014</div>
-                <div class="des">
-                  <a href="#"> Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                    Andy is awesome. He is the best in the world.
-                  </a>
-                </div>
-              </li>
 
             </ul>
-            <div class="more"><a href="#">VIEW MORE</a></div>
-
-
+            <!--<div class="more"><a href="#">VIEW MORE</a></div>-->
 
           </div>
         </div>
@@ -187,4 +78,3 @@
 
   </div>
 </div>
-<% end %>

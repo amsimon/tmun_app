@@ -1,0 +1,65 @@
+<% provide(:title, 'All Conferences') %>
+
+
+
+<% provide(:title, 'TritonMUN') %>
+
+
+<h1 id="tritonmun"><span id="main">TritonMUN</span></h1>
+
+
+<div id="letter">
+  <p>
+    Dear Advisors and Delegates,<br>
+    <br>
+    It is with great pleasure that we welcome you to the 10th session of Triton Model United Nations. The conference will take place at the University of California, San Diego on Saturday, November 1st, 2014.<br>
+    <br>
+    Our Secretariat and Staff are dedicated to providing delegates with a rewarding experience that challenges them intellectually and comprehensively. With emphasis on public speaking, diplomacy, research and dynamic debate, we hold our conference to only the highest standards. Our Chairs are prepared to guide novice delegates through the process of parliamentary procedure and challenge experienced delegates with stimulating committees and thoughtful discussion.<br>
+    <br>
+    We plan to draw on the memorable traditions of the TritonMUN Fall Conference by illuminating the close-knit feel and enhanced delegate involvement that comes with smaller committee sizes. We believe that increased exposure provides a more rewarding experience for delegates and facilitates a deeper understanding of the issues as delegates work closely to exercise creative problem solving and to compose detailed resolutions.<br>
+    <br>
+    This year our committees have looked to current world issues, including the outbreak of the Coronavirus in the Middle East and now the West, the 2015 Education for All Movement, and the detrimental risks of drone warfare.<br>
+    <br>
+    We are eager for the commencement of the upcoming conference and we hope you will join us for the 10th Anniversary of Triton Model United Nations. For any questions or comments, email us at tritonmun.ucsd@gmail.com<br>
+    <br>
+    Best regards,<br>
+    <br>
+    Megan Difley<br>
+    Secretary General<br>
+    Triton Model United Nations<br>
+    Tritonmun.ucsd@gmail.com<br>
+
+  </p>
+
+  <!--<div id="by"><span>&mdash;Megan Difley</span></div>-->
+</div>
+
+<div id="tmun1">
+  <div class="innerRom">
+
+    <h2 class="lowerhead"><span>Fall</span></h2>
+
+    <%= link_to( @hconference_fall ) do %>
+        <div class="romanBox"><%= to_roman @hconference_fall %></div>
+    <% end %>
+  </div>
+
+  <div class="innerRom">
+
+    <h2 class="lowerhead"><span>Spring</span></h2>
+    <%= link_to( @hconference_spring ) do %>
+        <div class="romanBox"><%= to_roman @hconference_spring %></div>
+    <% end %>
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
