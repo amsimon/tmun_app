@@ -34,21 +34,23 @@
   <!--<div id="by"><span>&mdash;Megan Difley</span></div>-->
 </div>
 
+
 <div id="tmun1">
   <div class="innerRom">
 
     <h2 class="lowerhead"><span>Fall</span></h2>
 
-    <%= link_to( "/tritonmun/10" ) do %>
-        <div class="romanBox">X</div>
+    <%= link_to( @hconference_fall ) do %>
+        <div class="romanBox"><%= @hconference_fall.roman %></div>
     <% end %>
   </div>
 
   <div class="innerRom">
 
     <h2 class="lowerhead"><span>Spring</span></h2>
-
-    <div style="color:gray" class="romanBox">XI</div>
+    <%#= link_to( @hconference_spring ) do %>
+        <div class="romanBox"><%= @hconference_spring.roman %></div>
+    <%# end %>
 
 
   </div>

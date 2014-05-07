@@ -5,6 +5,24 @@ $headerGray:  #424242;
 
 $mediumGray: #848484;
 
+div.faq {
+  text-align: left;
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  div.question {
+    font-style: italic;
+    font-weight:bold;
+  }
+
+  div.answer {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    line-height: 150%;
+  }
+}
 
 div#pp_top {
   width: 650px;
@@ -41,11 +59,34 @@ div#comm_cont {
   .comm_box {
     max-width: 1000px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+    padding-bottom: 110px;
+    border-bottom: 1px solid $borderLight;
+    position: relative;
 
-    img.banner {
-      margin-top: 30px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    div.ban-cont{
+
+      position: relative;
+
+
+      h3 {
+        font-size: 1.6em;
+        position:absolute;
+        width: 100%;
+        text-align: center;
+        top: 404px;
+        padding: 5px 0px;
+        color: rgba(255,255,255,.9);
+
+        background-color: rgba(0,0,0,.7);
+        text-shadow: 0px 1px 2px rgba(0,0,0,.7);
+
+      }
+
+      img.banner {
+        margin-top: 30px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      }
     }
 
     div.button {
@@ -120,7 +161,7 @@ h1#tritonmun {
   color: $headerGray;
   font-size: 4em;
   text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
-  margin-bottom: 0px;
+
 
   span#main {
     background-color:  $bgColor;
@@ -296,7 +337,7 @@ div#tmun1 {
     }
 
     a {
-      color: $mediumGray;
+      color: black;
       text-decoration: none;
     }
   }

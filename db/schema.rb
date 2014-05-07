@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506052510) do
+ActiveRecord::Schema.define(version: 20140506220928) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140506052510) do
     t.string   "late_date"
     t.string   "late_price"
     t.integer  "delegation_fee"
+    t.string   "roman"
   end
 
   add_index "hconferences", ["number"], name: "index_hconferences_on_number", unique: true

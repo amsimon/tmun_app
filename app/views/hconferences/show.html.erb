@@ -61,18 +61,24 @@ render season, year here
               <div class="info"><%= @hconference.location %></div></li>
 
           <li><div class="label">Delegation Fee: </div>
-            <div class="info">$<%= @hconference.delegation_fee %>
+            <div class="info">$<%= @hconference.delegation_fee %> / school
             </div></li>
 
             <li><div class="label">Early: </div>
-              <div class="info">$<%= @hconference.early_price %> / delegate  (before <%= @hconference.early_date %>) </div></li>
+              <div class="info">$<%= @hconference.early_price %> / delegate  <span class="date">(by <%= @hconference
+                                                                                                  .early_date %>)
+              </span>
+              </div></li>
 
             <li><div class="label">Regular: </div>
-              <div class="info">$<%= @hconference.normal_price %> / delegate (before <%= @hconference.normal_date %>)</div></li>
+              <div class="info">$<%= @hconference.normal_price %> / delegate <span class="date">(by <%= @hconference
+                                                                                                       .normal_date %>)
+              </span> </div></li>
 
           <li><div class="label">Late: </div>
-            <div class="info">$<%= @hconference.late_price %> / delegate (before <%= @hconference.late_date %>)
-            </div></li>
+            <div class="info">$<%= @hconference.late_price %> / delegate <span class="date">(by <%= @hconference
+                                                                                                   .late_date %>)
+            </span> </div></li>
 
 
         </ul>
@@ -106,21 +112,97 @@ render season, year here
   </div>
   <div class="outer">
     <div class="innerBox" >
-      <h2><span>FAQ</span></h2>
+      <h2><span>Registration FAQ</span></h2>
       <% if @hconference.questions.any? %>
           <ol class="questions">
             <%= render @questions %>
           </ol>
           <%= will_paginate @questions %>
       <% end %>
-      <div id="letter">
-        <p style="text-align:center;">
-          Coming soon!
-        </p>
-      </div>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+      <div class="faq">
+      <div class="question">Where do I register?</div>
+      <div class="answer">Please register online <%= link_to "here.", (conf_path(@hconference) + "/" + "register")
+      %></div>
+
+      <div class="question">What if there's a change to delegate numbers?</div>
+        <div class="answer">If there's a change in delegate numbers, please let us know
+          immediately so we can change your invoice as well as updating committee country spots.</div>
+
+      <div class="question">What happens after registration?</div>
+        <div class="question">Will I be able to make several different payments?</div>
+        <div class="answer">You'll receive a confirmation email from us with an invoice based on the estimated delegate number.
+        If you do not hear from us within a few days, please contact us at modelun@ucsd.edu</div>
+
+      <div class="question">What are the fees?</div>
+<div class="answer">Refer to the 'Information' section above.</div>
+
+      <div class="question">To whom do I make the check out?</div>
+        <div class="answer">UC Regents</div>
+
+
+      <div class="question">Will I be able to make several different payments?</div>
+      <div class="answer">Each payment will depend on the deadline but you can split the payment
+        in different portions if it's more convenient.</div>
+
+      <div class="question">What forms of payment are accepted?</div>
+      <div class="answer">At the moment, only checks are accepted. Sorry for the inconvenience.</div>
+
+      <div class="question">How should I send the check?</div>
+      <div class="answer">If you are not in the San Diego area, please send your checks via postal mail. Because we
+receive our mail from UCSD's postal service, there may be further delay due to the sorting process.
+We encourage you to inform us once you have mailed the payment so we can keep an eye out for it.
+      If you are close to UCSD, we ask that you personally drop off the checks to make the process fast and safe.</div>
+
+      <div class="question">Where do I send the payment?</div>
+      <div class="answer">
+      <em>Postal Mail:</em><br>
+      Attn: Model UN at UCSD<br>
+      International House<br>
+      UC San Diego<br>
+      9500 Gilman Drive, 0550<br>
+      La Jolla, CA 92093-0550<br>
+        <br>
+      <em>Drop-off:</em><br>
+      International House Office - off of Torrey Pines Rd on Pangea Dr.<br>
+      Visit <a href="http://ihouse.ucsd.edu/contact/index.html">this link</a> for more details:</div>
+
+      <div class="question">When will I receive country assignments?</div>
+      <div class="answer">Country assignments are given out as we receive payments. This is to ensure the proper assignment of country spots.
+      If there are any issues such as constrained timeline, please contact us as soon as possible so we can try to accommodate you.</div>
+
+      <div class="question">What committees are offered?</div>
+      <div class="answer">There are 6 committees: 1st Disarmament and International Security, World Health Organization,
+      UN Development Program, UN Education, Scientific and Cultural Organization, the North Atlantic Treaty
+      Organization and Security Council.</div>
+
+      <div class="question">Are you able to satisfy all of our country preferences (indicated at Registration)?</div>
+      <div class="answer">While we'd like to, it would be logistically unrealistic to provide everyone with their preferred countries.
+    We try our best to do so though, so thanks for your understanding. To ensure the best chance of getting your
+    preferred countries, please try to send us the payment as soon as possible so we can release your country assignments.</div>
+
+    <div class="question">Where is the conference?</div>
+      <div class="answer">TritonMUN X will be hosted at the UC San Diego Price Center. Committees will be
+    located between the Student Services Center and the East and West wings of Price Center.
+    <a href="http://universitycenters.ucsd.edu/aboutus_map_and_directions.php">Directions.</a></div>
+
+    <div class="question">Is there parking nearby? </div>
+        <div class="answer">Yes. The most convenient parking is inside the Gilman parking structure. Parking
+    is FREE on the weekends.</div>
+
+      <div class="question">Is there a hotel for us to stay overnight?</div>
+          <div class="answer">In past years, delegates have stayed at the La Jolla Sheraton.
+
+      <em>Contact information here:</em><br>
+      Mark Kuper<br>
+      Sales Manager<br>
+      858.452.4012<br>
+      SHERATON LA JOLLA HOTEL<br>
+      3299 Holiday Court, La Jolla, CA 92037<br>
+      <a href="http://sheratonlajolla.com">sheratonlajolla.com</a></div>
+
+
+      </div>
     </div>
 
     <div class="innerBox" >

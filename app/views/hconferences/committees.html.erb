@@ -5,7 +5,7 @@
 
 <h2 id="season">TritonMUN
     <span id="roman">
-        <%= to_roman @hconference %>
+        <%= @hconference.roman %>
     </span>
 </h2>
 
@@ -44,58 +44,72 @@
     <div class="comm_box">
       <h2 class="com_head">1st Disarmament and International Security</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Andrew Muse-Fisher</span></div>
      <!-- <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Andrew Simon</span></div>-->
+      <div class="ban-cont">
+        <h3 class="topic">Drone Warfare</h3>
+        <%= image_tag("c1.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
 
-      <%= image_tag("c1.jpg", alt: "Drone Warfare", class: "banner") %>
     </div>
 
     <div class="comm_box">
       <h2 class="com_head">World Health Organization</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Emily Lu</span></div>
       <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Lilia Stone</span></div>
-      <%= image_tag("c2.jpg", alt: "Drone Warfare", class: "banner") %>
+      <div class="ban-cont">
+        <h3 class="topic">Outbreak of the Coronavirus</h3>
+        <%= image_tag("c2.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
 
     </div>
 
     <div class="comm_box">
       <h2 class="com_head">UN Development Program</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Carla Diot</span></div>
       <!-- <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Andrew Simon</span></div>-->
-      <%= image_tag("c3.jpg", alt: "Drone Warfare", class: "banner") %>
+      <div class="ban-cont">
+        <h3 class="topic">Development Assistance for Syrian Refugees</h3>
+        <%= image_tag("c3.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
     </div>
 
     <div class="comm_box">
       <h2 class="com_head">UN Education, Scientific and Cultural Organization</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Reina Ishii</span></div>
       <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Sarah Min</span></div>
-      <%= image_tag("c4.jpg", alt: "Drone Warfare", class: "banner") %>
+      <div class="ban-cont">
+        <h3 class="topic">Inclusive Education for All</h3>
+        <%= image_tag("c4.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
     </div>
 
     <div class="comm_box">
       <h2 class="com_head">North Atlantic Treaty Organization</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Peyton Stever</span></div>
       <!-- <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Andrew Simon</span></div>-->
-      <%= image_tag("c5.jpg", alt: "Drone Warfare", class: "banner") %>
+      <div class="ban-cont">
+        <h3 class="topic">Ethnic Cleansing in the Central African Republic</h3>
+        <%= image_tag("c5.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
     </div>
 
 
     <div class="comm_box">
       <h2 class="com_head">Security Council</h2>
       <div class="button">Topic Guide</div>
-      <div class="gray button">Topic Update</div>
       <div class="chair"><span class="chair">Chair: </span><span class="name">Ashray Beshay</span></div>
+
       <!-- <div class="chair"><span class="chair">Vice Chair: </span><span class="name">Andrew Simon</span></div>-->
-      <%= image_tag("c6.jpg", alt: "Drone Warfare", class: "banner") %>
+
+      <div class="ban-cont">
+          <h3 class="topic">Cyberterrorism</h3>
+          <%= image_tag("c6.jpg", alt: "Drone Warfare", class: "banner") %>
+      </div>
     </div>
 
 

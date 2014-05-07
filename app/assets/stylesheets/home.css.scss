@@ -17,10 +17,20 @@ $mediumGray: #848484;
 
   margin: .5em;
 }
+
+.home {
+
+  position: relative;
+  width:100%;
+  z-index: 10;
+  margin-bottom: 42px;
+
+}
 div.outer {
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
+
 
   div.inner {
     width: 50%;
@@ -211,11 +221,22 @@ div.outer {
           min-width: 125px;
           line-height: 100%;
 
+          span.date {
+
+            vertical-align: center;
+            font-size: .6em;
+          text-transform: uppercase;
+            font-style: italic;
+            color: gray;
+            margin-left: 12px;
+
+          }
+
         }
 
         ul li {
 
-          margin-bottom: 0em;
+          margin-bottom: .5em;
           overflow: hidden;
           padding: 5px;
           list-style: none;

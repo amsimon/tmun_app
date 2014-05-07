@@ -9,7 +9,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem 'friendly_id', '~> 5.0.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem "friendly_id", "~> 5.0.1" # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -44,7 +44,7 @@ gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
+gem 'turbolinks'
 gem 'jbuilder', '1.0.2'
 
 group :doc do

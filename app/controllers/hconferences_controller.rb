@@ -38,7 +38,7 @@ class HconferencesController < ApplicationController
     @hconference = Hconference.new(hconference_params)
     if @hconference.save
       flash[:success] = "Home Conference created!"
-      redirect_to (tritonmun_path + "/" + (@hconference.number).to_s)
+      redirect_to (tritonmun_path + "/" + (@hconference.roman))
     else
       render 'new'
     end
@@ -61,6 +61,8 @@ class HconferencesController < ApplicationController
   def update
     @hconference = Hconference.friendly.find(params[:id])
     if @hconference.update_attributes(hconference_params)
+
+      @hconference.update(roman: (number_to_roman(@hconference.number)) )
       flash[:success] = "Conference updated"
       redirect_to @hconference
     else
@@ -76,6 +78,39 @@ class HconferencesController < ApplicationController
 
     def hconference_params
       params.require(:hconference).permit(:number, :season, :year, :location, :date, :early_price, :normal_price,
-                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee)
+                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman)
     end
+
+
+  def number_to_roman(number)
+    result = ""
+    # number = hconference.number
+
+    roman_mapping.keys.each do |divisor|
+      quotient, modulus = number.divmod(divisor)
+      result << roman_mapping[divisor] * quotient
+      number = modulus
+    end
+    result
+  end
+
+  private
+
+  def roman_mapping
+    {
+        1000 => "M",
+        900 => "CM",
+        500 => "D",
+        400 => "CD",
+        100 => "C",
+        90 => "XC",
+        50 => "L",
+        40 => "XL",
+        10 => "X",
+        9 => "IX",
+        5 => "V",
+        4 => "IV",
+        1 => "I"
+    }
+  end
 end
