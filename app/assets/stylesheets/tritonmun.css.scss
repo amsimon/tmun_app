@@ -162,6 +162,7 @@ h1#tritonmun {
   font-size: 4em;
   text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
 
+  margin-bottom: 0px;
 
   span#main {
     background-color:  $bgColor;
@@ -175,7 +176,9 @@ h1#tritonmun {
   }
 
 }
+.home {
 
+}
 div.conf_cont {
 
   max-width: 1200px;
