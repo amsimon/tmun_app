@@ -37,6 +37,8 @@ class HconferencesController < ApplicationController
   def create
     @hconference = Hconference.new(hconference_params)
     if @hconference.save
+
+      @hconference.update(roman: (number_to_roman(@hconference.number)) )
       flash[:success] = "Home Conference created!"
       redirect_to (tritonmun_path + "/" + (@hconference.roman))
     else
