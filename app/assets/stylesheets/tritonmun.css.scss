@@ -179,6 +179,88 @@ h1#tritonmun {
 .home {
 
 }
+
+
+div#buttonBox {
+  margin-bottom: 30px;
+  display: inline-block;
+  text-align: center;
+
+
+  div.button {
+
+
+    font-size:1em;
+    text-align: center;
+
+    padding: .5em;
+
+
+    background-color: #E6E6E6;
+
+    display: inline-block;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    margin-bottom: 16px;
+    border-top: 1px solid $borderLight;
+    border-bottom: 1px solid white;
+
+    margin-right: 12px;
+  }
+
+  div.button#register {
+    background-color: #E9E9BD;
+    margin-right: 0em;
+  }
+
+  div.button#register:hover {
+    background-color: #D8B526;
+    border-top: 1px solid #9F8419;
+  }
+
+
+  div.button:hover {
+    border-top: 1px solid black;
+    background-color: #252E61;
+    color: white;
+  }
+
+  a {
+    color: $mediumGray;
+    text-decoration: none;
+  }
+
+  div.button.current {
+    border-top: 1px solid black;
+    background-color: #252E61;
+    color: white;
+  }
+
+  div.button.current:hover {
+    border-top: 1px solid #1c224b;
+    background-color: #333e88;
+    color: white;
+  }
+
+  div.button.current#register:hover {
+    background-color: #e8c428;
+    border-top: 1px solid #b4961c;
+    margin-right: 0em;
+  }
+
+  div.button.current#register {
+    background-color: #d8b526;
+    border-top: 1px solid #9F8419;
+    margin-right: 0em;
+  }
+}
+
+
+
+
 div.conf_cont {
 
   max-width: 1200px;
@@ -187,83 +269,6 @@ div.conf_cont {
 
 
   text-align: center;
-
-  div#buttonBox {
-    margin-bottom: 30px;
-    display: inline-block;
-    text-align: center;
-
-
-    div.button {
-
-
-      font-size:1em;
-      text-align: center;
-
-      padding: .5em;
-
-
-      background-color: #E6E6E6;
-
-      display: inline-block;
-
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-
-      margin-bottom: 16px;
-      border-top: 1px solid $borderLight;
-      border-bottom: 1px solid white;
-
-      margin-right: 12px;
-    }
-
-    div.button#register {
-      background-color: #E9E9BD;
-      margin-right: 0em;
-    }
-
-    div.button#register:hover {
-      background-color: #D8B526;
-      border-top: 1px solid #9F8419;
-    }
-
-
-    div.button:hover {
-      border-top: 1px solid black;
-      background-color: #252E61;
-      color: white;
-    }
-
-    a {
-      color: $mediumGray;
-      text-decoration: none;
-    }
-
-    div.button.current {
-      border-top: 1px solid black;
-      background-color: #252E61;
-      color: white;
-    }
-
-    div.button.current:hover {
-      border-top: 1px solid #1c224b;
-      background-color: #333e88;
-      color: white;
-    }
-
-    div.button.current#register:hover {
-      background-color: #e8c428;
-      border-top: 1px solid #b4961c;
-      margin-right: 0em;
-    }
-
-    div.button.current#register {
-      background-color: #d8b526;
-      border-top: 1px solid #9F8419;
-      margin-right: 0em;
-    }
-  }
 
 }
 

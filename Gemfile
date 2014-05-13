@@ -10,6 +10,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem "friendly_id", "~> 5.0.1" # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem "paperclip", "~> 3.5.3"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
 
+
+
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -20,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    redirect_to @user
-    # @user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to UCSD MUN!"
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :role, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation, :avatar, :bio, :grad_year, :major)
   end
 
   # Before filters

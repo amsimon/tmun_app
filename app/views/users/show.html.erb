@@ -1,43 +1,91 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <%= @user.role %>
-      </h1>
-    </section>
 
-    <% if signed_in? %>
-        <% if !current_user?(@user) %>
-            <!-- Admin viewing others' -->
-            <% if current_user.admin? %>
+<h1 id="tritonmun">
+  <span id="main"><%= @user.name %></span>
+</h1>
 
-            | <%= link_to "Admin: edit user details", edit_user_path(@user)%>
-            | <%= link_to "Admin: change user password", edit_user_path(@user)%>
-            | <%= link_to "Admin: delete", @user, method: :delete,
-                          data: { confirm: "You sure?" } %>
-            <% end %>
-            <!-- Admin's profile -->
-            <% if @user.admin? %>
-                <%= link_to "View all members", users_path %>
-                <%= link_to "Create Home Conference", new_hconference_path %>
-            <% end %>
-        <% else %>
-            <%= link_to "Edit account", edit_user_path(@user)%>
-        <% end %>
-    <% end %>
-  </aside>
-  
-  <div class="span8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
+<% if @user.secretariat? %>
+    <div class="user_title">
+
+
+    <h2 class="sec_pos">
+      <%= @user.sec_pos%>
+    </h2>
+
+    </div>
+<% end %>
+
+<div id="badge_info">blank</div>
+
+<div class="user_cont">
+<div id="buttonBox">
+
+  <%= link_to (@user) do %>
+      <div class="current button">Overview</div>
+  <% end %>
+
+  <%= link_to (@user) do %>
+      <div class="button">Travel Team</div>
+  <% end %>
+
+  <%= link_to (@user) do %>
+      <div class="button">TritonMUN</div>
+  <% end %>
+
+</div>
+
+
+
+<div class="user_outer">
+
+    <div class="ava">
+        <%= image_tag @user.avatar.url(:small), style:"vertical-align: middle" %>
+
+        <div class="badges">
+          <%= render 'user_badges' %>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="user_info">
+      <ul>
+        <li><%= link_to @user.email, ("mailto:"+@user.email)%></li>
+        <li><%= @user.major %></li>
+        <li>Class of  <%= @user.grad_year %></li>
+      </ul>
+
+      <div class="bio">
+         <%= @user.bio %>
+      </div>
+    </div>
+
+
+</div>
+
+  <div class="outer">
+
+    <div class="innerBox" >
+        <h2><span>Awards</span></h2><br><br><br>
+    </div>
+
+    <div class="innerBox" >
+      <h2><span>History</span></h2>
+
+
+    </div>
+
+
+
+
+
   </div>
+
+
+
+
+</div>
 </div>
 </div>

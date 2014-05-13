@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
   before_create :create_remember_token
 
   validates :name,  presence: true, length: { maximum: 50 }
+  validates :bio, length: { maximum: 500 }
+
+  has_attached_file :avatar, :styles => {
+      :tiny => "25x25#",
+      :small  => "150x150",
+      :medium => "300x300>" },
+      :default_url => "/assets/default_avatar_:style.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i

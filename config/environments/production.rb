@@ -81,4 +81,6 @@ TmunApp::Application.configure do
   config.serve_static_assets = true
   config.assets.compile = true
   config.assets.digest = true
+
+  Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-6.8.9-Q16"
 end

@@ -1,4 +1,36 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
-Currently unavailable.
+
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :role %>
+    <%= f.text_field :role %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :major %>
+    <%= f.text_field :major %>
+
+    <%= f.label :grad_year %>
+    <%= f.text_field :grad_year %>
+
+
+    <%= f.label :password %>
+    <%= f.password_field :password, value: @user.password %>
+
+    <%= f.label :password_confirmation, "Confirm Pasdasdassword" %>
+    <%= f.password_field :password_confirmation, value: @user.password %>
+
+    <%= f.label :bio, "Tell us about yourself." %>
+    <%= f.text_area :bio, :cols => 50, :rows => 10 %>
+
+    <%= f.file_field :avatar %>
+
+    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+<% end %>

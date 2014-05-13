@@ -1,3 +1,136 @@
 // Place all the styles related to the Schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div#badge_info {
+  width: 130px;
+
+  background-color: black;
+  color: white;
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
+  opacity: 0;
+  padding: 10px;
+  font-size: 12px;
+
+}
+
+
+
+div.badges {
+
+  border-top: 1px solid lightgray;
+  padding-top: 15px;
+  position:relative;
+  overflow: visible;
+  div.badge {
+    width: 32px;
+    height: 32px;
+    background: red;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    display: inline-block;
+    margin: 0px 0px 14px 0px;
+    font-size:12px;
+
+    span {
+      color: white;
+      position: relative;
+      top: 7px;
+      font-weight: 900;
+
+
+
+    }
+  }
+  div.badge:nth-child(3n+1) {
+    background: blue;
+    margin-left: 0px;
+  }
+
+
+
+
+}
+
+
+
+
+
+div.user_title {
+
+  text-align: center;
+
+
+}
+
+
+h2.sec_pos {
+  text-align: center;
+  color: gray;
+  margin-top: 0px;
+
+}
+
+div.user_cont {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  text-align: center;
+
+}
+
+div.user_outer {
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: left;
+
+
+  div.ava {
+    width: 150px;
+    float: left;
+    text-align: center;
+
+    img {
+      padding-bottom: 20px;
+    }
+
+
+  }
+
+  div.user_info {
+    float:left;
+    width: 70%;
+    padding-left: 50px;
+
+    a {
+      color: #ad7e00;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type:none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    div.bio {
+      font-style: italic;
+      font-size: 18px;
+      margin-top: 20px;
+
+    }
+
+  }
+
+
+
+}
