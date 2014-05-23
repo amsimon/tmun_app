@@ -7,7 +7,6 @@
 <% if @user.secretariat? %>
     <div class="user_title">
 
-
     <h2 class="sec_pos">
       <%= @user.sec_pos%>
     </h2>
@@ -32,9 +31,22 @@
       <div class="button">TritonMUN</div>
   <% end %>
 
+  <% if current_user?(@user) %>
+      <%= link_to (edit_user_path) do %>
+          <div class="button">Edit Profile</div>
+      <% end %>
+  <%end%>
+
 </div>
 
-
+  <% if signed_in? %>
+      <!-- Admin viewing others' -->
+      <% if current_user.admin? %>
+            <span class="admin">
+              <%= link_to "Admin: edit user details", (edit_user_path)%>
+            </span>
+      <% end %>
+  <% end %>
 
 <div class="user_outer">
 
@@ -54,7 +66,6 @@
       <ul>
         <li><%= link_to @user.email, ("mailto:"+@user.email)%></li>
         <li><%= @user.major %></li>
-        <li>Class of  <%= @user.grad_year %></li>
       </ul>
 
       <div class="bio">

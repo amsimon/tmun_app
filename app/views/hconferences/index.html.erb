@@ -7,8 +7,16 @@
 
 <h1 id="tritonmun"><span id="main">TritonMUN</span></h1>
 
-
 <div id="letter">
+
+  <% if signed_in? %>
+      <!-- Admin viewing others' -->
+      <% if current_user.admin? %>
+        <span class="admin">
+              <%= link_to "Admin: add new conference", "/tritonmun/new" %>
+            </span>
+      <% end %>
+  <% end %>
   <p>
     Dear Advisors and Delegates,<br>
     <br>

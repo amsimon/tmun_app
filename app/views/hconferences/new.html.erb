@@ -1,76 +1,78 @@
-<% provide(:title, 'New Home Conference') %>
-<h1>New Home Conference</h1>
+<h1 id="tritonmun"><span id="main">New Home Conference</span></h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@hconference) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-
-        <div class="form_line">
-          <%= f.label :number %>
-          <%= f.text_field :number %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :season %>
-          <%= f.text_field :season %>
-        </div>
+<div class="narrow">
 
 
-        <div class="form_line">
-          <%= f.label :year %>
-          <%= f.text_field :year %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :date %>
-          <%= f.text_field :date %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :location %>
-          <%= f.text_field :location %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :early_price, "Early Price" %>
-          $<%= f.text_field :early_price %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :early_date, "Early Price Deadline" %>
-          Before: <%= f.text_field :early_date %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :normal_price, "Normal Price" %>
-          $<%= f.text_field :normal_price %>
-        </div>
+  <div class="even_more">
+    <div class="forms">
+      <%= form_for(@hconference) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
 
-        <div class="form_line">
-          <%= f.label :normal_date, "Normal Price Deadline" %>
-          Before: <%= f.text_field :normal_date %>
-        </div>
+          <div class="form_line">
+            <%= f.label :number %>
+            <%= f.text_field :number %>
+          </div>
 
-        <div class="form_line">
-          <%= f.label :late_price, "Late Price" %>
-          $<%= f.text_field :late_price %>
-        </div>
-
-
-        <div class="form_line">
-          <%= f.label :late_date, "Late Price Deadline" %>
-          Before: <%= f.text_field :late_date %>
-        </div>
-
-        <div class="form_line">
-          <%= f.label :delegation_fee, "Delegation Fee" %>
-          $<%= f.text_field :delegation_fee %>
-        </div>
+          <div class="form_line">
+            <%= f.label :season %>
+            <%= f.text_field :season %>
+          </div>
 
 
-        <%= f.submit "Create Conference", class: "btn btn-large btn-primary" %>
-    <% end %>
+          <div class="form_line">
+            <%= f.label :year %>
+            <%= f.text_field :year %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :date %>
+            <%= f.text_field :date %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :early_price, "Early Price" %>
+            $<%= f.text_field :early_price %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :early_date, "Early Price Deadline" %>
+            Before: <%= f.text_field :early_date %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :normal_price, "Normal Price" %>
+            $<%= f.text_field :normal_price %>
+          </div>
+
+
+          <div class="form_line">
+            <%= f.label :normal_date, "Normal Price Deadline" %>
+            Before: <%= f.text_field :normal_date %>
+          </div>
+
+          <div class="form_line">
+            <%= f.label :late_price, "Late Price" %>
+            $<%= f.text_field :late_price %>
+          </div>
+
+
+          <div class="form_line">
+            <%= f.label :late_date, "Late Price Deadline" %>
+            Before: <%= f.text_field :late_date %>
+          </div>
+
+
+
+
+
+          <%= f.submit "Create Conference", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

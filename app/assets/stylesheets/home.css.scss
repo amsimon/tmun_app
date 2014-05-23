@@ -8,14 +8,29 @@ $mediumGray: #848484;
 
 
 #home_h1 {
+
+position: relative;
+  z-index: 50000;
+  padding: 20px 0px;
+  margin: 0px;
+
+  background-image: url("line-pixel.png");
+  background-repeat:repeat-x;
+  text-align: center;
+  background-position:center;
+
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: 1000;
   color: $headerGray;
-  font-size: 3.98em;
+  font-size: 4em;
   text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
-  text-align: center;
 
-  margin: .5em;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .8);
+  span {
+    background-color: $bgColor;
+    padding: 0px 1em;
+  }
+
 }
 
 .home {
@@ -23,7 +38,6 @@ $mediumGray: #848484;
   position: relative;
   width:100%;
   z-index: 10;
-  margin-bottom: 42px;
 
 }
 div.outer {
@@ -33,6 +47,8 @@ div.outer {
 
 
   div.inner {
+    position: relative;
+
     width: 50%;
     float:left;
 
@@ -46,7 +62,7 @@ div.outer {
   div.innerBox {
 
     overflow: hidden;
-    width: 47.92%;
+    width: calc(50% - 1px);
     float:left;
     border-right: 1px solid #cccccc;
     padding: 0px 0%;

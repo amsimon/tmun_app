@@ -42,8 +42,9 @@ render season, year here
   <% if signed_in? %>
           <!-- Admin viewing others' -->
           <% if current_user.admin? %>
-
-              | <%= link_to "Admin: edit conf details", conf_path(@hconference) + "/edit"%>
+            <span class="admin">
+              <%= link_to "Admin: edit conf details", conf_path(@hconference) + "/edit"%>
+            </span>
           <% end %>
   <% end %>
 

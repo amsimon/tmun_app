@@ -1,6 +1,66 @@
 // Place all the styles related to the Schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.narrow {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+
+  .even_more {
+    width: 800px;
+    margin: 0 auto;
+
+  }
+}
+
+.forms {
+ margin-top: 50px;
+
+  height: 22px;
+
+tr {
+  text-align: right;
+}
+
+  div.outer {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    div.labels {
+      position: relative;
+
+      width: 30%;
+      float: left;
+
+    }
+    div.inputs {
+      position: relative;
+
+
+      float: left;
+      text-align: left;
+      margin-left: 15px;
+
+      width: calc(50% - 15px);
+
+    }
+  }
+}
+
+label {
+  font-size: 30px;
+}
+
+input {
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: 4px;
+  width: calc(100% - 10px);
+
+}
+
 div#badge_info {
   width: 130px;
 

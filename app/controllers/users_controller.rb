@@ -55,8 +55,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :role, :email, :password,
-                                 :password_confirmation, :avatar, :bio, :grad_year, :major)
+      params.require(:user).permit(:name, :role, :email, :password,
+                                   :password_confirmation, :avatar, :bio, :grad_year, :major, :travel_team,
+                                   :home_team, :admin, :secretariat, :sec_pos)
+
+
+
   end
 
   # Before filters
@@ -70,5 +74,5 @@ class UsersController < ApplicationController
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
-
 end
+

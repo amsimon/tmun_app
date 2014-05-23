@@ -5,6 +5,11 @@ $headerGray:  #424242;
 
 $mediumGray: #848484;
 
+
+.admin {
+  padding: 5px;
+  background: red;
+}
 div.faq {
   text-align: left;
   font-size: 18px;
@@ -164,6 +169,7 @@ h1#tritonmun {
 
   margin-bottom: 0px;
 
+
   span#main {
     background-color:  $bgColor;
     padding: 0px 1em;
@@ -273,7 +279,10 @@ div.conf_cont {
 }
 
 div#letter {
-  margin: 50px 0px;
+  margin: 0 auto;
+  max-width: 700px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 0px 25%;
   font-style: italic;
   font-size: 18px;
