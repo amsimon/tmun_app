@@ -1,6 +1,8 @@
 module HconferencesHelper
 
-
+  def confs
+    Hconference.all
+  end
 
   def conf_path(conf)
     tritonmun_path + "/" + (conf.roman)

@@ -96,8 +96,6 @@ class HconferencesController < ApplicationController
     result
   end
 
-  private
-
   def roman_mapping
     {
         1000 => "M",

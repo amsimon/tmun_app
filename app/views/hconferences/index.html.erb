@@ -4,31 +4,28 @@
 
 <% provide(:title, 'TritonMUN') %>
 
-
 <h1 id="tritonmun"><span id="main">TritonMUN</span></h1>
 <div class="upcoming-cont">
 <div class="upcoming"><!--<h1 class="subhead"><span id="main">Upcoming Conferences</span></h1>-->
-<div id="tmun1">
-  <div class="innerRom">
+  <div id="tmun1">
+    <div class="innerRom">
 
-    <h2 class="lowerhead"><span>Fall 2014</span></h2>
+      <h2 class="lowerhead"><span>Fall</span></h2>
 
-    <%= link_to( @hconference_fall ) do %>
-        <div class="romanBox"><%= @hconference_fall.roman %></div>
-    <% end %>
+      <a href="/tritonmun/X"><div class="romanBox">X</div></a>
+
+    </div>
+
+    <div class="innerRom">
+
+      <h2 class="lowerhead"><span>Spring</span></h2>
+      <a href="#"><div class="romanBox">XI</div></a>
+
+
+    </div>
+
+
   </div>
-
-  <div class="innerRom">
-
-    <h2 class="lowerhead"><span>Spring 2015</span></h2>
-    <%#= link_to( @hconference_spring ) do %>
-    <div class="romanBox"><%= @hconference_spring.roman %></div>
-    <%# end %>
-
-
-  </div>
-
-</div>
 </div>
 </div>
 
