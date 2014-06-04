@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
 
   has_attached_file :avatar, :styles => {
-      :tiny => "25x25#",
+      :tiny => "25x25",
       :small  => "150x150",
       :medium => "300x300>" },
       :default_url => "/assets/default_avatar_:style.png"

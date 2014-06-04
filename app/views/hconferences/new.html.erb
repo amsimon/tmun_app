@@ -36,7 +36,13 @@
             <td><%= f.text_field :location %></td>
           </tr>
 
-          <tr>
+            <tr>
+              <td><%= f.label :delegation_fee, "Delegation Fee" %></td>
+              <td>$<%= f.text_field :delegation_fee %></td>
+            </tr>
+
+
+            <tr>
             <td><%= f.label :early_price, "Early Price" %></td>
             <td>$<%= f.text_field :early_price %></td>
           </tr>
