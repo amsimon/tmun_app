@@ -19,7 +19,18 @@ class StaticPagesController < ApplicationController
   def tritonmun
   end
 
-  def x
+  def mission
+
+  end
+  def secretariat
+
+  end
+
+  def history
+
+  end
+
+  def alumni
 
   end
 

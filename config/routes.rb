@@ -5,8 +5,6 @@ TmunApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
 
-
-
   root 'static_pages#home'
 
   match '/tritonmun/:number',  to: 'hconferences#show',         via: 'get'
@@ -32,6 +30,12 @@ TmunApp::Application.routes.draw do
 
   match '/travelteam',    to: 'static_pages#travelteam',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
+
+  match '/mission',   to: 'static_pages#mission',   via: 'get'
+  match '/secretariat',   to: 'static_pages#secretariat',   via: 'get'
+  match '/history',   to: 'static_pages#history',   via: 'get'
+  match '/alumni',   to: 'static_pages#alumni',   via: 'get'
+
   match '/tritonmun', to: 'hconferences#index', via: 'get'
 
 

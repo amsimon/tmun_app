@@ -1,4 +1,3 @@
-alert('dsdfsdf');
 $(window).load(function() {
 
 
@@ -13,7 +12,7 @@ $(window).load(function() {
 
     var H = "-" + ($(".slide.s-left").css("height"));
 
-    alert(H);
+    //alert(H);
 
 
     $(window).on('resize', function() {

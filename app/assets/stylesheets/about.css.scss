@@ -1,15 +1,96 @@
 
 
 .main_cont {
-  max-width: 800px;
   margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+
   font-size: 18px;
   color: #2E2E2E;
-  line-height: 120%;
+  //line-height: 120%;
+
+  max-width: 1200px;
 }
 
 h3.first-word {
 
   font-size: 32px;
   color: #242362;
+}
+
+div.bio-box {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  padding-top: 40px;
+
+  //border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+
+  text-align: left;
+
+  div.photo {
+    position: relative;
+    width: 200px;
+    float:left;
+    height: 100%;
+
+    img.bio-photo {
+      width: 200px;
+    }
+  }
+
+  div.bio-right {
+
+    margin-left: 40px;
+    width: calc(100% - 240px);
+    float:left;
+
+    div.bio-header {
+      font-size: 16px;
+      color: #4f4f4f;
+      font-style: italic;
+
+
+      div.position {
+        font-size: 40px;
+        color: black;
+        font-style: normal;
+        margin-bottom: 10px;
+      }
+      div.name {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      div.college {
+
+      }
+      div.major {
+
+      }
+
+    }
+
+    div.bio {
+      margin-top: 20px;
+      line-height: 140%;
+      font-family: Georgia, Times, "Times New Roman", serif;
+
+      span.quote {
+        font-size: 70px;
+        color: #e1e1e1;
+        position: relative;
+        top: 30px;
+        right: 30px;
+        font-family: "Arial";
+        font-style: italic;
+
+
+      }
+    }
+  }
+
+
 }

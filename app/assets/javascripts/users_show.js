@@ -1,3 +1,6 @@
+
+alert('user');
+
 $( document ).ready( function() {
 
 

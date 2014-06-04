@@ -1,17 +1,64 @@
 // Place all the styles related to the Schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  -webkit-text-fill-color: #333;
+}
+
 .narrow {
 
   max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 100px;
   text-align: center;
+
+  margin-top: 70px;
+
+
 
   .even_more {
     width: 800px;
     margin: 0 auto;
 
   }
+
+  div.two-cols {
+    overflow: hidden;
+  }
+
+  div.col {
+    width: 50%;
+    float:left;
+  }
+  div#left {
+    padding-right: 40px;
+    border-right: 1px solid lightgray;
+  }
+  div#right {
+    width: calc(50% - 41px);
+
+    p#new {
+      font-size: 40px;
+
+      a {
+        color: #b79300;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ffd300;
+        text-decoration: none;
+      }
+    }
+  }
+}
+*:focus {
+  outline: 0;
 }
 
 .forms {
@@ -49,15 +96,93 @@ tr {
   }
 }
 
+table.sign {
+
+
+  .check {
+    text-align: left;
+  }
+  text-align: right;
+  tr {
+
+
+    td {
+      padding: 5px 5px;
+
+    }
+  }
+}
+
+div#sub-cont {
+  position: relative;
+  text-align: right;
+
+  margin-top: 30px;
+
+}
+
+.avatar {
+  font-size: 18px;
+  margin-top: 10px;
+
+
+}
+input[type=submit] {
+
+  background-color: #252E61;
+  color: white;
+
+  border: none;
+  border-bottom: 4px solid #1A2145;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  padding: 10px 20px;
+
+  margin: 0 auto;
+
+
+}
+input[type=submit]:hover {
+  background-color: #333e88;
+}
+
+input[type=submit]:active {
+  background-color: #1f264e;
+  border: none;
+  margin-top: 4px;
+}
+
+
+
+
+
+div.lower-sign {
+
+  border-top: 1px solid #d1d1d1;
+
+  margin-top: 30px;
+  padding-top: 30px;
+
+  text-align: left;
+  padding-bottom: 200px;
+
+}
+
+
 label {
   font-size: 30px;
+  margin-right: 20px;
+  color: #212121;
 }
 
 input {
   text-align: left;
   font-size: 30px;
   margin-bottom: 4px;
-  width: calc(100% - 10px);
+  //width: calc(100% - 10px);
 
 }
 
@@ -135,7 +260,7 @@ h2.sec_pos {
 
 div.user_cont {
 
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 50px;
 

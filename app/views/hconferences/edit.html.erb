@@ -9,63 +9,68 @@
           <%= render 'shared/error_messages', object: f.object %>
 
 
-          <div class="form_line">
-            <%= f.label :number %>
-            <%= f.text_field :number %>
-          </div>
+          <table class="sign">
 
-          <div class="form_line">
-            <%= f.label :season %>
-            <%= f.text_field :season %>
-          </div>
+            <tr>
+              <td><%= f.label :number %></td>
+              <td><%= f.text_field :number %></td>
+            </tr>
 
 
-          <div class="form_line">
-            <%= f.label :year %>
-            <%= f.text_field :year %>
-          </div>
-
-          <div class="form_line">
-            <%= f.label :date %>
-            <%= f.text_field :date %>
-          </div>
-
-          <div class="form_line">
-            <%= f.label :location %>
-            <%= f.text_field :location %>
-          </div>
-
-          <div class="form_line">
-            <%= f.label :early_price, "Early Price" %>
-            $<%= f.text_field :early_price %>
-          </div>
-
-          <div class="form_line">
-            <%= f.label :early_date, "Early Price Deadline" %>
-            Before: <%= f.text_field :early_date %>
-          </div>
-
-          <div class="form_line">
-            <%= f.label :normal_price, "Normal Price" %>
-            $<%= f.text_field :normal_price %>
-          </div>
+            <tr>
+              <td><%= f.label :season %></td>
+              <td><%= f.text_field :season %></td>
+            </tr>
 
 
-          <div class="form_line">
-            <%= f.label :normal_date, "Normal Price Deadline" %>
-            Before: <%= f.text_field :normal_date %>
-          </div>
+            <tr>
+              <td><%= f.label :year %></td>
+              <td><%= f.text_field :year %></td>
+            </tr>
 
-          <div class="form_line">
-            <%= f.label :late_price, "Late Price" %>
-            $<%= f.text_field :late_price %>
-          </div>
+            <tr>
+              <td><%= f.label :date %></td>
+              <td><%= f.text_field :date %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :location %></td>
+              <td><%= f.text_field :location %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :early_price, "Early Price" %></td>
+              <td>$<%= f.text_field :early_price %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :early_date, "Early Price Deadline" %></td>
+              <td>Before: <%= f.text_field :early_date %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :normal_price, "Normal Price" %></td>
+              <td>$<%= f.text_field :normal_price %></td>
+            </tr>
 
 
-          <div class="form_line">
-            <%= f.label :late_date, "Late Price Deadline" %>
-            Before: <%= f.text_field :late_date %>
-          </div>
+            <tr>
+              <td><%= f.label :normal_date, "Normal Price Deadline" %></td>
+              <td>Before: <%= f.text_field :normal_date %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :late_price, "Late Price" %></td>
+              <td>$<%= f.text_field :late_price %></td>
+            </tr>
+
+
+            <tr>
+              <td><%= f.label :late_date, "Late Price Deadline" %></td>
+              <td>Before: <%= f.text_field :late_date %></td>
+            </tr>
+
+          </table>
 
 
 

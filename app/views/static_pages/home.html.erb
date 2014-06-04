@@ -5,14 +5,55 @@
 
     <div class="outer">
 
-      <div class="inner">
-        <%= image_tag("f1.jpg", alt: "Travel Team", class: "slide") %>
+      <div class="inner" id="il">
+
+        <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") %></a>
+
+
+
+
+        <div class="phot-cont slide s-left" id="1">
+          <div class="overlay">
+            Learn.
+          </div>
+          <%= image_tag("f3.jpg", alt: "TritonMUN") %>
+        </div>
+
+        <div class="phot-cont slide s-left" id="one">
+          <div class="overlay">
+            <div>Debate.</div>
+            <a class="butt">Participate</a>
+          </div>
+          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
+        </div>
+
+
       </div>
 
-      <div class="inner">
-        <%= image_tag("f2.jpg", alt: "TritonMUN", class: "slide") %>
+      <div class="inner" id="ir">
+        <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") %></a>
+
+      <!--  <%= image_tag("f1.jpg", alt: "TritonMUN", class: "slide s-right", id: "1") %>
+        <%= image_tag("f2.jpg", alt: "TritonMUN", class: "slide s-right", id: "2") %>-->
+
+        <div class="phot-cont slide s-right" id="1">
+          <div class="overlay">
+            <div>TritonMUN X</div>
+            <a class="butt">Register now!</a>
+          </div>
+          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
+        </div>
+
+        <div class="phot-cont slide s-right" id="one">
+          <div class="overlay">
+            Lead.
+          </div>
+          <%= image_tag("f3.jpg", alt: "TritonMUN") %>
+        </div>
+
       </div>
 
+      <div class="bottom_cont">
       <div class="innerBox">
         <h2><span>Travel Team</span></h2>
 
@@ -72,6 +113,7 @@
 
           </div>
         </div>
+      </div>
       </div>
   </div>
 

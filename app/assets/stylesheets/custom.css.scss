@@ -181,9 +181,10 @@ html, body {
 
 header.navbar {
   width: 100%;
-  background: #F2F2F2;
+  background: #ececec;
   height: $headerHeight;
-  border-bottom: 1px solid #E2E2E2;
+  border-bottom: 1px solid #e4e4e4;
+
 }
 
 div#navbar-inner {
@@ -233,10 +234,11 @@ nav ul{
 
 a.nav-link {
   // color: #A4A4A4;
-  font-family: 'Georgia';
+  font-family: 'Lato', sans-serif;
   text-decoration: none;
-  font-weight: 900;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform:uppercase;
   // text-shadow:  0px -.3px 0px rgba(0, 0, 0, .8);
   letter-spacing: 0em;
   height: 100%;
