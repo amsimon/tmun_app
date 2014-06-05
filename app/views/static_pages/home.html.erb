@@ -9,22 +9,33 @@
 
         <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") %></a>
 
-
-
-
-        <div class="phot-cont slide s-left" id="1">
-          <div class="overlay">
-            Learn.
+        <div class="phot-cont slide s-left" id="2">
+          <div class="overlay-cont">
+            <div class="overlay">
+              <span class="word">Lead.</span>
+            </div>
           </div>
           <%= image_tag("f3.jpg", alt: "TritonMUN") %>
         </div>
 
-        <div class="phot-cont slide s-left" id="one">
+
+        <div class="phot-cont slide s-left" id="1">
+          <div class="overlay-cont">
           <div class="overlay">
-            <div>Debate.</div>
+            <span class="word">Learn.</span>
+          </div>
+           </div>
+          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
+        </div>
+
+        <div class="phot-cont slide s-left" id="one">
+          <div class="overlay-cont">
+          <div class="overlay">
+            <span class="word"><div>Debate.</div></span>
             <a class="butt">Participate</a>
           </div>
-          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
+          </div>
+          <%= image_tag("f1.jpg", alt: "TritonMUN") %>
         </div>
 
 
@@ -37,18 +48,24 @@
         <%= image_tag("f2.jpg", alt: "TritonMUN", class: "slide s-right", id: "2") %>-->
 
         <div class="phot-cont slide s-right" id="1">
-          <div class="overlay">
-            <div>TritonMUN X</div>
-            <a class="butt">Register now!</a>
+          <div class="overlay-cont">
+              <div class="overlay">
+                <div></div>
+
+              </div>
           </div>
-          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
+          <%= image_tag("f4.jpg", alt: "TritonMUN") %>
         </div>
 
         <div class="phot-cont slide s-right" id="one">
+          <div class="overlay-cont">
           <div class="overlay">
-            Lead.
+            TritonMUN X
+            <span class="small">Early fee deadline is June 10th</span>
+            <a href="/tritonmun/X/register" class="butt">Register now!</a>
           </div>
-          <%= image_tag("f3.jpg", alt: "TritonMUN") %>
+           </div>
+          <%= image_tag("f5.jpg", alt: "TritonMUN") %>
         </div>
 
       </div>
