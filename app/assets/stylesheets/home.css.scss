@@ -105,7 +105,7 @@ div.outer {
         bottom:14%;
         margin-left:auto;
         margin-right:auto;
-
+z-index: 999;
         div {position: relative; line-height: 20%; opacity: .9;}
 
         //background: rgba(0, 0, 0, 0.5);
@@ -155,6 +155,7 @@ div.outer {
 
       img {
         width: 100%;
+        -webkit-transform: translateZ(0);
       }
     }
 

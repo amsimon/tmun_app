@@ -14,29 +14,38 @@ $(window).load(function() {
 
     //alert(H);
 
+    var eas = 'easeInExpo';
+    var sp = 700;
+    var del = 3000;
+
 
     $(window).on('resize', function() {
         H = "-" + ($(".slide.s-left").css("height"));
     });
 
     function slideLeftImg() {
-        $(la[0]).stop().animate({
+        var $l = $(la[0]);
+        $l.stop().animate({
+            top: -1
+        }, 1, 'linear').animate({
 
             top: H
 
-        }, 800, 'easeInOutExpo', function() {
+        }, sp, eas, function() {
 
             ltop = la.shift();
             la.push(ltop);
 
             $(la).each( function(i) {
-                $(this).css( { zIndex: (100-i) } );
+                var $this = $(this);
+                $this.css( { zIndex: (100-i) } );
             });
 
             //$(ra).css({ zIndex: 1 });
-            $(ltop).css({ top: 0 });
+            var $ltop =  $(ltop);
+            $ltop.css({ top: 0 });
 
-            setTimeout(slideRightImg,3000);
+            setTimeout(slideRightImg, del);
         });
     }
 
@@ -46,7 +55,7 @@ $(window).load(function() {
 
             top: H
 
-        }, 800, 'easeInOutExpo', function() {
+        }, sp, eas, function() {
 
             rtop = ra.shift();
             ra.push(rtop);
@@ -58,7 +67,7 @@ $(window).load(function() {
             //$(ra).css({ zIndex: 1 });
             $(rtop).css({ top: 0 });
             //$(".slide.s-right").stop().delay(2000).animate({ top: 0}, 400);
-            setTimeout(slideLeftImg,3000);
+            setTimeout(slideLeftImg, del);
         });
     }
 
