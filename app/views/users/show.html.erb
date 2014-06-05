@@ -34,6 +34,7 @@
       <div class="button">TritonMUN</div>
   <% end %>
 
+
   <% if current_user?(@user) %>
       <%= link_to (edit_user_path) do %>
           <div class="button">Edit Profile</div>
@@ -46,14 +47,13 @@
   <% if signed_in? %>
       <!-- Admin viewing others' -->
       <% if current_user.admin? %>
-            <span class="admin" >
-              <%= link_to "Admin: edit user details", (edit_user_path), style: "color: white;"%>
-            </span>/
-            <span class="admin" >
-              <%= link_to "Admin: View all users", (users_path), style: "color: white"%>
-            </span>
-      <% end %>
-  <% end %>
+          <span class="admin" >
+            <%= link_to "Admin: edit user details", (edit_user_path), style: "color: white;"%>
+          </span>
+      <%end%>
+  <%end%>
+
+
 </div>
 
 

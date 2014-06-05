@@ -7,7 +7,11 @@ TmunApp::Application.routes.draw do
 
   root 'static_pages#home'
 
+  match '/admintools',  to: 'users#admintools',         via: 'get'
+
   match '/tritonmun/:number',  to: 'hconferences#show',         via: 'get'
+
+  match '/tritonmun/all',  to: 'hconferences#all',         via: 'get'
 
   match '/tritonmun/:id/register',    to: 'hconferences#register',     via: 'get'
   match '/tritonmun/:id/committees',  to: 'hconferences#committees',   via: 'get'

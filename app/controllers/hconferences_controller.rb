@@ -23,6 +23,10 @@ class HconferencesController < ApplicationController
     @hconference = Hconference.friendly.find(params[:id])
   end
 
+  def all
+    @hconferences = Hconference.paginate(page: params[:page])
+  end
+
 
   def index
     @hconference_fall = Hconference.all.second

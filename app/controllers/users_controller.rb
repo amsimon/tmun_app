@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :admin_user,     only: [:destroy]
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :admintools]
+  before_action :admin_user,     only: [:destroy, :admintools]
   before_action :correct_user,   only: [:edit, :update]
-
-
-
 
   def index
     @users = User.paginate(page: params[:page])
@@ -50,6 +47,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def admintools
+
   end
 
   private
