@@ -16,5 +16,5 @@
 
 $(window).load( function() {
 
-    $('.alert').delay(1000).slideUp(400);
+    $('.alert').delay(2000).slideUp(400);
 });
