@@ -56,6 +56,20 @@ aside {
   }
 }
 
+  .alert {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 0px;
+    color: white;
+  }
+
+
+  .alert-success {
+    background: #47c346;
+  }
+
+
+
 /* forms */
 div.row {
   text-align: center;

@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 
+
+$(window).load( function() {
+
+    $('.alert').delay(1000).slideUp(400);
+});
