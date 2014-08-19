@@ -2,7 +2,18 @@
   <div class="phot-cont slide s-<%= frontpage.side %>">
     <div class="overlay-cont">
       <div class="overlay">
-        <%= frontpage.title %>
+
+        <% if frontpage.description.present? %>
+        <div class="title">
+            <%= frontpage.title %>
+        </div>
+        <% else %>
+            <div class="word">
+              <%= frontpage.title %>
+            </div>
+        <% end %>
+
+
         <span class="small"><%= frontpage.description %></span>
 
         <% if frontpage.link_href != "" %>

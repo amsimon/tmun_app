@@ -3,7 +3,17 @@
 <div class="phot-cont slide s-<%= slide.side %>">
     <div class="overlay-cont">
       <div class="overlay">
-        <%= slide.title %>
+
+        <% if slide.description.present? %>
+            <div class="title">
+              <%= slide.title %>
+            </div>
+        <% else %>
+            <div class="word">
+              <%= slide.title %>
+            </div>
+        <% end %>
+
         <span class="small"><%= slide.description %></span>
 
         <% if slide.link_href != "" %>

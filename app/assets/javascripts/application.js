@@ -25,7 +25,18 @@ function add_fields(link, association, content) {
     $(link).parent().before(content.replace(regexp, new_id));
 }
 
+$(document).ready( function() {
 
+    $(".answer").hide();
+
+    $(".question").click( function() {
+       $(this).next().stop().slideToggle('fast');
+    })
+
+    $(".question").prepend("<span class='arrow'>&#x25BC;</span>")
+
+
+});
 
 
 $(window).load( function() {
