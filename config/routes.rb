@@ -1,11 +1,20 @@
 TmunApp::Application.routes.draw do
+
   resources :users
+  resources :frontpages
   resources :hconferences, :path => 'tritonmun'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
 
+  resources :questions
+
   root 'static_pages#home'
+
+
+  match '/_update_hello', to: 'frontpages#update_hello', via: 'put'
+
+
 
   match '/admintools',  to: 'users#admintools',         via: 'get'
 
@@ -35,12 +44,19 @@ TmunApp::Application.routes.draw do
   match '/travelteam',    to: 'static_pages#travelteam',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
 
+  match '/tritonmun/new/#',   to: 'hconferences#add_question',   via: 'get'
+
+  match '/participate',   to: 'static_pages#participate',   via: 'get'
+
   match '/mission',   to: 'static_pages#mission',   via: 'get'
   match '/secretariat',   to: 'static_pages#secretariat',   via: 'get'
   match '/history',   to: 'static_pages#history',   via: 'get'
   match '/alumni',   to: 'static_pages#alumni',   via: 'get'
 
+  match '/calendar',   to: 'static_pages#calendar',   via: 'get'
+
   match '/tritonmun', to: 'hconferences#index', via: 'get'
+  match '/hconference/all', to: 'hconferences#all', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

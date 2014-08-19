@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509014738) do
+ActiveRecord::Schema.define(version: 20140730030850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: true do |t|
+    t.string   "time_start"
+    t.string   "time_end"
+    t.string   "activity"
+    t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "schedule_id"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -28,6 +38,22 @@ ActiveRecord::Schema.define(version: 20140509014738) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "frontpages", force: true do |t|
+    t.string   "side"
+    t.string   "bg_color"
+    t.string   "title"
+    t.string   "description"
+    t.string   "link_href"
+    t.string   "link_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "bg_image_file_name"
+    t.string   "bg_image_content_type"
+    t.integer  "bg_image_file_size"
+    t.datetime "bg_image_updated_at"
+    t.string   "greeting"
+  end
 
   create_table "hconferences", force: true do |t|
     t.string   "season"
@@ -65,6 +91,13 @@ ActiveRecord::Schema.define(version: 20140509014738) do
   end
 
   add_index "questions", ["hconference_id", "created_at"], name: "index_questions_on_hconference_id_and_created_at", using: :btree
+
+  create_table "schedules", force: true do |t|
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "hconference_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

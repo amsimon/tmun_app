@@ -14,22 +14,117 @@ body {
 h1, h2, h3 {
 
 }
-.admin {
-  padding: 10px;
-  background: red;
 
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+li.fields {
 
-   a {
-     color: white;
-     text-decoration: none;
-     font-style: normal;
-   }
+  display: table-row;
 
+  a{
+    width: 10px;
+  }
+
+
+
+  span {
+    width: 50%;
+    display: table-cell;
+  }
+
+  span.remove {
+    background: red;
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+
+    input, a {
+      width: 10px;
+      margin: 0px;
+      padding: 0px;
+
+    }
+
+  }
+
+  caption {
+    text-decoration: bold;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: solid 1px gray;
+    margin-bottom: 10px;
+  }
+
+  span.left {
+    font-weight: bold;
+    padding: 18px;
+    font-size: 16px;
+    border-top: solid 1px white;
+    background-color: #CAD4F5;
+    border-bottom: solid 2px #A8B0CB;
+    border-radius:6px;
+    text-align: right;
+    color: #3c3e48;
+  }
+
+  span#time {
+
+    text-align: left;
+
+    input {
+      width: 20%;
+      font-size: 1em;
+      margin: 0;
+
+    }
+
+    label {
+      margin: 0;
+      font-size: 1em;
+    }
+  }
+  span#activity {
+
+    text-align: left;
+
+    input {
+      width: 30%;
+      font-size: 1em;
+      margin: 0;
+
+    }
+
+    label {
+      margin: 0;
+      font-size: 1em;
+    }
+  }
+
+  span.right {
+    padding: 18px;
+    font-size: 16px;
+    background-color: #E6E6E6;
+    border-top: solid 1px white;
+    border-bottom: solid 2px #D8D8D8;
+    border-radius:6px;
+  }
+
+  tr.sched {
+    //border-bottom: solid 1px black;
+
+  }
 
 }
+
+li.sched, .ques {
+  background: rgba(0,0,0,.03);
+  margin-bottom: 12px;
+  padding: 15px;
+
+  display: block !important;
+}
+
+
+
 div.faq {
   text-align: left;
   font-size: 18px;
@@ -106,7 +201,8 @@ div#comm_cont {
   .comm_box {
     max-width: 1000px;
     margin: 0 auto;
-    margin-bottom: 70px;
+
+
     padding-bottom: 110px;
     border-bottom: 1px solid $borderLight;
     position: relative;
@@ -179,6 +275,10 @@ div#comm_cont {
     }
 
 
+  }
+
+  .comm_box:not(:last-of-type) {
+    margin-bottom: 70px;
   }
 
 }
@@ -381,6 +481,8 @@ div.upcoming {
 }
 }
 
+
+
 div#tmun1 {
   width: 100%;
   overflow: hidden;
@@ -477,6 +579,20 @@ div#tmun1 {
 
   div.innerRom:last-child {
     border-right: none;
+  }
+}
+
+div.crisis {
+  width: 100%;
+  background: #dedede;
+  padding-top: 1em;
+
+  //color: white;
+
+  border: dashed 10px rgba(0,0,0,.05);
+
+  .comm_box {
+    margin-bottom: 0px;
   }
 }
 

@@ -36,22 +36,44 @@ class HconferencesController < ApplicationController
 
   def new
     @hconference = Hconference.new
+    1.times do
+      @hconference.questions.new
+    end
+
+
+
+    1.times do
+      schedule = @hconference.schedules.new
+
+      3.times do
+        schedule.events.new
+      end
+
+    end
+
+
   end
+
+
+
 
   def create
     @hconference = Hconference.new(hconference_params)
-    if @hconference.save
 
-      @hconference.update(roman: (number_to_roman(@hconference.number)) )
-      flash[:success] = "Home Conference created!"
-      redirect_to (tritonmun_path + "/" + (@hconference.roman))
+    if @hconference.save
+        @hconference.update(roman: (number_to_roman(@hconference.number)) )
+        flash[:success] = "Conference details saved"
+        redirect_to (tritonmun_path + "/" + (@hconference.roman) )
     else
       render 'new'
     end
+
   end
 
   def show
     @hconference = Hconference.friendly.find(params[:id])
+    @questions = @hconference.questions.reverse
+    @schedules = @hconference.schedules.reverse
   end
 
   def destroy
@@ -62,10 +84,15 @@ class HconferencesController < ApplicationController
 
   def edit
     @hconference = Hconference.friendly.find(params[:id])
+
+
+
   end
 
   def update
     @hconference = Hconference.friendly.find(params[:id])
+
+
     if @hconference.update_attributes(hconference_params)
 
       @hconference.update(roman: (number_to_roman(@hconference.number)) )
@@ -84,7 +111,10 @@ class HconferencesController < ApplicationController
 
     def hconference_params
       params.require(:hconference).permit(:number, :season, :year, :location, :date, :early_price, :normal_price,
-                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman)
+                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman,
+                                          questions_attributes: [:id, :hconference_id, :q, :a, :_destroy],
+                                          schedules_attributes: [:id, :hconference_id, :date, :_destroy])
+
     end
 
 

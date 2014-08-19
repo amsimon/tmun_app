@@ -11,6 +11,53 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #333;
 }
 
+ul.ad {
+
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2em;
+  list-style: none;
+
+  li {
+    line-hieght: normal;
+    margin-bottom: 1em;
+
+    span {
+      display: block;
+    }
+  }
+
+  .admin {
+
+    font-size: 2em;
+    opacity: 1;
+    padding: 10px;
+    //background: rgba(255, 0, 0, 0.26);
+
+    border: 1px solid red;
+
+    color: red;
+    text-decoration: none;
+
+    //line-height: 4em;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .admin:hover {
+    background: rgba(255, 0, 0, 1);
+    color: white;
+  }
+}
+
 .narrow {
 
   max-width: 1000px;

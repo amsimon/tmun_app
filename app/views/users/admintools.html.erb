@@ -1,17 +1,23 @@
-<ol class="ad">
+<h1 id="tritonmun"><span id="main">Admin Tools</span></h1>
+
+<ul class="ad">
   <li>
-    <span class="admin" >
-    <%= link_to "View all users", (users_path), style: "color: white"%>
-    </span>
+    <%= link_to((users_path)) do %>
+        <span class="admin" > Manage users</span>
+    <% end %>
   </li>
 
   <li>
-    <span class="admin" >
-    <%= link_to "Add new home conference", (new_hconference_path), style: "color: white"%>
-    </span>
+    <%= link_to((hconference_all_path), style: "color: white") do %>
+      <span class="admin" > Manage home conferences</span>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to((frontpages_path)) do %>
+        <span class="admin" >Manage frontpage</span>
+    <% end %>
   </li>
 
 
-
-
-</ol>
+</ul>

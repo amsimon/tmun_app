@@ -38,15 +38,8 @@ render season, year here
     <% end %>
 
   </div>
-
-  <% if signed_in? %>
-          <!-- Admin viewing others' -->
-          <% if current_user.admin? %>
-            <span class="admin">
-              <%= link_to "Admin: edit conf details", conf_path(@hconference) + "/edit"%>
-            </span>
-          <% end %>
-  <% end %>
+<br>
+  <%= render 'shared/question_form' %>
 
   <div class="outer">
     <div class="innerBox" >
@@ -114,14 +107,12 @@ render season, year here
   <div class="outer">
     <div class="innerBox" >
       <h2><span>Registration FAQ</span></h2>
-      <% if @hconference.questions.any? %>
-          <ol class="questions">
-            <%= render @questions %>
-          </ol>
-          <%= will_paginate @questions %>
-      <% end %>
+
 
       <div class="faq">
+        <% if @hconference.questions.any? %>
+              <%= render @questions %>
+        <% end %>
       <div class="question">Where do I register?</div>
       <div class="answer">Please register online <%= link_to "here.", (conf_path(@hconference) + "/" + "register")
       %></div>
@@ -208,6 +199,12 @@ We encourage you to inform us once you have mailed the payment so we can keep an
 
     <div class="innerBox" >
       <h2><span>Schedule</span></h2>
+
+      <% if @hconference.schedules.any? %>
+          <%= render @schedules %>
+      <% end %>
+
+
       <table class="sched">
         <caption>Saturday, November 1st</caption>
         <tr class="sched">

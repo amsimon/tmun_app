@@ -1,0 +1,24 @@
+<%#= render 'shared/question_form' %>
+
+
+
+
+
+<li class="fields sched">
+<p>
+
+        <div>
+          <%= f.label :date %>
+          <%= f.text_field :date %>
+        </div>
+
+
+  </p>
+
+  <ol class="events">
+  <%= f.fields_for :events do |builder| %>
+      <%= render 'event_fields', :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Event", f, :events %> | <%= link_to_remove_fields "Remove this day's schedule", f %></p>
+  </ol>
+</li>

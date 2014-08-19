@@ -4,36 +4,131 @@ $borderLight: #cccccc;
 $headerGray: #2b2b2b;
 
 $mediumGray: #848484;
+$tritonGold: #d49f11;
 
+
+
+.gde {
+  overflow: hidden;
+  background-color: #0A0822;
+  //min-height: 12px;
+  //height: auto;
+  //padding: .7em 0;
+
+  //height: 0px;
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-weight: 400;
+  color: white;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);
+  font-size: 3em;
+  padding: 1em 2em;
+
+  a {
+    text-decoration: none;
+    color: $tritonGold;
+    font-family: Lato;
+    text-transform: none;
+    opacity: 1;
+  }
+  a:hover {
+    opacity: .5;
+  }
+
+  #learn {
+    font-size: .75em;
+
+    #arrow {
+      margin-left: .25em;
+      font-size: .6em;
+    }
+
+  }
+}
+
+.slide-head {
+  color: white;
+  font-size: 4em;
+  opacity: .03;
+  width: 50%;
+  text-align: center;
+
+}
+.slide-head#left {
+  float: left;
+
+}
+
+.slide-head#right {
+  float: right;
+
+}
 
 
 #home_h1 {
-
 position: relative;
-  z-index: 50000;
-  padding: 10px 0px;
-  margin: 0px;
-
-  //background-image: url("line-pixel-dark.png");
+  opacity: .9;
+  z-index: 9999;
+  background-image: url("line-pixel.png");
   background-repeat:repeat-x;
   text-align: center;
   background-position:center;
 
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-weight: 1000;
-  color: #e8e8e8;
-  font-size: 2em;
-  text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  color: #353535;
+  font-size: 1em;
+  text-transform:uppercase;
+  //text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
 
+  margin-bottom: 0px;
+margin-top:0px;
+  //text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
+padding: 10px 0px;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .8);
-  background-color: #0A0822;
+  background-color: white; //#0A0822;
   span {
-    background-color: #0A0822;
+    background-color: white;
     padding: 0px 1em;
+    opacity: 2;
   }
 
 }
 
+
+.s-left {
+
+  text-align: left;
+
+  div.overlay {
+    margin-left: 5%;
+  }
+
+}
+.s-right {
+
+  text-align: right;
+
+  div.overlay {
+    margin-right: 5%;
+  }
+}
+
+
+#everything {
+  width: 9px;
+ // height: 100%;
+  //background: url("/assets/trident-handle.png") repeat-y center;
+  background-color: $tritonGold;
+ // border-bottom: 1px solid #ae840e;
+  position: absolute;
+  z-index: 1000;
+  opacity: .95;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 
 .home {
@@ -43,10 +138,18 @@ position: relative;
   z-index: 10;
 
 }
+div.outer#front {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 1);
+}
+
 div.outer {
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
+position: relative;
+
+  //border-bottom: 2px solid black;
+
 
   // background-image: url("background-stamp.png");
   background-position: top center;
@@ -90,15 +193,17 @@ div.outer {
     }
 
     div.phot-cont {
+      font-size: .8em;
       position:relative;
-div.overlay-cont {
-  position: absolute;
-  background: rgba(0,0,0,.55);
-  z-index: 998;
-  width: 100%;
-  height: 100%;
 
-}
+      div.overlay-cont {
+        position: absolute;
+        background: rgba(0,0,0,.55);
+        z-index: 998;
+        width: 100%;
+        height: 100%;
+
+      }
       div.overlay {
         //margin-top: 50%;
 
@@ -109,16 +214,17 @@ div.overlay-cont {
 
         left:0;
         right:0;
-        bottom:14%;
-        margin-left:auto;
-        margin-right:auto;
-z-index: 999;
+        bottom:10%;
+
+
+        z-index: 999;
         div {position: relative; line-height: 80%; opacity: .9;}
         span.small {
           display: block;
           font-size: .5em;
-          line-height: .5em;
+          //line-height: .5em;
           color: #ffed45;
+          margin-bottom: 1em;
         }
         span.word {
           font-style: italic;
@@ -138,8 +244,8 @@ z-index: 999;
           cursor: pointer;
           -webkit-border-radius: 5px;
           border-radius: 5px;
-          font-size: 30px;
-          font-family: Georgia, Times, "Times New Roman", serif;
+          font-size: .5em;
+          //font-family: Georgia, Times, "Times New Roman", serif;
           padding: 10px 20px;
           position: relative;
           //bottom: 50px;
@@ -156,7 +262,7 @@ z-index: 999;
         a.butt:active {
           background-color: #1f264e;
           border: none;
-         top: 4px;
+          top: 4px;
         }
       }
 
@@ -177,7 +283,7 @@ z-index: 999;
       }
     }
 
-    div.slide:not(#one) {
+    div.slide:not(:last-child) {
 
       position: absolute;
       left: 0;
@@ -195,52 +301,7 @@ z-index: 999;
     padding: 0px 0%;
 
 
-    table.sched {
-      margin: 0 auto;
-      margin-top: 20px;
 
-      display: inline-block;
-
-      border-collapse: separate;
-      border-spacing: 2px 2px;
-
-      padding-bottom: 10px;
-      padding-top: 8px;
-    }
-
-    caption {
-      text-decoration: bold;
-      font-size: 20px;
-      text-align: left;
-      border-bottom: solid 1px gray;
-      margin-bottom: 10px;
-    }
-
-    td.left {
-      font-weight: bold;
-      padding: 18px;
-      font-size: 16px;
-      border-top: solid 1px white;
-      background-color: #CAD4F5;
-      border-bottom: solid 2px #A8B0CB;
-      border-radius:6px;
-      text-align: right;
-      color: #3c3e48;
-    }
-
-    td.right {
-      padding: 18px;
-      font-size: 16px;
-      background-color: #E6E6E6;
-      border-top: solid 1px white;
-      border-bottom: solid 2px #D8D8D8;
-      border-radius:6px;
-    }
-
-    tr.sched {
-      //border-bottom: solid 1px black;
-
-    }
 
     .pos {
       font-size: 18px;

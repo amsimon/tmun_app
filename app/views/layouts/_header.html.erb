@@ -5,17 +5,17 @@
                             id: "logo"), root_path, id: "logo"
       %>
 
-      <ul>
-        <!--
-        <%# link_to(travelteam_path, class: "nav-link") do %>
-            <li class="c">
-              test
-            </li>
-        <%# end %>
-        -->
-        <li><%= link_to "Travel",    travelteam_path, class: "nav-link" %></li>
-        <li><%= link_to "TritonMUN",    hconferences_path, class: "nav-link" %></li>
-        <li><%= link_to "About", about_path, class: "nav-link" %></li>
+     <div class="half">
+         <ul id="left">
+            <li><%= link_to "Travel",    travelteam_path, class: "nav-link" %></li>
+            <li><%= link_to "TritonMUN",    hconferences_path, class: "nav-link" %></li>
+            <li><%= link_to "About", about_path, class: "nav-link" %></li>
+         </ul>
+     </div>
+
+
+    <div class="half">
+      <ul id="right">
 
 
 
@@ -38,8 +38,10 @@
             <% end %>
         <% end %>
 
-
+        <li><%= link_to image_tag("calendar-icon.png", alt: "Calendar", id: "calendar"), calendar_path %></li>
+        <li><%= link_to image_tag("fb-icon.png", alt: "Facebook", id: "calendar"), "https://www.facebook.com/ModelUnitedNationsAtUcsd" %></li>
       </ul>
+    </div>
     </nav>
   </div>
 </header>

@@ -1,0 +1,10 @@
+<table class="sched">
+  <caption><%= schedule.date %></caption>
+
+  <% if schedule.events.any? %>
+      <%= render schedule.events %>
+  <% end %>
+
+</table>
+
+

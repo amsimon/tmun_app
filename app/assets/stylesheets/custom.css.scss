@@ -194,7 +194,7 @@ html, body {
   font-size: 16px;
   background: #F2F2F2;
 
-  padding-bottom: 100px;
+  //padding-bottom: 100px;
 }
 
 header.navbar {
@@ -206,7 +206,7 @@ header.navbar {
 }
 
 div#navbar-inner {
-  max-width: 1000px;
+  //max-width: 1000px;
   margin: 0 auto;
   height: 100%;
   /*padding: 20px 0px 20px 0px;*/
@@ -217,37 +217,61 @@ nav {
   height: $headerHeight;
   line-height: $headerHeight;
 
+  div.half {
+    width: 50%;
+    float: left;
+  }
 
   img#logo {
-    vertical-align: middle;
-    margin-bottom: 10px;
-    height: 75%;
+    //height: 5%;
+    position: absolute;
+    margin: auto;
+    //top: 50px;
+    left: 0;
+    right: 0;
+    //bottom: 0;
+    z-index: 10000001;
   }
-}
 
-nav ul{
-  height: 100%;
-  margin: 0px;
-  list-style: none;
-  display: inline-block;
-  float: right;
-  line-height: $headerHeight;
-
-
-  li {
+  ul{
+    height: 100%;
+    margin: 0px;
+    list-style: none;
     display: inline-block;
-    padding: 0px 1em;
-    height: $headerHeight;
+    line-height: $headerHeight;
+    padding-left: 0px;
 
+    li {
+      display: inline-block;
+      padding: 0px 1em;
+      height: $headerHeight;
 
+    }
+    li:first-child {
+      padding-left: 0em;
+    }
+
+    li:last-child {
+      padding-right: 0em;
+    }
+
+    #calendar {
+      vertical-align: text-bottom;
+      opacity: .35;
+    }
+    #calendar:hover {
+      opacity: .55;
+    }
   }
-  li:first-child {
-    padding-left: 0em;
+  ul#left {
+    float: right;
+    padding-right: 20%;
+  }
+  ul#right {
+    float: left;
+    padding-left: 20%;
   }
 
-  li:last-child {
-    padding-right: 0em;
-  }
 }
 
 a.nav-link {

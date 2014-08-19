@@ -1,0 +1,66 @@
+<h1>Frontpages#new</h1>
+<p>Find me in app/views/frontpages/new.html.erb</p>
+
+
+<div class="narrow">
+
+
+  <div class="even_more">
+    <div class="forms">
+      <%= form_for(@frontpage) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <table class="sign">
+            <tr>
+              <td><%= f.label :side, "Left" %></td>
+              <td style="text-align: left"><%= f.radio_button :side, "left", :checked => (@frontpage.side == "left") %></td>
+            </tr>
+
+            <tr>
+              <td><%= f.label :side, "Right" %></td>
+              <td style="text-align: left"><%= f.radio_button :side, "right", :checked => (@frontpage.side == "right") %></td>
+            </tr>
+
+
+            <tr>
+              <td><%= f.label :bg_color %></td>
+              <td><%= f.text_field :bg_color %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :title %></td>
+              <td><%= f.text_field :title %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :description %></td>
+              <td><%= f.text_field :description %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :link_href %></td>
+              <td><%= f.text_field :link_href %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :link_text %></td>
+              <td><%= f.text_field :link_text %></td>
+            </tr>
+
+
+          </table>
+
+          <br>
+
+          <div class="lower-sign">
+            <%= f.label :bg_image, "Upload a background image. Must be 960x640" %><br>
+            <%= f.file_field :bg_image, class: "bg_image" %>
+            <br>
+            <br>
+            <div id="sub-cont">
+              <%= f.submit "Create Slide"%>
+            </div>
+          </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

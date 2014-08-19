@@ -1,136 +1,42 @@
+<div id="everything"> </div>
 
-
-    <h1 id="home_h1"></h1>
+    <h1 id="home_h1"><span id="main">Model United Nations at UCSD</span></h1>
+<!--<h1 id="tritonmun"><span id="main">Mission</span></h1>-->
     <!--<h1 id="home_h1">Model United Nations at UCSD </h1>-->
 
-    <div class="outer">
+    <div class="outer" id="front">
 
       <div class="inner" id="il">
 
-        <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") %></a>
-
-        <div class="phot-cont slide s-left" id="2">
-          <div class="overlay-cont">
-            <div class="overlay">
-              <span class="word">Lead.</span>
-            </div>
-          </div>
-          <%= image_tag("f3.jpg", alt: "TritonMUN") %>
-        </div>
+       <!-- <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") %></a>-->
 
 
-        <div class="phot-cont slide s-left" id="1">
-          <div class="overlay-cont">
-          <div class="overlay">
-            <span class="word">Learn.</span>
-          </div>
-           </div>
-          <%= image_tag("f2.jpg", alt: "TritonMUN") %>
-        </div>
-
-        <div class="phot-cont slide s-left" id="one">
-          <div class="overlay-cont">
-          <div class="overlay">
-            <span class="word"><div>Debate.</div></span>
-            <a class="butt">Participate</a>
-          </div>
-          </div>
-          <%= image_tag("f1.jpg", alt: "TritonMUN") %>
-        </div>
+        <%= render :partial => "slide", :collection => left_slides %>
 
 
       </div>
 
       <div class="inner" id="ir">
-        <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") %></a>
+       <!-- <a href="javascript:;"><%= image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") %></a>-->
 
-      <!--  <%= image_tag("f1.jpg", alt: "TritonMUN", class: "slide s-right", id: "1") %>
-        <%= image_tag("f2.jpg", alt: "TritonMUN", class: "slide s-right", id: "2") %>-->
-
-        <div class="phot-cont slide s-right" id="1">
-          <div class="overlay-cont">
-              <div class="overlay">
-                <div></div>
-
-              </div>
-          </div>
-          <%= image_tag("f4.jpg", alt: "TritonMUN") %>
+        <%= render :partial => "slide", :collection => right_slides %>
         </div>
 
-        <div class="phot-cont slide s-right" id="one">
-          <div class="overlay-cont">
-          <div class="overlay">
-            TritonMUN X
-            <span class="small">Early fee deadline is June 10th</span>
-            <a href="/tritonmun/X/register" class="butt">Register now!</a>
-          </div>
-           </div>
-          <%= image_tag("f5.jpg", alt: "TritonMUN") %>
-        </div>
 
-      </div>
-
-      <div class="bottom_cont">
-      <div class="innerBox">
-        <h2><span>Travel Team</span></h2>
-
-          <div class="updatesBox">
-
-    <!--
-            <div class="nextConf">
-                <span class="next">UPCOMING:</span>
-              ChicagoXII
-            </div>
-            </a>
--->
-
-            <br>
-            <div class="updates">
-
-                <ul>
-
-                </ul>
-              <!--<div class="more"><a href="#">VIEW MORE</a></div>-->
+     </div>
 
 
+      <div class="gde">
+<%= Frontpage.hello %>
+<!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.-->
+<br>
+        <a href="<%= Frontpage.hello_link_url %>"><span id="learn"><%= Frontpage.hello_link_text %> <span
+        id="arrow">&#10148;
+      </span></span></a>
 
-            </div>
-         </div>
-      </div>
-      <div class="innerBox">
+<!--        <span class="slide-head" id="left">Travel Team</span>
+        <span class="slide-head" id="right">TritonMUN</span>-->
 
-        <h2><span>TritonMUN</span></h2>
-
-        <div class="updatesBox">
-
-          <a href="/tritonmun/X">
-            <div class="nextConf">
-              <span class="next">UPCOMING:</span>
-              TritonMUN X
-            </div>
-          </a>
-
-
-          <br>
-          <div class="updates">
-
-            <ul>
-              <li>
-                <div class="date">May 5, 2014</div>
-                <div class="des">
-                  <a href="/tritonmun/X">
-                    TritonMUN X has been posted!
-                  </a>
-                </div>
-              </li>
-
-
-            </ul>
-            <!--<div class="more"><a href="#">VIEW MORE</a></div>-->
-
-          </div>
-        </div>
-      </div>
-      </div>
-  </div>
+     </div>
 

@@ -1,0 +1,11 @@
+<%#= render 'shared/question_form' %>
+<li class="fields ques">
+    <p>
+      <%= f.label :q %>
+      <%= link_to_remove_fields "remove", f %><br />
+      <%= f.text_area :q %><br>
+
+      <%= f.label :a %><br>
+      <%= f.text_area :a %>
+    </p>
+</li>

@@ -1,0 +1,17 @@
+
+
+<div class="phot-cont slide s-<%= slide.side %>">
+    <div class="overlay-cont">
+      <div class="overlay">
+        <%= slide.title %>
+        <span class="small"><%= slide.description %></span>
+
+        <% if slide.link_href != "" %>
+            <a href="<%= slide.link_href %>" class="butt"><%= slide.link_text %></a>
+        <% end %>
+
+      </div>
+    </div>
+
+    <%= image_tag slide.bg_image.url(:medium), style:"width: 100%; vertical-align: middle" %>
+</div>
