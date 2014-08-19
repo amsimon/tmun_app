@@ -45,5 +45,9 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def training
+
+  end
+
 
 end

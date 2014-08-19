@@ -14,7 +14,7 @@ TmunApp::Application.routes.draw do
 
   match '/_update_hello', to: 'frontpages#update_hello', via: 'put'
 
-
+  match '/travelteam/training/', to: 'static_pages#training', via: 'get'
 
   match '/admintools',  to: 'users#admintools',         via: 'get'
 
