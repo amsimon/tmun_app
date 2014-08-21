@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ul.history {
+
+  font-size: 1.5em;
+  list-style: none;
+
+  li {
+    margin-bottom: .75em;
+    padding-bottom: .75em;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+
+    span.year {
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-size: 1.5em;
+      float: left;
+      display: block;
+    }
+    span.desc {
+      width: 75%;
+      float: left;
+      display: block;
+      margin-left: 2em;
+      font-size: .85em;
+      opacity: .9;
+
+    }
+  }
+}
+
 
 .cal {
 
