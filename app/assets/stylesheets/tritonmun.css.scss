@@ -479,16 +479,18 @@ a.past-confs:hover {
 
 div.upcoming-cont {
   width: 100%;
+  height: 100%;
   background: #0A0822;
   padding: 20px 0px;
   margin-top: 20px;
   border-top: 2px solid black;
 
-  height: 150px;
+  min-height: 150px;
 div.upcoming {
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  height: 100%;
 
   h1, h2, h3 {
     background: #0A0822;
@@ -497,7 +499,150 @@ div.upcoming {
 }
 }
 
+div#trav1 {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 0px;
 
+  min-height: 100%;
+  height: 100%;
+
+  div.innerRom {
+    display: table-cell;
+    div.trav_cont {
+      margin-bottom: 2em;
+      padding: 1em;
+    }
+    min-height: 100%;
+    height: 100%;
+    width: 30%;
+    min-width: 330px;
+
+    border-right: 1px solid #23232c;
+
+    padding: 0px 1%;
+
+    padding-bottom: 2em;
+
+    text-align: center;
+
+    margin: 0 auto;
+
+    div.desc {
+      font-size: 1.1em;
+      color: white;
+      text-align: left;
+      padding: 0em 1em;
+      padding-bottom: 2em;
+      padding-top: 1.5em;
+      border-bottom: 1px solid #23232c;
+
+      div.title {
+        font-size: 1.5em;
+        margin-bottom: .75em;
+
+        font-weight: bold;
+      }
+
+      div.details {
+        margin-bottom: 1em;
+        opacity: .5;
+      }
+
+      span.email_address {
+        color: white;
+        opacity: .8;
+
+      }
+    }
+
+    h2 {
+
+//      background-image: url("line-pixel-dark.png");
+//      background-repeat:repeat-x;
+      text-align: center;
+     // background-position:center;
+
+      border-bottom: 5px solid rgba(255, 255, 255, 0.13);
+
+      //font-family: Georgia, Times, "Times New Roman", serif;
+      font-family: 'Lato', sans-serif;
+      font-weight: 1000;
+      color: #ffffff;
+      font-size: 2em;
+      text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
+      margin-bottom: 2em;
+      margin-top: 0px;
+      padding-bottom: .5em;
+
+      span {
+        background-color:  #0A0822;
+        padding: 0px 1em;
+      }
+    }
+
+    div.romanBox {
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-size:2.5em;
+      padding: 10px 20px;
+      text-align: center;
+
+      background-color: #E6E6E6;
+
+      display: inline-block;
+
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+
+      margin-bottom: 16px;
+      border-top: 1px solid $borderLight;
+      border-bottom: 3px solid #555555;
+
+      position: relative;
+    }
+
+    div.romanBox:hover {
+      border-top: 1px solid black;
+      background-color: #D8B526;
+      border-bottom: 3px solid #5d5617;
+      color: white;
+    }
+
+    div.romanBox:active {
+      border-top: 1px solid black;
+      border-bottom: 0px solid #5d5617;
+      top: 3px;
+
+    }
+
+    div.disabled {
+      background: #000012;
+      color: #434860;
+      border-top: 1px black ;
+      border-bottom: 1px solid #212121;
+
+    }
+
+    div.disabled:hover {
+      background: #000012;
+      color: #3a3e53;
+      border-top: 1px black ;
+      border-bottom: 1px solid #212121;
+
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  div.innerRom:last-child {
+    border-right: none;
+  }
+}
 
 div#tmun1 {
   width: 100%;
