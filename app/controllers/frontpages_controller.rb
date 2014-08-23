@@ -65,7 +65,7 @@ class FrontpagesController < ApplicationController
   private
 
   def frontpage_params
-    params.require(:frontpage).permit(:side, :bg_color, :bg_image, :title,
+    params.require(:frontpage).permit(:side, :image_url, :bg_color, :bg_image, :title,
                                  :description, :link_href, :link_text, :greeting)
 
   end

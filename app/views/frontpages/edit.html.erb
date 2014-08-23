@@ -13,12 +13,12 @@
           <table class="sign">
             <tr>
               <td><%= f.label :side, "Left" %></td>
-              <td style="text-align: left"><%= f.radio_button :side, "left", :checked => (@frontpage.side == "left") %></td>
+              <td style="text-align: left"><%= f.radio_button :side, "left", :checked => "checked" %></td>
             </tr>
 
             <tr>
               <td><%= f.label :side, "Right" %></td>
-              <td style="text-align: left"><%= f.radio_button :side, "right", :checked => (@frontpage.side == "right") %></td>
+              <td style="text-align: left"><%= f.radio_button :side, "right" %></td>
             </tr>
 
 
@@ -42,6 +42,10 @@
               <td><%= f.label :link_text %></td>
               <td><%= f.text_field :link_text %></td>
             </tr>
+            <tr>
+              <td><%= f.label "Url to image (use imgur) [temporary]" %></td>
+              <td><%= f.text_field :image_url %></td>
+            </tr>
 
 
           </table>
@@ -49,12 +53,12 @@
           <br>
 
           <div class="lower-sign">
-            <%= f.label :bg_image, "Upload a background image. Must be 960x640" %><br>
-            <%= f.file_field :bg_image, class: "bg_image" %>
+            <%#= f.label :bg_image, "Upload a background image. Must be 960x640" %><br>
+            <%#= f.file_field :bg_image, class: "bg_image" %>
             <br>
             <br>
             <div id="sub-cont">
-              <%= f.submit "Create Slide"%>
+              <%= f.submit "Save Slide"%>
             </div>
           </div>
 

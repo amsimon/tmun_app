@@ -42,6 +42,10 @@
               <td><%= f.label :link_text %></td>
               <td><%= f.text_field :link_text %></td>
             </tr>
+            <tr>
+              <td><%= f.label "Url to image (use imgur) [temporary]" %></td>
+              <td><%= f.text_field :image_url %></td>
+            </tr>
 
 
           </table>
@@ -49,8 +53,8 @@
           <br>
 
           <div class="lower-sign">
-            <%= f.label :bg_image, "Upload a background image. Must be 960x640" %><br>
-            <%= f.file_field :bg_image, class: "bg_image" %>
+            <%#= f.label :bg_image, "Upload a background image. Must be 960x640" %><br>
+            <%#= f.file_field :bg_image, class: "bg_image" %>
             <br>
             <br>
             <div id="sub-cont">

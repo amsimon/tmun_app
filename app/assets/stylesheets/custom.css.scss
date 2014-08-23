@@ -8,6 +8,10 @@ $headerHeight: 6em;
   box-sizing: border-box;
 }
 
+span.email_address {
+  border-bottom: 1px #988a1d solid;
+  color: #000054;
+}
 
 
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
