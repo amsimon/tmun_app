@@ -14,6 +14,23 @@ class StaticPagesController < ApplicationController
 
 
   def travelteam
+    render :layout => 'travel'
+  end
+
+  def past
+    render :layout => 'travel'
+  end
+
+  def upcoming
+    render :layout => 'travel'
+  end
+
+  def resources
+    render :layout => 'travel'
+  end
+
+  def training
+    render :layout => 'travel'
   end
 
   def about
@@ -45,9 +62,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def training
 
-  end
 
 
 end
