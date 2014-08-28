@@ -298,7 +298,11 @@ position: relative;
 
       img {
         width: 100%;
-        -webkit-transform: translateZ(0);
+        -webkit-transform: translatez(0);
+        -moz-transform: translatez(0);
+        -ms-transform: translatez(0);
+        -o-transform: translatez(0);
+        transform: translatez(0);
       }
     }
 
@@ -307,7 +311,7 @@ position: relative;
       position: absolute;
       left: 0;
       right: 0;
-      z-index: 1;
+      z-index: 0;
     }
   }
 

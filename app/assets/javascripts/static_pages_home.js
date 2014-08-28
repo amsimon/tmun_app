@@ -8,7 +8,7 @@ $(document).ready(function() {
 $(window).load(function() {
 
 
-    setTimeout(slideLeftImg,1000);
+
 
     var la = $(".slide.s-left").toArray().reverse();
     var ltop;
@@ -24,6 +24,9 @@ $(window).load(function() {
     var eas = 'easeInExpo';
     var sp = 700;
     var del = 3000;
+
+
+    setTimeout(slideLeftImg,1000);
 
 
     $(window).on('resize', function() {
