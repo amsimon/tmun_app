@@ -13,9 +13,19 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,
   900italic' rel='stylesheet' type='text/css'>
 
+  <%= stylesheet_link_tag "custom", media: "all" %>
+  <%= stylesheet_link_tag "frontpages", media: "all" %>
+  <%= stylesheet_link_tag "hconference_all", media: "all" %>
+  <%= stylesheet_link_tag "home", media: "all" %>
+  <%= stylesheet_link_tag "sessions", media: "all" %>
+  <%= stylesheet_link_tag "static_pages", media: "all" %>
+  <%= stylesheet_link_tag "travelteam", media: "all" %>
+  <%= stylesheet_link_tag "tritonmun", media: "all" %>
+  <%= stylesheet_link_tag "users", media: "all" %>
 
   <%  if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}" %>
       <%= javascript_include_tag "#{params[:controller]}_#{params[:action]}" %>
+      <%= stylesheet_link_tag "#{params[:controller]}_#{params[:action]}" %>
   <% end %>
 
 

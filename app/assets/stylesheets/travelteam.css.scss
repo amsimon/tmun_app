@@ -1,11 +1,39 @@
-$bgColor: #F2F2F2;
+$bgColor: #d9d9d9;
 $borderLight: #cccccc;
 
 $headerGray:  #424242;
 
 $mediumGray: #848484;
 
+ul.resources {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
 
+  margin-bottom: 3em;
+
+  font-size: 1.5em;
+
+  li {
+    margin-bottom: .5em;
+
+  }
+
+  li:hover {
+    margin-bottom: .5em;
+
+  }
+
+  a {
+    color: #292929;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 187, 0, 0.36);
+  }
+
+  a:hover {
+    border-bottom: 1px solid rgba(255, 187, 0, 1);
+  }
+}
 div.past-conf {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 2em;

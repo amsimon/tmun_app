@@ -86,11 +86,11 @@ $(window).load(function() {
     //alert("Off: " + yo + "   H: " + $(window).height() );
 
     //$('.gde').height( $(document).height() -  yo  );
-    $('#everything').height($('.outer').height() + $('#home_h1').outerHeight() + 0 );
+    $('#everything').height($('.outer').height()  + 0 );
 });
 
 $(window).resize(function() {
     var yo = $('.gde').offset().top;
    //$('.gde').height( $(document).height() -  yo  );
-    $('#everything').height($('.outer').height() + $('#home_h1').outerHeight() + 0 );
+    $('#everything').height($('.outer').height()  + 0 );
 });

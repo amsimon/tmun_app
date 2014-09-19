@@ -1,6 +1,6 @@
-
+$bgColor: #d9d9d9;
 $grayMediumLight: #eaeaea;
-$headerHeight: 6em;
+$headerHeight: 5em;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -11,6 +11,10 @@ $headerHeight: 6em;
 span.email_address {
   border-bottom: 1px #988a1d solid;
   color: #000054;
+}
+
+body {
+  background-color: $bgColor;
 }
 
 
@@ -196,16 +200,26 @@ html, body {
   margin: 0px;
   font-family: 'Georgia';
   font-size: 16px;
-  background: #F2F2F2;
+  //background: #F2F2F2;
+
+  height: 100%;
 
   //padding-bottom: 100px;
 }
 
 header.navbar {
   width: 100%;
-  background: #ececec;
+  background: rgba(255, 255, 255, 0.84);
   height: $headerHeight;
-  border-bottom: 1px solid #e4e4e4;
+  /* border-bottom: 1px solid #e4e4e4; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* height: 100px; */
+  z-index: 99999;
+
+  //padding: .1em 0;
+
 
 }
 
@@ -227,14 +241,15 @@ nav {
   }
 
   img#logo {
-    //height: 5%;
+    height: 90%;
     position: absolute;
     margin: auto;
     //top: 50px;
     left: 0;
     right: 0;
     //bottom: 0;
-    z-index: 10000001;
+    z-index: 996;
+    opacity: 1;
   }
 
   ul{
@@ -335,6 +350,9 @@ a.nav-link#signin:hover {
 }
 
 div.container {
+
+  padding:4em 0em;
+  background: #d9d9d9;
   margin: 0 auto;
 }
 
