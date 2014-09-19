@@ -22,6 +22,9 @@
   <%= stylesheet_link_tag "travelteam", media: "all" %>
   <%= stylesheet_link_tag "tritonmun", media: "all" %>
   <%= stylesheet_link_tag "users", media: "all" %>
+  <%= stylesheet_link_tag "about", media: "all" %>
+
+  <%= stylesheet_link_tag "flaticon", media: "all" %>
 
   <%  if Rails.application.assets.find_asset "#{params[:controller]}_#{params[:action]}" %>
       <%= javascript_include_tag "#{params[:controller]}_#{params[:action]}" %>

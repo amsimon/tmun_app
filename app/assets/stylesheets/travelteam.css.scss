@@ -67,21 +67,31 @@ div.past-conf {
   margin-top: 40px;
 }
 
+i {
+  font-weight: 100;
+  margin-right: .5em;
+  color: #d49f11;
+}
+
+div.past-cont {
+  width: 70%;
+  margin: 0 auto;
+}
+
 h1.subhead {
   background-image: url("line-pixel.png");
-  background-repeat:repeat-x;
-  text-align: center;
-  background-position:center;
-
-  font-family: Georgia, Times, "Times New Roman", serif;
-
-  font-size: 4em;
-  text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
-
+  background-repeat: repeat-x;
+  text-align: left;
+  padding-left: 3em;
+  background-position: center;
+  /* font-family: Georgia, Times, "Times New Roman", serif; */
+  font-size: 2em;
+  /* text-shadow: 0px -1px 0px black; */
   margin-bottom: 30px;
   margin-top: 30px;
-  opacity: .3;
-  color: #aeab65;
+  /* opacity: .3; */
+  color: rgb(23, 35, 70);
+  text-transform: uppercase;
 
   span#main {
     background-color:  $bgColor;
