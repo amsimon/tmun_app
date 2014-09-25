@@ -27,13 +27,17 @@
 
 
       <div class="gde">
+        <%= image_tag "logo4.png", class: "bg" %>
         <h1 id="home_h1"><span id="main">Model United Nations at UCSD</span></h1>
         <div id="copy">
 <%= Frontpage.hello %>
 <!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua.-->
 <br>
-        <a href="<%= Frontpage.hello_link_url %>"><span id="learn"><%= Frontpage.hello_link_text %> <span
+        <a style="position: relative; z-index: 999999;" href="<%= Frontpage.hello_link_url %>"><span id="learn"><%=
+            Frontpage
+                                                                                                .hello_link_text %>
+          <span
         id="arrow">&#10148;
       </span></span></a></div>
 
