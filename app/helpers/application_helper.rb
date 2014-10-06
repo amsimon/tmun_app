@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "UCSD MUN"
+    base_title = "Model United Nations at UCSD"
     if page_title.empty?
       base_title
     else
