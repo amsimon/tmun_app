@@ -13,7 +13,7 @@ TmunApp::Application.routes.draw do
 
 
   match '/_update_hello', to: 'frontpages#update_hello', via: 'put'
-
+  match '/travelteam/guides/', to: 'static_pages#guides', via: 'get'
   match '/travelteam/training/', to: 'static_pages#training', via: 'get'
   match '/travelteam/upcoming/', to: 'static_pages#upcoming', via: 'get'
   match '/travelteam/resources/', to: 'static_pages#resources', via: 'get'
