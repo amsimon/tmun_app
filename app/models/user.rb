@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :name,  presence: true, length: { maximum: 50 }
   validates :bio, length: { maximum: 500 }
 
-
+  has_many :badges
 
   has_attached_file :avatar, :styles => {
       :tiny => "25x25",

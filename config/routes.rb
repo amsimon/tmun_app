@@ -1,6 +1,10 @@
 TmunApp::Application.routes.draw do
 
-  resources :users
+  resources :badges
+
+  resources :users do
+    resources :badges
+  end
   resources :frontpages
   resources :hconferences, :path => 'tritonmun'
 
