@@ -14,7 +14,10 @@ class BadgesController < ApplicationController
 
   # GET /badges/new
   def new
-    @badge = Badge.new
+    @user = User.find(params[:user_id])
+    #2nd you build a new one
+    @badge = @user.badges.build
+    @badges = Badge.all
   end
 
   # GET /badges/1/edit
@@ -24,14 +27,19 @@ class BadgesController < ApplicationController
   # POST /badges
   # POST /badges.json
   def create
-    @badge = Badge.new(badge_params)
+
+
+    @user = User.find(params[:user_id])
+    #2nd you create the comment with arguments in params[:comment]
+    @badge = @user.badges.create(badge_params)
+
 
     respond_to do |format|
       if @badge.save
-        format.html { redirect_to @badge, notice: 'Badge was successfully created.' }
+        format.html { redirect_to @user, notice: 'Badge was successfully created.' }
         format.json { render action: 'show', status: :created, location: @badge }
       else
-        format.html { render action: 'new' }
+        format.html { render @user }
         format.json { render json: @badge.errors, status: :unprocessable_entity }
       end
     end
@@ -68,7 +76,10 @@ class BadgesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def badge_params
-      params[:badge]
-    end
+  def badge_params
+    params.require(:badge).permit(:user_id, :desc, :name, :color, :text_color)
+
+
+
+  end
 end

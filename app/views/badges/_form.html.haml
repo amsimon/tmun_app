@@ -1,4 +1,6 @@
-= form_for @badge do |f|
+
+
+= form_for ([@user, @badge]) do |f|
   - if @badge.errors.any?
     #error_explanation
       %h2= "#{pluralize(@badge.errors.count, "error")} prohibited this badge from being saved:"
@@ -9,12 +11,25 @@
   %table.sign
     %tr
       %td
-        = f.label :name
+        = f.label "Label"
+      %td
         = f.text_field :name
     %tr
       %td
-        = f.label :color
-        = f.text_field :color
+        = f.label "Badge Color"
+      %td
+        = f.text_field :color, class: "color"
+    %tr
+      %td
+        = f.label "Text Color"
+      %td
+        = f.text_field :text_color, class: "color"
+    %tr
+      %td
+        = f.label "Description"
+      %td
+        = f.text_area :desc
+
 
   .actions
     = f.submit 'Save'

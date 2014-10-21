@@ -19,7 +19,7 @@ gem 'html2haml'
 
 gem 'pg'
 
-
+gem 'jscolor-rails'
 
 group :development, :test do
 

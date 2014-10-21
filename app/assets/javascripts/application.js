@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
+//= require jscolor
+
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");

@@ -17,6 +17,16 @@ body {
   background-color: $bgColor;
 }
 
+.inline-admin {
+  border-radius: 3px;
+  background-color: red;
+  color: white !important;
+  padding: .5em 1em;
+
+  a {
+    color: white;
+  }
+}
 
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
 ::selection { background: #5af; color: #fff; text-shadow: none; }

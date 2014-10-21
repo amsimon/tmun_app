@@ -1,0 +1,105 @@
+
+
+$( document ).ready( function() {
+
+
+    var badgeBox = $("div#badge_info");
+    var startOff = $("div.ava").offset();
+
+    badgeBox.css({
+        top: (startOff).top,
+        left: (startOff).left
+    });
+
+    var badgeBoxH =  badgeBox.outerHeight();
+    var offset_height = 5;
+    var slide_height = 5;
+
+    $(window).resize(function() {
+        startOff = $("div.ava").offset();
+
+        badgeBox.css({
+            top: (startOff).top,
+            left: (startOff).left
+        });
+    });
+
+
+
+    $( ".badge" ).hover(
+        function() {
+            var cc = $(this).attr('id');
+
+
+            var desc = $(this).next().html();
+
+            badgeBox.html( desc);
+
+            badgeBoxH =  badgeBox.outerHeight();
+
+            var pos = $(this).offset();
+            var pos_l = pos.left;
+            var pos_t = pos.top;
+
+            // Reset position of box
+            badgeBox.css({
+                top: pos_t - badgeBoxH - slide_height - offset_height
+            });
+
+            badgeBox.stop().animate({
+                top: pos.top - badgeBoxH - offset_height,
+                opacity: 1
+            }, 200,
+
+                function() {
+                badgeBox.css({
+                    opcaity: 1
+                });
+
+            }).show();
+
+    },
+
+    function() {
+
+            var pos = $(this).offset();
+            var pos_t = pos.top;
+
+            $("div#badge_info").stop().animate({
+                top: pos_t - badgeBoxH - slide_height - offset_height,
+                opacity: 0
+            }, 200,
+
+                function() {
+                    badgeBox.hide();
+                }
+
+            );
+    });
+
+
+
+
+/*
+    $( "div.badge" ).hover(
+        function() {
+            //alert('sdfsdfsdf');
+            var pos = $(this).position();
+
+
+            $( "div#badge_info").animate({
+                opacity: "1",
+                top: pos.top + "px"
+            }, 200);
+
+        }, function() {
+
+            $( "div#badge_info").animate({
+                opacity: "0",
+                top: "0px"
+
+            }, 200);
+
+        });*/
+});
+

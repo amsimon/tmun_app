@@ -22,7 +22,7 @@
 
 <div id="buttonBox">
 
-  <%= link_to (@user) do %>
+<!--  <%= link_to (@user) do %>
       <div class="current button">Overview</div>
   <% end %>
 
@@ -32,7 +32,7 @@
 
   <%= link_to (@user) do %>
       <div class="button">TritonMUN</div>
-  <% end %>
+  <% end %>-->
 
 
   <% if current_user?(@user) %>
@@ -48,11 +48,12 @@
       <!-- Admin viewing others' -->
       <% if current_user.admin? %>
           <span class="admin" >
-            <%= link_to "Admin: edit user details", (edit_user_path), style: "color: white;"%>
+            <%= link_to "Admin: edit user details", (edit_user_path), class: "inline-admin" %>
           </span>
 
         <span class="admin" >
-            <%= link_to "Admin: give badge", (new_user_badge_path), style: "color: white;"%>
+            <%= link_to "Admin: give badge", (new_user_badge_path(@user)),
+                        class: "inline-admin"%>
           </span>
       <%end%>
   <%end%>
@@ -69,7 +70,7 @@
         <%= image_tag @user.avatar.url(:small), style:"vertical-align: middle" %>
 
         <div class="badges">
-          <%#= render 'user_badges' %>
+          <%= render partial: "badges/badge", collection: @badges  %>
         </div>
 
 
@@ -91,7 +92,7 @@
 
 </div>
 
-  <div class="outer">
+<!--  <div class="outer">
 
     <div class="innerBox" >
         <h2><span>Awards</span></h2><br><br><br>
@@ -107,7 +108,7 @@
 
 
 
-  </div>
+  </div>-->
 
 
 
