@@ -33,9 +33,16 @@ $(document).ready( function() {
 
     $(".question").click( function() {
        $(this).next().stop().slideToggle('fast');
-    })
+    });
 
-    $(".question").prepend("<span class='arrow'>&#x25BC;</span>")
+    $(".question").prepend("<span class='arrow'>&#x25BC;</span>");
+
+    $(".google-form").hide();
+
+    $("div.button#apply-topic").click( function() {
+        $(this).parent().next().stop().slideToggle('fast');
+    });
+
 
 
 });
