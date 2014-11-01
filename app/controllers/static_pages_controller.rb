@@ -33,6 +33,10 @@ class StaticPagesController < ApplicationController
     render :layout => 'travel'
   end
 
+  def app
+
+  end
+
   def guides
     render :layout => 'travel'
   end

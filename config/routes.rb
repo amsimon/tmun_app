@@ -43,6 +43,8 @@ TmunApp::Application.routes.draw do
   #match '/tritonmun/all',  to: 'hconferences#index',         via: 'get'
   # match '/tritonmun/:number',  to: 'hconferences#show',         via: 'get'
 
+  match '/app',    to: 'static_pages#app',    via: 'get'
+
   match '/x',    to: 'static_pages#x',    via: 'get'
   match '/commitees',    to: 'static_pages#commitees',    via: 'get'
   match '/staff',    to: 'static_pages#staff',    via: 'get'
