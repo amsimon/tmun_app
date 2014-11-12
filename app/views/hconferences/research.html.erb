@@ -1,43 +1,8 @@
-<h1 id="tritonmun">
-  <span id="main">Research</span>
-</h1>
-<!-- render roman, season, year here -->
 
-<h2 id="season">TritonMUN
-    <span id="roman">
-        <%= @hconference.roman %>
-    </span>
-</h2>
 
 <div class="conf_cont">
 
-  <div id="buttonBox">
 
-    <%= link_to (conf_path(@hconference)) do %>
-        <div class="button">Overview</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "committees", @hconference )) do %>
-        <div class="button">Committees</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "speakers", @hconference )) do %>
-        <div class="button">Speakers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "research", @hconference )) do %>
-        <div class="current button">Research</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
-        <div class="button">Position Papers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "register", @hconference )) do %>
-        <div class="button" id="register">Register</div>
-    <% end %>
-
-  </div>
 
   <div class="outer">
 

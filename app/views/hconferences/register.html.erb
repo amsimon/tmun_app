@@ -1,49 +1,6 @@
-<h1 id="tritonmun">
-  <span id="main">Register</span>
-</h1>
-<!-- render roman, season, year here -->
-
-<h2 id="season">TritonMUN
-    <span id="roman">
-        <%= @hconference.roman %>
-    </span>
-</h2>
-
-<div class="conf_cont">
-
-  <div id="buttonBox">
-
-    <%= link_to (conf_path(@hconference)) do %>
-        <div class="button">Overview</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "committees", @hconference )) do %>
-        <div class="button">Committees</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "speakers", @hconference )) do %>
-        <div class="button">Speakers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "research", @hconference )) do %>
-        <div class="button">Research</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
-        <div class="button">Position Papers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "register", @hconference )) do %>
-        <div class="current button" id="register">Country Matrix</div>
-    <% end %>
-
-  </div>
-
-  <a href="<%= asset_url("TritonMUNXFall2014CountryMatrix-Sheet1.pdf")
-  %>">View Matrix</a>
-
-  <!--<iframe src="https://docs.google.com/forms/d/11BKn59FyEMAyXiHLPohxABoETzIXq28dwXQpNwMt3DE/viewform?embedded=true"
-          width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>-->
 
 
-</div>
+
+  <iframe src="https://docs.google.com/forms/d/122KvjXToZrhZi867BCiwvhUc55a2jJ8TOVwVjyXr0fI/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+

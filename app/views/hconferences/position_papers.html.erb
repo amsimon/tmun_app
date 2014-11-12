@@ -1,47 +1,11 @@
-<h1 id="tritonmun">
-  <span id="main">Position Papers</span>
-</h1>
-<!-- render roman, season, year here -->
 
-<h2 id="season">TritonMUN
-    <span id="roman">
-        <%= @hconference.roman %>
-    </span>
-</h2>
 
 <div class="conf_cont">
 
-  <div id="buttonBox">
-
-    <%= link_to (conf_path(@hconference)) do %>
-        <div class="button">Overview</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "committees", @hconference )) do %>
-        <div class="button">Committees</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "speakers", @hconference )) do %>
-        <div class="button">Speakers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "research", @hconference )) do %>
-        <div class="button">Research</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
-        <div class="current button">Position Papers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "register", @hconference )) do %>
-        <div class="button" id="register">Register</div>
-    <% end %>
-
-  </div>
 
   <div id="pp_top">
     <span class="exclaim">!</span>
-    <p id="dead">Submission Deadline: <strong>October 19th, 2014 at 11:59pm.</strong></p>
+    <p id="dead">Submission Deadline: <strong>April 16th, 2015 at 11:59pm.</strong></p>
 
     <p id="dead2"><em> Late position papers will NOT be accepted. You must turn in a
       position paper by the deadline in order to be eligible for committee awards.</em></p>
@@ -79,7 +43,8 @@
     <div class="innerBox" style="text-align:left;">
       <h2><span>Formatting Requirements</span></h2>
       <ul class="pos">
-        <li>Position papers should be Times New Roman 12, and 1,000-1,500 words. </li>
+        <li>Position papers should be Times New Roman 12, and 1,000-1,500 words (not including in-text citations and
+          bibliography). </li>
         <li>All position papers MUST include a bibliography, and in-text citations. </li>
         <li>Plagiarism of any kind will not be tolerated and may greatly affect your eligibility for a committee award. </li>
         <li>Please follow all of the formatting in the example paper below. You will be graded on your ability to follow directions. </li>

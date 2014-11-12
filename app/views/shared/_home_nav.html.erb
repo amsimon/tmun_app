@@ -1,0 +1,29 @@
+<div id="buttonBox">
+  <%= link_to (conf_path(@hconference)) do %>
+      <div class="button">Overview</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "locations", @hconference )) do %>
+      <div class="button">Locations</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "committees", @hconference )) do %>
+      <div class="button">Committees</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "speakers", @hconference )) do %>
+      <div class="button">Speakers</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "research", @hconference )) do %>
+      <div class="button">Research</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
+      <div class="button">Position Papers</div>
+  <% end %>
+
+  <%= link_to (conf_button_path( "register", @hconference )) do %>
+      <div class="button" id="register">Register</div>
+  <% end %>
+</div>

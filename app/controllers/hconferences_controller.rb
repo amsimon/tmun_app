@@ -4,27 +4,46 @@ class HconferencesController < ApplicationController
 
 
   def register
+
     @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Register", hconference: @hconference}
+  end
+
+  def locations
+    @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Locations", hconference: @hconference}
   end
 
   def committees
     @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Committees", hconference: @hconference}
   end
 
   def research
     @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Research", hconference: @hconference}
   end
 
   def speakers
     @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Speakers", hconference: @hconference}
   end
 
   def position_papers
     @hconference = Hconference.friendly.find(params[:id])
+
+    render layout: 'home', locals: {title: "Position Papers", hconference: @hconference}
   end
 
   def all
     @hconferences = Hconference.paginate(page: params[:page])
+
+
   end
 
 

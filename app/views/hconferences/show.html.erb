@@ -11,33 +11,7 @@ render season, year here
 
 <div class="conf_cont">
 
-  <div id="buttonBox">
-
-    <%= link_to (conf_path(@hconference)) do %>
-        <div class="current button">Overview</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "committees", @hconference )) do %>
-        <div class="button">Committees</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "speakers", @hconference )) do %>
-        <div class="button">Speakers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "research", @hconference )) do %>
-        <div class="button">Research</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "position_papers", @hconference )) do %>
-        <div class="button">Position Papers</div>
-    <% end %>
-
-    <%= link_to (conf_button_path( "register", @hconference )) do %>
-        <div class="button" id="register">Country Matrix</div>
-    <% end %>
-
-  </div>
+    <%= render "shared/home_nav" %>
 <br>
   <%= render 'shared/question_form' %>
 
@@ -86,16 +60,16 @@ render season, year here
       <div class="infosBox">
         <div class="infos" >
           <ul>
-            <li><div class="label date">June 10, 2014</div>
+            <li><div class="label date">December 12, 2014</div>
               <div class="info">Early registration deadline to postmark payment.</div></li>
 
-            <li><div class="label date">September 5, 2014</div>
+            <li><div class="label date">February 6, 2015</div>
               <div class="info">Regular registration deadline to postmark payment.</div></li>
 
-            <li><div class="label date">September 25, 2014</div>
+            <li><div class="label date">March 6, 2015</div>
               <div class="info">Late registration deadline to postmark payment.</div></li>
 
-            <li><div class="label date">October 19, 2014</div>
+            <li><div class="label date">April 12, 2014</div>
               <div class="info">Position papers due at 11:59 pm PST.</div></li>
           </ul>
         </div>
@@ -110,9 +84,9 @@ render season, year here
 
 
       <div class="faq">
-        <% if @hconference.questions.any? %>
+<!--        <% if @hconference.questions.any? %>
               <%= render @questions %>
-        <% end %>
+        <% end %>-->
       <div class="question">Where do I register?</div>
       <div class="answer">Please register online <%= link_to "here.", (conf_path(@hconference) + "/" + "register")
       %></div>
@@ -167,10 +141,6 @@ We encourage you to inform us once you have mailed the payment so we can keep an
       <div class="answer">Country assignments are given out as we receive payments. This is to ensure the proper assignment of country spots.
       If there are any issues such as constrained timeline, please contact us as soon as possible so we can try to accommodate you.</div>
 
-      <div class="question">What committees are offered?</div>
-      <div class="answer">There are 6 committees: 1st Disarmament and International Security, World Health Organization,
-      UN Development Program, UN Education, Scientific and Cultural Organization, the North Atlantic Treaty
-      Organization and Security Council.</div>
 
       <div class="question">Are you able to satisfy all of our country preferences?</div>
       <div class="answer">While we'd like to, it would be logistically unrealistic to provide everyone with their preferred countries.
@@ -205,44 +175,104 @@ We encourage you to inform us once you have mailed the payment so we can keep an
       <h2><span>Schedule</span></h2>
 
       <table class="sched">
-        <caption>Saturday, November 1st</caption>
-        <tr class="sched">
-          <td class="left">8:00 am - 9:00 am</td>
-          <td class="right">Check In</td>
-        </tr>
-
+        <caption><strong>Day 1: </strong>Saturday, April 25th</caption>
         <tr class="sched">
           <td class="left">9:00 am - 9:30 am</td>
-          <td class="right">Opening Ceremony</td>
+          <td class="right">Check In / Price Center Theater (1st floor)</td>
         </tr>
 
         <tr class="sched">
-          <td class="left">9:30 am - 12:30 pm</td>
+          <td class="left">9:30 am - 10:00 am</td>
+          <td class="right">Opening Ceremony / Price Center Theater</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">10:00 am - 1:00 pm</td>
           <td class="right">Session I</td>
         </tr>
 
         <tr class="sched">
-          <td class="left">12:30 pm - 1:30 pm</td>
+          <td class="left">1:00 pm - 2:30 pm</td>
+          <td class="right">Lunch / Various Locations</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">2:30 pm - 4:30 pm</td>
+          <td class="right">Session II</td>
+        </tr>
+        <tr class="sched">
+          <td class="left">3:00 pm - 4:00 pm</td>
+          <td class="right">Advisor Reception *</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">4:30 pm - 4:45 pm</td>
+          <td class="right">Break</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">4:45 pm - 6:00 pm</td>
+          <td class="right">Session III</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">8:00 pm - 10:00 pm</td>
+          <td class="right">Delegate Social / La Jolla Sheraton Hotel</td>
+        </tr>
+      </table>
+<br>
+      <table class="sched">
+        <caption><strong>Day 2: </strong>Sunday, April 26th</caption>
+        <tr class="sched">
+          <td class="left">9:00 am - 1:00 pm</td>
+          <td class="right">Session IV</td>
+        </tr>
+
+        <tr class="sched">
+          <td class="left">1:00 pm - 2:30 pm</td>
           <td class="right">Lunch</td>
         </tr>
 
         <tr class="sched">
-          <td class="left">1:30 pm - 3:30 pm</td>
-          <td class="right">Session II</td>
+          <td class="left">2:30 pm - 3:00 pm</td>
+          <td class="right">Closing Ceremony / Price Center Theater</td>
         </tr>
 
-        <tr class="sched">
-          <td class="left">4:00 pm - 4:30 pm</td>
-          <td class="right">Closing Ceremony</td>
-        </tr>
 
       </table>
-
+      <em>* Shuttles will be provided to and from the La Jolla Sheraton Hotel.</em>
 
     </div>
 
 
 
   </div>
+
+    <div class="outer">
+      <div class="innerBox" >
+        <h2><span>Regulations</span></h2>
+        <p>Please follow all committee rules and regulations. Failure to do so may result in loss of diplomacy points and in severe cases, expulsion from committee.</p>
+
+        <br />
+        <p><strong>No cellphones</strong>, iPads, tablets, or other electronic devices in committee. If a delegate wishes to
+          use their cellphone in an emergency, they may respectfully exit the room. Delegates who make a habit of this may be asked to leave.</p>
+
+        <br />
+        <p>Delegates MAY use their <strong>laptops</strong> to type resolutions during unmoderated caucus only. Draft
+          resolutions will be submitted to their Chair via email or a flash drive. Under no circumstances may delegates use their laptops for other purposes. Delegates will be provided with a sample resolution and list of preoperative and operative clauses.</p>
+
+        <br />
+        <p><strong>Pre-written resolutions</strong> are forbidden and are grounds for disqualification of committee awards.
+          This
+                        includes operative clauses, preoperative clauses, or any variation thereof, written out before committee session begins or the topic is introduced. </p>
+
+        <br />
+        <p><strong>Plagiarism</strong> is a serious offense and may be grounds for disqualification of committee awards. All
+                            Chairs will be checking for plagiarism through various devices. In order to avoid plagiarism, cite all sources in your position paper, and avoid quoting or paraphrasing. You may instead combine or restructure information to come to a different conclusion, using entirely different words and phrases.</p>
+
+        <br />
+        Delegates are expected to cease their conversation at the bang of the gavel. The gavel signifies the end of a moderated or unmoderated caucus and the end of a speech. During speeches, Chairs will tap the gavel with 10 seconds left, and bang the gavel at the end of your speech. During comments, Chairs will tap the gavel with 5 seconds left, and bang the gavel at the end of your comment. The taps signifies to a delegate to wrap up their point. After the bang of the gavel, they may finish their phrase but may not start a new sentence or conjunction.
+      </div>
+    </div>
 </div>
 

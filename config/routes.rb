@@ -29,6 +29,8 @@ TmunApp::Application.routes.draw do
 
   match '/tritonmun/all',  to: 'hconferences#all',         via: 'get'
 
+
+  match '/tritonmun/:id/locations',    to: 'hconferences#locations',     via: 'get'
   match '/tritonmun/:id/register',    to: 'hconferences#register',     via: 'get'
   match '/tritonmun/:id/committees',  to: 'hconferences#committees',   via: 'get'
   match '/tritonmun/:id/speakers',  to: 'hconferences#speakers',   via: 'get'

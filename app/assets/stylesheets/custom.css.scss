@@ -12,9 +12,12 @@ $headerHeight: 5em;
   border-bottom: 1px #988a1d solid;
   color: #000054;
 }
-
+html {
+  height: 100%;
+}
 body {
   background-color: $bgColor;
+  height: 100%;
 }
 
 div#under-bar {
@@ -372,7 +375,11 @@ a.nav-link#signin:hover {
 
 div.container {
 
-  padding:4em 0em;
+  //padding:4em 0em;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  min-height: 100%;
+
   background: #d9d9d9;
   margin: 0 auto;
 }
