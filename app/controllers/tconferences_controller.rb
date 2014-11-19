@@ -76,6 +76,8 @@ class TconferencesController < ApplicationController
 
   def index
     @tconferences = Tconference.paginate(page: params[:page])
+
+    render :layout => 'travel'
   end
 
   private

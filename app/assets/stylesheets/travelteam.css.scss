@@ -266,6 +266,30 @@ div.past-cont {
   margin: 0 auto;
 }
 
+div.col-cont {
+  overflow: hidden;
+  text-align: center;
+
+  div.col {
+    float: left;
+    width: 30%;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  div.away {
+    font-size: 2em;
+    background: #131535;
+    border-radius: 2px;
+    border-bottom: 2px #0a0a14 solid;
+    padding: .7em 1em;
+
+    color: white;
+
+  }
+}
 h1.subhead {
   background-image: url("line-pixel.png");
   background-repeat: repeat-x;

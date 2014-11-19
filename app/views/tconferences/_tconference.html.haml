@@ -1,8 +1,11 @@
 %li
-  = link_to tconference.name, tconference, class: "roman"
+  = link_to tconference, class: "away" do
+    %div.away
+      = tconference.nick
   %br/
-  = tconference.season
-  = tconference.year
+  = tconference.name
+  %br/
+  = tconference.date
   %br/
   - if signed_in?
     - if current_user.admin?

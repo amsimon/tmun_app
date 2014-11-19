@@ -1,6 +1,6 @@
 - provide(:title, 'All Home Conferences')
-%h1#tritonmun
-  %span#main Home Conferences
+%h1.subhead
+  %span#main Upcoming Conferences
 
 .narrow
   = will_paginate
@@ -9,10 +9,17 @@
     - if current_user.admin?
       %span.admin
         = link_to "Add new travel conference", new_tconference_path
-  %br/
-  %br/
   /
     <#%= collection_select_tag(:user, :role, User.all,
     \:id, :role, {}, {:name=>'user_filter'}) %>
-  %ul.users= render @tconferences
+  %div.col-cont
+    %div.col
+      %h2 Fall 2014
+      %ul.users= render Tconference.fall
+    %div.col
+      %h2 Winter 2015
+      %ul.users= render Tconference.winter
+    %div.col
+      %h2 Spring 2015
+      %ul.users= render Tconference.spring
   = will_paginate
