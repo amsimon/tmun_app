@@ -20,37 +20,44 @@ render season, year here
 
       <h2><span>Information</span></h2>
       <div class="infosBox">
-        <div class="infos" >
-        <ul>
-            <li><div class="label">Date: </div>
-              <div class="info"><%= @hconference.date %> </div></li>
+        <table class="infos" >
+            <tr>
+              <td class="label">Date: </td>
+              <td class="info"><%= @hconference.date %> </td>
+            </tr>
 
-            <li><div class="label">Location: </div>
-              <div class="info"><%= @hconference.location %></div></li>
+            <tr>
+              <td class="label">Location: </td>
+              <td class="info"><%= @hconference.location %></td>
+            </tr>
 
-          <li><div class="label">Delegation Fee: </div>
-            <div class="info">$<%= @hconference.delegation_fee %> / school
-            </div></li>
+          <tr>
+            <td class="label">Delegation Fee: </td>
+            <td class="info">$<%= @hconference.delegation_fee %> / school</td>
+          </tr>
 
-            <li><div class="label">Early: </div>
-              <div class="info">$<%= @hconference.early_price %> / delegate  <span class="date">(by <%= @hconference
+            <tr>
+              <td class="label">Early: </td>
+              <td class="info">$<%= @hconference.early_price %> / delegate  <span class="date">(by <%= @hconference
                                                                                                   .early_date %>)
               </span>
-              </div></li>
+              </td>
+            </tr>
 
-            <li><div class="label">Regular: </div>
-              <div class="info">$<%= @hconference.normal_price %> / delegate <span class="date">(by <%= @hconference
+            <tr>
+              <td class="label">Regular: </td>
+              <td class="info">$<%= @hconference.normal_price %> / delegate <span class="date">(by <%= @hconference
                                                                                                        .normal_date %>)
-              </span> </div></li>
+              </span> </td>
+            </tr>
 
-          <li><div class="label">Late: </div>
-            <div class="info">$<%= @hconference.late_price %> / delegate <span class="date">(by <%= @hconference
+          <tr>
+            <td class="label">Late: </td>
+            <td class="info">$<%= @hconference.late_price %> / delegate <span class="date">(by <%= @hconference
                                                                                                    .late_date %>)
-            </span> </div></li>
-
-
-        </ul>
-    </div>
+            </span> </td>
+          </tr>
+    </table>
         <br><br><br>
       </div>
     </div>
@@ -58,21 +65,19 @@ render season, year here
     <div class="innerBox">
       <h2><span>Deadlines</span></h2>
       <div class="infosBox">
-        <div class="infos" >
-          <ul>
-            <li><div class="label date">December 12, 2014</div>
-              <div class="info">Early registration deadline to postmark payment.</div></li>
+        <table class="infos" >
+            <tr><td class="label date">December 12, 2014</td>
+              <td class="info">Early registration deadline to postmark payment.</td></tr>
 
-            <li><div class="label date">February 6, 2015</div>
-              <div class="info">Regular registration deadline to postmark payment.</div></li>
+            <tr><td class="label date">February 6, 2015</td>
+              <td class="info">Regular registration deadline to postmark payment.</td></tr>
 
-            <li><div class="label date">March 6, 2015</div>
-              <div class="info">Late registration deadline to postmark payment.</div></li>
+            <tr><td class="label date">March 6, 2015</td>
+              <td class="info">Late registration deadline to postmark payment.</td></tr>
 
-            <li><div class="label date">April 12, 2014</div>
-              <div class="info">Position papers due at 11:59 pm PST.</div></li>
-          </ul>
-        </div>
+            <tr><td class="label date">April 12, 2014</td>
+              <td class="info">Position papers due at 11:59 pm PST.</td></tr>
+        </table>
       </div>
     </div>
 

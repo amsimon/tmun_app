@@ -506,28 +506,26 @@ position: relative;
         a:hover {
           color: #252E61;
         }
-
-        ul {
-          padding: 0px;
-          margin: 0px;
-          list-style-type:none;
+        td {
+          padding: .3em 0em;
         }
 
-        div.label {
-          float: left;
+        td.label {
           text-align: right;
-          margin-right: 85px;
+
           width: 180px;
           color: $mediumGray;
           font-style: italic;
           margin-bottom: 0em;
+
+          padding-right: 3em;
         }
 
-        div.label.date {
+        td.label.date {
           text-align: left;
         }
 
-        div.info {
+        td.info {
           float: left;
           text-align: left;
           min-width: 125px;
@@ -546,14 +544,7 @@ position: relative;
 
         }
 
-        ul li {
 
-          margin-bottom: .5em;
-          overflow: hidden;
-          padding: 5px;
-          list-style: none;
-
-        }
 
 
         div.more {
