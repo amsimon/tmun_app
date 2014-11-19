@@ -20,6 +20,7 @@ gem 'html2haml'
 gem 'pg'
 
 gem 'jscolor-rails'
+gem 'jquery-minicolors-rails'
 
 group :development, :test do
 
