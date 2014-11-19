@@ -1,0 +1,10 @@
+%li
+  = link_to tconference.name, tconference, class: "roman"
+  %br/
+  = tconference.season
+  = tconference.year
+  %br/
+  - if signed_in?
+    - if current_user.admin?
+      = link_to "edit", edit_tconference_path(tconference)
+      | #{link_to "delete", tconference, method: :delete, data: { confirm: "You sure?" }}

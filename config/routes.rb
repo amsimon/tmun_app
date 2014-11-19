@@ -1,5 +1,7 @@
 TmunApp::Application.routes.draw do
 
+  resources :tconferences
+
   resources :badges
 
   resources :users do
