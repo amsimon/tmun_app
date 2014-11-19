@@ -87,7 +87,7 @@ class TconferencesController < ApplicationController
   end
 
   def tconference_params
-    params.require(:tconference).permit(:name, :season, :year, :location, :date, :host)
+    params.require(:tconference).permit(:name, :nick, :season, :year, :location, :date, :host)
 
   end
 
