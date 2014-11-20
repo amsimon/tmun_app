@@ -1,7 +1,5 @@
 module LayoutsHelper
-  def parent_layout(layout)
-    @view_flow.set(:layout, output_buffer)
-    output = render(:file => "layouts/#{layout}")
-    self.output_buffer = ActionView::OutputBuffer.new(output)
+  def parent_layout(layout, &blk)
+    render({ layout: "layouts/#{layout}" }, &blk)
   end
 end

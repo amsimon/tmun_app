@@ -93,6 +93,7 @@ class HconferencesController < ApplicationController
     @hconference = Hconference.friendly.find(params[:id])
     @questions = @hconference.questions.reverse
     @schedules = @hconference.schedules.reverse
+    render layout: 'home_conf_overview'
   end
 
   def destroy

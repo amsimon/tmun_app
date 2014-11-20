@@ -1,0 +1,5 @@
+= parent_layout "application" do
+  = render partial: 'hconferences/home_header', locals: {hconference: hconference, title: title}
+  .main_cont
+    = render 'shared/home_nav'
+    = yield

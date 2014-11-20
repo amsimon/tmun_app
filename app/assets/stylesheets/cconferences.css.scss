@@ -1,0 +1,37 @@
+// Place all the styles related to the Cconferences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.introducing {
+  text-align: center;
+  margin-top: 2em;
+
+  div.big {
+    font-size: 6vw;
+    font-weight: 900;
+
+    span {
+      color: rgb(0, 97, 168);
+    }
+  }
+  div.small {
+    font-size: 3vw;
+  }
+
+  a {
+    color: rgba(0, 97, 168, 1);
+    span.learn {
+      display: inline-block;
+      font-size: 2vw;
+      border-radius: 3px;
+      border: .2em solid rgba(0, 97, 168, .5);
+      padding: .6em 1em;
+      margin-top: 1.5em;
+    }
+    span.learn:hover {
+      border: .2em solid rgba(0, 97, 168, 1);
+    }
+  }
+
+}

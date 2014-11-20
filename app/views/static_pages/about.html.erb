@@ -1,31 +1,6 @@
 <% provide(:title, 'About Us') %>
 
 
-<h1 id="tritonmun"><span id="main">About Us</span></h1>
-
-
-<div class="main_cont">
-  <div id="buttonBox">
-
-    <%= link_to (about_path) do %>
-        <div class="current button">Club Overview</div>
-    <% end %>
-
-
-    <%= link_to (secretariat_path) do %>
-        <div class="button">Secretariat</div>
-    <% end %>
-
-    <%= link_to (history_path) do %>
-        <div class="button">History</div>
-    <% end %>
-
-    <%= link_to (alumni_path) do %>
-        <div class="button">Alumni</div>
-    <% end %>
-
-  </div>
-</div>
   <%= render partial:"about" %>
 
 <!--<div id="letter" style="text-align: center">-->

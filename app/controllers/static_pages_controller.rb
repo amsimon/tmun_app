@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   
   
   def home
-
+    render :layout => '_application'
 
 
     if signed_in?
@@ -42,32 +42,33 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    render :layout => 'about'
   end
 
   def tritonmun
   end
 
   def mission
-
+    render :layout => 'about'
   end
   def secretariat
-
+    render :layout => 'about'
   end
 
   def history
-
+    render :layout => 'about'
   end
 
   def alumni
-
+    render :layout => 'about'
   end
 
   def calendar
-
+    render :layout => 'about'
   end
 
   def participate
-
+    render :layout => 'about'
   end
 
 

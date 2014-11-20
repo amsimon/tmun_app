@@ -1,0 +1,17 @@
+= form_for(@cconference) do |f|
+  = render 'shared/error_messages', object: f.object
+  %table.sign
+    %tr
+      %td= f.label :number
+      %td= f.text_field :number
+    %tr
+      %td= f.label :season
+      %td= f.text_field :season
+    %tr
+      %td= f.label :year
+      %td= f.text_field :year
+    %tr
+      %td= f.label :date
+      %td= f.text_field :date
+  %br/
+  %p= f.submit "Submit"
