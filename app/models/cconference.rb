@@ -6,4 +6,6 @@ class Cconference < ActiveRecord::Base
   friendly_id :number
 
 
+
+
 end

@@ -1,35 +1,62 @@
 %h1{class:"subhead"}
   %span{id:"main"}
     Training
-%div.narrow
-  %div.even_more{style: "text-align: left"}
-    %p
-      When: 6-8pm Thursdays, 1-3pm Sundays
-      %br
-      Where: Asante 123 AD, International House
-      %p
-        Our trainings are public and topics vary on a weekly basis.  The overall purpose of our training meetings
-        is to build on an individual’s public speaking abilities while at the same time improving their awareness
-        of international affairs.  In order to achieve this, we run simulations that emulate those within the United
-        Nations.  We teach delegates how to debate within the context of the United Nations and how to write
-        effective public policy.  We also like to ask “what if?” and run fantasy simulations from time to time.
-        We occasionally take a break from simulations to play games aimed at improving public speaking skills.
-      %p
-        Our main objectives as an organization are to:
-        %ol
-          %li
-            Instruct members on the workings and principles of the United Nations, its organs, and agencies.
-          %li
-            Study contemporary issues of international significance and discuss them within the context of the
-            United Nation’s subcommittees.
-          %li
-            More fully understand the interconnectedness of our world and apply our knowledge by competing in
-            conferences and discuss issues of international significance from the perspective of another nation.
-          %li
-            Instill in each member a sense of responsibility towards maintaining international peace and well-being
-            through cooperation.
+%div#trav-col1
+  = link_to "Add Training Session", new_training_path, class: "admin-link"
+  .two-col-cont<
+    - Training.all.each do |t|
+      .col>
+        .col-content
+          = link_to "Edit Session", edit_training_path(t), class: "admin-link"
+          %h1
+            = t.date.strftime("%A")
+            = t.date.strftime("%-m/%-d")
+          - t.topics.each do |topic|
+            .topic-cont
+              %h2
+                = topic.committee
+              %img{src: "#{topic.image_url}" }
+              %h3
+                = topic.topic
+              %p
+                = topic.description
+%div#trav-col2
 
-      %p
-        To find out more, please drop by while we’re in session or email our training staff at
-        %span.email_address
-          travelingtritons@gmail.com
+  %p
+    %table#training-details
+      %tr
+        %td.when-where
+          WHEN
+        %td
+          = Training.time
+      %tr
+        %td.when-where
+          WHERE
+        %td
+          = Training.location
+    %p
+      Our trainings are public and topics vary on a weekly basis.  The overall purpose of our training meetings
+      is to build on an individual’s public speaking abilities while at the same time improving their awareness
+      of international affairs.  In order to achieve this, we run simulations that emulate those within the United
+      Nations.  We teach delegates how to debate within the context of the United Nations and how to write
+      effective public policy.  We also like to ask “what if?” and run fantasy simulations from time to time.
+      We occasionally take a break from simulations to play games aimed at improving public speaking skills.
+    %p
+      Our main objectives as an organization are to:
+      %ol
+        %li
+          Instruct members on the workings and principles of the United Nations, its organs, and agencies.
+        %li
+          Study contemporary issues of international significance and discuss them within the context of the
+          United Nation’s subcommittees.
+        %li
+          More fully understand the interconnectedness of our world and apply our knowledge by competing in
+          conferences and discuss issues of international significance from the perspective of another nation.
+        %li
+          Instill in each member a sense of responsibility towards maintaining international peace and well-being
+          through cooperation.
+
+    %p
+      To find out more, please drop by while we’re in session or email our training staff at
+      %span.email_address
+        travelingtritons@gmail.com

@@ -1,0 +1,56 @@
+/
+  <div class="next-trav-conf">
+
+  </div>
+/
+  <div id="apply-now">
+  <h2>➨  Be on the Dais, Crisis Staff, or Organizing Committee</h2>
+  <a href="/travelteam/guides">
+  <div class="apply">
+  View Topics
+  </div></a>
+  <a href="https://docs.google.com/forms/d/1b9KIyqVBj1SntUnyCgYXM_E5km5Zgn0OQFFluKWh8pg/viewform">
+  <div class="apply">
+  Apply Now!
+  </div></a>
+
+  </div>
+
+  <div id="apply-now">
+  <h2>➨  Compete with the Team</h2>
+  <a href="https://docs.google.com/forms/d/1E-nQXT6Od2sWaDKWiyYUo0PfiNMwT9SQ5ZyWSRp83LY/viewform?usp=send_form">
+  <div class="apply">
+  Apply Now!
+  </div>
+  </a>
+  </div>
+
+%h1.subhead
+  %span#main Overview
+#trav-col1
+  = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
+  %ul
+    = render partial: "shared/headline", collection: Branch.travel.first.headlines, as: :headline
+#trav-col2
+  %h2 Important Dates
+  = link_to "New Schedule", new_branch_schedule_path(@travel_branch, @schedule), class: "admin-link"
+  = render partial: "schedules/schedule", object: @schedule, locals: {conf: "false"}
+  %h2 Contact the Team
+  #inner
+    %span.email_address{:style => "color: #d7d7d7; font-size: 1.5em"} travelingtritons@gmail.com
+    .person
+      %ul
+        %li.name Zoe Cheung
+        %li.pos Director of Travel
+    .person
+      %ul
+        %li.name Reina Ishii
+        %li.pos Under-Secretary General of Training
+    .person
+      %ul
+        %li.name Pichaporn Kanjanakantorn
+        %li.pos Deputy Under-Secretary General of Training
+    .person
+      %ul
+        %li.name Ben Salter
+        %li.pos Deputy Under-Secretary General of Training

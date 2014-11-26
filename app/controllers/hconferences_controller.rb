@@ -3,6 +3,8 @@ class HconferencesController < ApplicationController
   before_action :admin_user, only: [:new, :create, :destroy, :edit,  :update]
 
 
+
+
   def register
 
     @hconference = Hconference.friendly.find(params[:id])
@@ -10,10 +12,10 @@ class HconferencesController < ApplicationController
     render layout: 'home', locals: {title: "Register", hconference: @hconference}
   end
 
-  def locations
+  def location
     @hconference = Hconference.friendly.find(params[:id])
 
-    render layout: 'home', locals: {title: "Locations", hconference: @hconference}
+    render layout: 'home', locals: {title: "Location", hconference: @hconference}
   end
 
   def committees
@@ -41,13 +43,16 @@ class HconferencesController < ApplicationController
   end
 
   def all
-    @hconferences = Hconference.paginate(page: params[:page])
 
+    @hconferences = Hconference.paginate(page: params[:page])
+    render layout: '_application'
 
   end
 
 
   def index
+
+
     @hconference_fall = Hconference.all.second
     @hconference_spring = Hconference.first
     @hconferences = Hconference.paginate(page: params[:page])
@@ -55,21 +60,6 @@ class HconferencesController < ApplicationController
 
   def new
     @hconference = Hconference.new
-    1.times do
-      @hconference.questions.new
-    end
-
-
-
-    1.times do
-      schedule = @hconference.schedules.new
-
-      3.times do
-        schedule.events.new
-      end
-
-    end
-
 
   end
 
@@ -91,8 +81,6 @@ class HconferencesController < ApplicationController
 
   def show
     @hconference = Hconference.friendly.find(params[:id])
-    @questions = @hconference.questions.reverse
-    @schedules = @hconference.schedules.reverse
     render layout: 'home_conf_overview'
   end
 

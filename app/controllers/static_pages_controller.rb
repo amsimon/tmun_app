@@ -14,6 +14,12 @@ class StaticPagesController < ApplicationController
 
 
   def travelteam
+    @travel_branch = Branch.friendly.where(name: "Travel").first
+    @schedule = @travel_branch.schedules.first
+    @events = @schedule.events
+
+
+
     render :layout => 'travel'
   end
 

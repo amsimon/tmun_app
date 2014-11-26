@@ -1,0 +1,39 @@
+#everything
+/ <h1 id="tritonmun"><span id="main">Mission</span></h1>
+/ <h1 id="home_h1">Model United Nations at UCSD </h1>
+#front.outer
+  #il.inner
+    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") </haml_loud></a>
+    = render :partial => "slide", :collection => left_slides
+  #ir.inner
+    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") </haml_loud></a>
+    = render :partial => "slide", :collection => right_slides
+#news.outer
+  .inner
+    = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
+    .news-box
+      %ul
+        = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline
+  .inner
+    = link_to "New Home Headline", new_branch_headline_url(Branch.home.first), class: "admin-link"
+    .news-box
+      %ul
+        = render partial: "shared/headline", collection: Branch.home.first.headlines.limit(3), as: :headline
+.gde
+  = image_tag "logo4.png", class: "bg"
+  %h1#home_h1
+    %span#main Model United Nations at UCSD
+  #copy
+    = Frontpage.hello
+    /
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    %br/
+    %a{:href => Frontpage.hello_link_url, :style => "position: relative; z-index: 999999;"}
+      %span#learn
+        = Frontpage.hello_link_text
+        %span#arrow
+          \➤
+  -#
+    <span class="slide-head" id="left">Travel Team</span>
+    <span class="slide-head" id="right">TritonMUN</span>

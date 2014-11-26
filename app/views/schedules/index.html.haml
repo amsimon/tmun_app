@@ -1,0 +1,10 @@
+%h1 Listing Schedules
+
+
+= render partial: "schedule", collection: @parent.schedules, locals: {parent: @parent, conf: "all"}
+
+%br
+
+= link_to 'New Schedule', new_hconference_schedule_path
+
+

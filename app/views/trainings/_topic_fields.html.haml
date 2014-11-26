@@ -1,0 +1,19 @@
+%fieldset
+  = f.label :committee
+  = f.text_field :committee
+  = link_to "Remove Topic", '#', class: "remove_fields"
+  %br/
+  = f.label :topic
+  = f.text_field :topic
+  %br/
+  = f.label :image_url
+  = f.text_field :image_url
+  %br/
+  = f.label :description
+  = f.text_area :description
+  %br/
+  = f.label :guide_filename, "Topic Guide Filename"
+  = f.text_field :guide_filename
+  %br/
+  = f.hidden_field :_destroy
+

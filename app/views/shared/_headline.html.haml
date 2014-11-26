@@ -1,0 +1,9 @@
+%li
+  %h2
+    = headline.title
+  %a{:href => "#{headline.button_url}"}
+    .apply
+      = headline.button_text
+    %br/
+    = link_to "edit", edit_headline_path(headline), class: "admin-link"
+    | #{link_to "delete", headline, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}

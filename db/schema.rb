@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120063502) do
+ActiveRecord::Schema.define(version: 20141126020008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content"
+    t.integer  "question_id"
+  end
 
   create_table "badges", force: true do |t|
     t.datetime "created_at"
@@ -24,6 +31,12 @@ ActiveRecord::Schema.define(version: 20141120063502) do
     t.string   "desc"
     t.integer  "user_id"
     t.string   "text_color"
+  end
+
+  create_table "branches", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "cconferences", force: true do |t|
@@ -36,13 +49,21 @@ ActiveRecord::Schema.define(version: 20141120063502) do
   end
 
   create_table "events", force: true do |t|
-    t.string   "time_start"
-    t.string   "time_end"
     t.string   "activity"
     t.string   "place"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "schedule_id"
+    t.date     "date"
+    t.time     "time_end"
+    t.time     "time_start"
+  end
+
+  create_table "faqs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "hconference_id"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -95,6 +116,16 @@ ActiveRecord::Schema.define(version: 20141120063502) do
 
   add_index "hconferences", ["number"], name: "index_hconferences_on_number", unique: true, using: :btree
 
+  create_table "headlines", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "title"
+    t.integer  "order"
+    t.integer  "branch_id"
+    t.string   "button_text"
+    t.string   "button_url"
+  end
+
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -103,20 +134,19 @@ ActiveRecord::Schema.define(version: 20141120063502) do
   end
 
   create_table "questions", force: true do |t|
-    t.string   "q"
-    t.string   "a"
-    t.integer  "hconference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "faq_id"
+    t.string   "content"
   end
 
-  add_index "questions", ["hconference_id", "created_at"], name: "index_questions_on_hconference_id_and_created_at", using: :btree
-
   create_table "schedules", force: true do |t|
-    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "hconference_id"
+    t.string   "name"
+    t.integer  "branch_id"
+    t.date     "date"
   end
 
   create_table "tconferences", force: true do |t|
@@ -133,6 +163,27 @@ ActiveRecord::Schema.define(version: 20141120063502) do
   end
 
   add_index "tconferences", ["slug"], name: "index_tconferences_on_slug", using: :btree
+
+  create_table "topics", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "committee"
+    t.text     "topic"
+    t.text     "image_url"
+    t.text     "guide_filename"
+    t.string   "chair"
+    t.string   "vice_chair"
+    t.text     "description"
+    t.integer  "training_id"
+    t.integer  "hconference_id"
+    t.integer  "cconference_id"
+  end
+
+  create_table "trainings", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "date"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

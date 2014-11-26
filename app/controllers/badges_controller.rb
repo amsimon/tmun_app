@@ -1,5 +1,6 @@
 class BadgesController < ApplicationController
-  before_action :set_badge, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user
+  before_action :admin_user
 
   # GET /badges
   # GET /badges.json
@@ -73,6 +74,10 @@ class BadgesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_badge
       @badge = Badge.find(params[:id])
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

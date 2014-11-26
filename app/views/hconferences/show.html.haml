@@ -1,0 +1,247 @@
+- provide(:title, "TritonMUN")
+/
+  render season, year here
+.conf_cont
+  %br/
+  = render 'shared/question_form'
+  .outer
+    .innerBox
+      %h2
+        %span Information
+      .infosBox
+        %table.infos
+          %tr
+            %td.label Date:
+            %td.info= @hconference.date
+          %tr
+            %td.label Location:
+            %td.info= @hconference.location
+          %tr
+            %td.label Delegation Fee:
+            %td.info
+              $#{@hconference.delegation_fee} / school
+          %tr
+            %td.label Early:
+            %td.info
+              $#{@hconference.early_price} / delegate
+              %span.date
+                (by #{@hconference .early_date})
+          %tr
+            %td.label Regular:
+            %td.info
+              $#{@hconference.normal_price} / delegate
+              %span.date
+                (by #{@hconference .normal_date})
+          %tr
+            %td.label Late:
+            %td.info
+              $#{@hconference.late_price} / delegate
+              %span.date
+                (by #{@hconference .late_date})
+        %br/
+        %br/
+        %br/
+    .innerBox
+      %h2
+        %span Deadlines
+      .infosBox
+        %table.infos
+          %tr
+            %td.label.date December 12, 2014
+            %td.info Early registration deadline to postmark payment.
+          %tr
+            %td.label.date February 6, 2015
+            %td.info Regular registration deadline to postmark payment.
+          %tr
+            %td.label.date March 6, 2015
+            %td.info Late registration deadline to postmark payment.
+          %tr
+            %td.label.date April 12, 2015
+            %td.info Position papers due at 11:59 pm PST.
+  .outer
+    .innerBox
+      %h2
+        %span Registration FAQ
+      = link_to "New FAQ", new_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
+      = link_to "edit", edit_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
+      .faq.admin-editable
+        %ol.questions
+          - Faq.specific_faq(@hconference, "Registration").questions.each do |q|
+            %li
+              .question
+                = q.content.html_safe
+              - q.answers.each do |a|
+                .answer
+                  = a.content.html_safe
+        -#.question Where do I register?
+        -#.answer
+        -#  Please register online #{link_to "here.", (conf_path(@hconference) + "/" + "register")}
+        -#.question What if there's a change to delegate numbers?
+        -#.answer
+        -#  If there's a change in delegate numbers, please let us know
+        -#  immediately so we can change your invoice as well as updating committee country spots.
+        -#.question What happens after registration?
+        -#.answer
+        -#  You'll receive a confirmation email from us with an invoice based on the estimated delegate number.
+        -#  If you do not hear from us within a few days, please contact us at tritonmun.ucsd@gmail.com
+        -#.question Will I be able to make several different payments?
+        -#.answer
+        -#  Yes. Each payment will depend on the deadline, but you can split the payment into
+        -#  different portions if it is more convenient.
+        -#.question What are the fees?
+        -#.answer Refer to the 'Information' section above.
+        -#.question To whom do I make the check out?
+        -#.answer
+        -#  %u UC Regents
+        -#.question Will I be able to make several different payments?
+        -#.answer
+        -#  Each payment will depend on the deadline but you can split the payment
+        -#  in different portions if it's more convenient.
+        -#.question What forms of payment are accepted?
+        -#.answer At the moment, only checks are accepted.
+        -#.question How should I send the check?
+        -#.answer
+        -#  If you are not in the San Diego area, please send your checks via postal mail. Because we
+        -#  receive our mail from UCSD's postal service, there may be further delay due to the sorting process.
+        -#  We encourage you to inform us once you have mailed the payment so we can keep an eye out for it.
+        -#  If you are close to UCSD, we ask that you personally drop off the checks to make the process fast and safe.
+        -#.question Where do I send the payment?
+        -#.answer
+        -#  %em Postal Mail:
+        -#  %br/
+        -#  Attn: Model UN at UCSD
+        -#  %br/
+        -#  International House
+        -#  %br/
+        -#  UC San Diego
+        -#  %br/
+        -#  9500 Gilman Drive, 0550
+        -#  %br/
+        -#  La Jolla, CA 92093-0550
+        -#  %br/
+        -#  %br/
+        -#  %em Drop-off:
+        -#  %br/
+        -#  International House Office - off of Torrey Pines Rd on Pangea Dr.
+        -#  %br/
+        -#  Visit
+        -#  %a{:href => "http://ihouse.ucsd.edu/contact/index.html"} this link
+        -#  for more details:
+        -#.question When will I receive country assignments?
+        -#.answer
+        -#  Country assignments are given out as we receive payments. This is to ensure the proper assignment of country spots.
+        -#  If there are any issues such as constrained timeline, please contact us as soon as possible so we can try to accommodate you.
+        -#.question Are you able to satisfy all of our country preferences?
+        -#.answer
+        -#  While we'd like to, it would be logistically unrealistic to provide everyone with their preferred countries.
+        -#  We try our best to do so though, so thanks for your understanding. To ensure the best chance of getting your
+        -#  preferred countries, please try to send us the payment as soon as possible so we can release your country assignments.
+        -#.question Where is the conference?
+        -#.answer
+        -#  TritonMUN X will be hosted at the UC San Diego Price Center. Committees will be
+        -#  located between the Student Services Center and the East and West wings of Price Center.
+        -#  %a{:href => "http://universitycenters.ucsd.edu/aboutus_map_and_directions.php"} Directions.
+        -#.question Is there parking nearby?
+        -#.answer
+        -#  Yes. The most convenient parking is inside the Gilman parking structure. Parking
+        -#  is FREE on the weekends.
+        -#.question Is there a hotel for us to stay overnight?
+        -#.answer
+        -#  In past years, delegates have stayed at the La Jolla Sheraton.
+        -#  %br/
+        -#  %br/
+        -#  %em Contact information here:
+        -#  %br/
+        -#  Mark Kuper
+        -#  %br/
+        -#  Sales Manager
+        -#  %br/
+        -#  858.452.4012
+        -#  %br/
+        -#  SHERATON LA JOLLA HOTEL
+        -#  %br/
+        -#  3299 Holiday Court, La Jolla, CA 92037
+        -#  %br/
+        -#  %a{:href => "http://sheratonlajolla.com"} sheratonlajolla.com
+    .innerBox
+      %h2
+        %span Schedule
+      = link_to "New Schedule", new_hconference_schedule_path(@hconference, Schedule.specific_schedule(@hconference, "Day 1")), class: "admin-link"
+      = render partial: "schedules/schedule", object: Schedule.specific_schedule(@hconference, "Day 1"), locals: {conf: "true"}
+      = render partial: "schedules/schedule", object: Schedule.specific_schedule(@hconference, "Day 2"), locals: {conf: "true"}
+      -#
+        %table.sched
+          %caption
+            %strong> Day 1:
+            Saturday, April 25th
+          %tr.sched
+            %td.left 9:00 am - 9:30 am
+            %td.right Check In / Price Center Theater (1st floor)
+          %tr.sched
+            %td.left 9:30 am - 10:00 am
+            %td.right Opening Ceremony / Price Center Theater
+          %tr.sched
+            %td.left 10:00 am - 1:00 pm
+            %td.right Session I
+          %tr.sched
+            %td.left 1:00 pm - 2:30 pm
+            %td.right Lunch / Various Locations
+          %tr.sched
+            %td.left 2:30 pm - 4:30 pm
+            %td.right Session II
+          %tr.sched
+            %td.left 3:00 pm - 4:00 pm
+            %td.right Advisor Reception *
+          %tr.sched
+            %td.left 4:30 pm - 4:45 pm
+            %td.right Break
+          %tr.sched
+            %td.left 4:45 pm - 6:00 pm
+            %td.right Session III
+          %tr.sched
+            %td.left 8:00 pm - 10:00 pm
+            %td.right Delegate Social / La Jolla Sheraton Hotel
+        %br/
+        %table.sched
+          %caption
+            %strong> Day 2:
+            Sunday, April 26th
+          %tr.sched
+            %td.left 9:00 am - 1:00 pm
+            %td.right Session IV
+          %tr.sched
+            %td.left 1:00 pm - 2:30 pm
+            %td.right Lunch
+          %tr.sched
+            %td.left 2:30 pm - 3:00 pm
+            %td.right Closing Ceremony / Price Center Theater
+        %em * Shuttles will be provided to and from the La Jolla Sheraton Hotel.
+  .outer
+    .innerBox
+      %h2
+        %span Regulations
+      %p Please follow all committee rules and regulations. Failure to do so may result in loss of diplomacy points and in severe cases, expulsion from committee.
+      %br/
+      %p
+        %strong> No cellphones
+        , iPads, tablets, or other electronic devices in committee. If a delegate wishes to
+        use their cellphone in an emergency, they may respectfully exit the room. Delegates who make a habit of this may be asked to leave.
+      %br/
+      %p
+        Delegates MAY use their
+        %strong laptops
+        to type resolutions during unmoderated caucus only. Draft
+        resolutions will be submitted to their Chair via email or a flash drive. Under no circumstances may delegates use their laptops for other purposes. Delegates will be provided with a sample resolution and list of preoperative and operative clauses.
+      %br/
+      %p
+        %strong Pre-written resolutions
+        are forbidden and are grounds for disqualification of committee awards.
+        This
+        includes operative clauses, preoperative clauses, or any variation thereof, written out before committee session begins or the topic is introduced.
+      %br/
+      %p
+        %strong Plagiarism
+        is a serious offense and may be grounds for disqualification of committee awards. All
+        Chairs will be checking for plagiarism through various devices. In order to avoid plagiarism, cite all sources in your position paper, and avoid quoting or paraphrasing. You may instead combine or restructure information to come to a different conclusion, using entirely different words and phrases.
+      %br/
+      Delegates are expected to cease their conversation at the bang of the gavel. The gavel signifies the end of a moderated or unmoderated caucus and the end of a speech. During speeches, Chairs will tap the gavel with 10 seconds left, and bang the gavel at the end of your speech. During comments, Chairs will tap the gavel with 5 seconds left, and bang the gavel at the end of your comment. The taps signifies to a delegate to wrap up their point. After the bang of the gavel, they may finish their phrase but may not start a new sentence or conjunction.

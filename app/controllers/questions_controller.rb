@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :admin_user, only: [:new, :create, :destroy, :edit,  :update]
+  before_action :signed_in_user
+  before_action :admin_user
 
 
 
@@ -28,6 +28,10 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:q, :a, :hconference_id, :_destroy)
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 
 =begin

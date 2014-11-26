@@ -1,0 +1,12 @@
+%tr
+  - if conf != "true"
+    %td
+      = event.date.try(:strftime, "%b %d %Y")
+  %td
+    = event.time_start.try(:strftime, "%-I:%M %p")
+    \-
+    = event.time_end.try(:strftime, "%-I:%M %p")
+  %td
+    = event.activity
+  %td
+    = event.place

@@ -1,8 +1,33 @@
 TmunApp::Application.routes.draw do
 
-  resources :cconferences
 
+  resources :trainings
+
+  resources :headlines
+
+  resources :topics
+
+  resources :branches do
+    resources :schedules
+    resources :headlines
+  end
+  resources :cconferences
   resources :tconferences
+
+  resources :hconferences do
+    resources :faqs
+    resources :schedules
+    member do
+      get 'location'
+      get 'committees'
+      get 'speakers'
+      get 'position_papers'
+      get 'research'
+      get 'register'
+    end
+  end
+
+  resources :schedules
 
   resources :badges
 
@@ -10,7 +35,7 @@ TmunApp::Application.routes.draw do
     resources :badges
   end
   resources :frontpages
-  resources :hconferences, :path => 'tritonmun'
+
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
@@ -34,12 +59,8 @@ TmunApp::Application.routes.draw do
   match '/tritonmun/all',  to: 'hconferences#all',         via: 'get'
 
 
-  match '/tritonmun/:id/locations',    to: 'hconferences#locations',     via: 'get'
-  match '/tritonmun/:id/register',    to: 'hconferences#register',     via: 'get'
-  match '/tritonmun/:id/committees',  to: 'hconferences#committees',   via: 'get'
-  match '/tritonmun/:id/speakers',  to: 'hconferences#speakers',   via: 'get'
-  match '/tritonmun/:id/position_papers',  to: 'hconferences#position_papers',   via: 'get'
-  match '/tritonmun/:id/research',  to: 'hconferences#research',   via: 'get'
+
+
 
   match '/signup',  to: 'users#new',              via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

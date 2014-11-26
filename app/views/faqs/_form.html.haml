@@ -1,0 +1,17 @@
+= form_for [@hconference, @faq] do |f|
+  - if @faq.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@faq.errors.count, "error")} prohibited this faq from being saved:"
+      %ul
+        - @faq.errors.full_messages.each do |msg|
+          %li= msg
+  .faq-field
+    = f.label :name, "FAQ Title: Registration, Location, etc."
+    %br/
+    = f.text_field :name
+    = f.fields_for :questions do |builder|
+      = render 'question_fields',f: builder
+    = link_to_add_fields "Add Question", f, :questions
+
+  .actions
+    = f.submit 'Save'

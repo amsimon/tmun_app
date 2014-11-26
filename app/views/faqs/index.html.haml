@@ -1,0 +1,19 @@
+%h1 Listing faqs
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @faqs.each do |faq|
+    %tr
+      %td
+        = faq.name
+        (#{faq.questions.count} questions)
+      %td= link_to 'Edit', edit_hconference_faq_path(@hconference, faq)
+      %td= link_to 'Destroy', hconference_faq_path(@hconference, faq), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Faq', new_hconference_faq_path

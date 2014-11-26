@@ -1,6 +1,6 @@
 class FrontpagesController < ApplicationController
-  before_action :signed_in_user, only: [:index, :show, :new, :create, :destroy, :edit,  :update]
-  before_action :admin_user, only: [:index, :show, :new, :create, :destroy, :edit,  :update]
+  before_action :signed_in_user
+  before_action :admin_user
 
 
   def update_hello

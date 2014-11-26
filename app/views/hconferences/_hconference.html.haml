@@ -1,0 +1,12 @@
+%li
+  = link_to hconference.roman, hconference_path(hconference), class: "roman"
+  %br/
+  = hconference.season
+  = hconference.year
+  %br/
+  - if signed_in?
+    - if current_user.admin?
+      = link_to "edit", conf_path(hconference) + "/edit"
+      | #{link_to "delete", hconference, method: :delete, data: { confirm: "You sure?" }}
+      | #{link_to "schedules",hconference_schedules_path(hconference)}
+      | #{link_to "faqs",hconference_faqs_path(hconference)}
