@@ -14,6 +14,23 @@ body {
 h1, h2, h3 {
 
 }
+.sched-form {
+  font-size: .75em;
+
+  table {
+    text-align: left;
+    font-size: .75em;
+/*    background-color: white;
+    border-radius: 3px;
+    border-top: 1px solid gray;*/
+
+    td {
+      //border: 1px solid lightgray;
+    }
+  }
+}
+
+
 .question {
   cursor: pointer;
   margin-bottom: 1em;
@@ -141,24 +158,7 @@ li.sched, .ques {
 
 
 
-div.faq {
-  text-align: left;
-  font-size: 18px;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 40px;
 
-  div.question {
-    font-style: italic;
-    font-weight:bold;
-  }
-
-  div.answer {
-    margin-top: 20px;
-    margin-bottom: 50px;
-    line-height: 150%;
-  }
-}
 
 div#pp_top {
   width: 650px;
@@ -682,11 +682,7 @@ div#trav1 {
   }
 }
 
-div.faq-field {
-  font-size: .7em;
-  width: 60%;
-  margin: 0 auto;
-}
+
 
 div#tmun1 {
   width: 100%;

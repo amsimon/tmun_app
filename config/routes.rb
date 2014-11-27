@@ -18,7 +18,7 @@ TmunApp::Application.routes.draw do
     resources :faqs
     resources :schedules
     member do
-      get 'location'
+      get 'locations'
       get 'committees'
       get 'speakers'
       get 'position_papers'

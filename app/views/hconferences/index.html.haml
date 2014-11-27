@@ -11,6 +11,9 @@
       %br/
       = link_to 'Edit', edit_hconference_path(h), class: "admin-link"
       = link_to 'Destroy', h, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
+      %br/
+      = link_to 'FAQS', hconference_faqs_path(h), class: "admin-link"
+      = link_to 'Schedules', hconference_schedules_path(h), class: "admin-link"
 
 %br
 

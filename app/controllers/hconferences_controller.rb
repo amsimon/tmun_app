@@ -12,7 +12,7 @@ class HconferencesController < ApplicationController
     render layout: 'home', locals: {title: "Register", hconference: @hconference}
   end
 
-  def location
+  def locations
     @hconference = Hconference.friendly.find(params[:id])
 
     render layout: 'home', locals: {title: "Location", hconference: @hconference}
@@ -74,7 +74,7 @@ class HconferencesController < ApplicationController
     if @hconference.save
         @hconference.update(roman: (number_to_roman(@hconference.number)) )
         flash[:success] = "Conference details saved"
-        redirect_to (tritonmun_path + "/" + (@hconference.roman) )
+        redirect_to (@hconference)
     else
       render 'new'
     end
@@ -111,9 +111,7 @@ class HconferencesController < ApplicationController
 
 
     if @hconference.update_attributes(hconference_params)
-
-      @hconference.update(roman: (number_to_roman(@hconference.number)) )
-      flash[:success] = "Conference updated"
+      flash[:success] = "Home Conference updated"
       redirect_to @hconference
     else
       render 'edit'
@@ -128,9 +126,7 @@ class HconferencesController < ApplicationController
 
     def hconference_params
       params.require(:hconference).permit(:number, :season, :year, :location, :date, :early_price, :normal_price,
-                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman,
-                                          questions_attributes: [:id, :hconference_id, :q, :a, :_destroy],
-                                          schedules_attributes: [:id, :hconference_id, :date, :_destroy])
+                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman)
 
     end
 

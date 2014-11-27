@@ -27,7 +27,8 @@ class FaqsController < ApplicationController
     @faq = @hconference.faqs.build(faq_params)
 
     if @faq.save
-      redirect_to hconference_url(@hconference), notice: "Successfully created faq."
+      flash[:success] = "Successfully created faq."
+      redirect_to hconference_url(@hconference)
     else
       render :new
     end
@@ -43,7 +44,8 @@ class FaqsController < ApplicationController
     @hconference = Hconference.friendly.find(params[:hconference_id])
     @faq = Faq.find(params[:id])
     if @faq.update(faq_params)
-      redirect_to hconference_url(@hconference), notice: "Successfully updated faq."
+      flash[:success] = "Successfully updated faq."
+      redirect_to hconference_url(@hconference)
     else
       render :edit
     end
