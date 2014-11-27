@@ -1,27 +1,21 @@
-= render 'trav_conf_head'
-/
-  render season, year here
-%h2#season
-  = @tconference.season
-  = @tconference.year
-.conf_cont
-  = render "shared/tconf_nav"
 
-  .outer
-    .innerBox
-      %h2
-        %span Information
-      .infosBox
-        %table.infos
-          %tr
-            %td.label Date:
-            %td.info= @tconference.date
-          %tr
-            %td.label Location:
-            %td.info= @tconference.location
-        %br/
-        %br/
-        %br/
+
+.outer
+  .innerBox
+    %h2
+      %span Information
+    .infosBox
+      %table.infos
+        %tr
+          %td.label Date:
+          %td.info= @tconference.date
+        %tr
+          %td.label Location:
+          %td.info= @tconference.location
+      %br/
+      %br/
+      %br/
+  -#
     .innerBox
       %h2
         %span Deadlines

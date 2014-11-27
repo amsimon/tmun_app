@@ -52,6 +52,7 @@ class TconferencesController < ApplicationController
 
   def show
     @tconference = Tconference.friendly.find(params[:id])
+    render layout: 'travel_conf_overview'
   end
 
   def destroy
