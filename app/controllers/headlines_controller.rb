@@ -65,11 +65,9 @@ class HeadlinesController < ApplicationController
   # DELETE /headlines/1
   # DELETE /headlines/1.json
   def destroy
-    @headline.destroy
-    respond_to do |format|
-      format.html { redirect_to headlines_url }
-      format.json { head :no_content }
-    end
+    Headline.find(params[:id]).destroy
+    flash[:success] = "Headline deleted."
+    redirect_to admintools_url
   end
 
   private

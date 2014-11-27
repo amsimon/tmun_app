@@ -33,9 +33,6 @@ class StaticPagesController < ApplicationController
     render :layout => 'travel'
   end
 
-  def upcoming
-    render :layout => 'travel'
-  end
 
   def resources
     render :layout => 'travel'

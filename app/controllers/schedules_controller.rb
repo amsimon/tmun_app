@@ -63,10 +63,9 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-    set_parent
-    @schedule = Schedule.find(params[:id])
-    @schedule.destroy
-    redirect_to root_url, notice: "Successfully destroyed schedule."
+    Schedule.find(params[:id]).destroy
+    flash[:success] = "Schedule deleted."
+    redirect_to admintools_url
   end
 
   private

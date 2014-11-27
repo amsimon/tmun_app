@@ -52,10 +52,9 @@ class FaqsController < ApplicationController
   end
 
   def destroy
-    @hconference = Hconference.friendly.find(params[:hconference_id])
-    @faq = Faq.find(params[:id])
-    @faq.destroy
-    redirect_to hconference_url(@hconference), notice: "Successfully destroyed faq."
+    Faq.find(params[:id]).destroy
+    flash[:success] = "FAQ deleted."
+    redirect_to admintools_url
   end
 
   private
