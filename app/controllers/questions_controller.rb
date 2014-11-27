@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :signed_in_user
   before_action :admin_user
 
-
+  layout "admin"
 
   def create
 

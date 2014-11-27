@@ -1,0 +1,16 @@
+%h1.subhead
+  %span#main Manage Frontpage
+
+
+= render 'update_hello'
+%div.slides-cont
+  %ul.left.slides
+    %h2.slide-head2
+      Left Slides
+      %a.admin-link{:href => "/frontpages/new"} + Add Slide
+    = render @left_slides
+  %ul.right.slides
+    %h2.slide-head2
+      Right Slides
+      %a.admin-link{:href => "/frontpages/new"} + Add Slide
+    = render @right_slides

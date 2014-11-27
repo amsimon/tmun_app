@@ -23,14 +23,24 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
 
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+
+    opacity: .5;
+
+    text-transform: capitalize;
+
+
 
 }
 
 .admin-link:hover {
 
-    background: none;
-    color: red;
+    opacity: 1;
 
 }
+
+
+
 
 

@@ -5,9 +5,9 @@
         id: "logo"), root_path, id: "logo"                                  |
       .half
         %ul#left
-          %li= link_to "Travel",    travelteam_path, class: "nav-link"
-          %li= link_to "TritonMUN",    hconferences_path, class: "nav-link"
-          %li= link_to "SDIMUN", cconferences_path, class: "nav-link"
+          %li= link_to "Travel",    branch_path(Branch.travel.first), class: "nav-link"
+          %li= link_to "TritonMUN",    branch_path(Branch.home.first), class: "nav-link"
+          %li= link_to "SDIMUN", branch_path(Branch.college.first), class: "nav-link"
       .half
         %ul#right
           %li= link_to "About", about_path, class: "nav-link"

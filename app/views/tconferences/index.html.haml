@@ -1,25 +1,17 @@
 - provide(:title, 'All Home Conferences')
-%h1.subhead
-  %span#main Upcoming Conferences
+%h1{class:"subhead"}
+  %span{id:"main"}
+    Manage Travel Conferences
 
-.narrow
-  = will_paginate
-  - if signed_in?
-    / Admin viewing others'
-    - if current_user.admin?
-      %span.admin
-        = link_to "Add new travel conference", new_tconference_path
-  /
-    <#%= collection_select_tag(:user, :role, User.all,
-    \:id, :role, {}, {:name=>'user_filter'}) %>
-  %div.col-cont
-    %div.col
-      %h2 Fall 2014
-      %ul.users= render Tconference.fall
-    %div.col
-      %h2 Winter 2015
-      %ul.users= render Tconference.winter
-    %div.col
-      %h2 Spring 2015
-      %ul.users= render Tconference.spring
-  = will_paginate
+%div.admin-items-cont
+  - @tconferences.each do |t|
+    %div.item
+      %span.name
+        = t.name
+      %br/
+      = link_to 'Edit', edit_tconference_path(t), class: "admin-link"
+      = link_to 'Destroy', t, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
+
+%br
+
+= link_to 'New Travel Conference', new_tconference_path, class: 'admin-link'

@@ -9,5 +9,5 @@
   %br/
   - if signed_in?
     - if current_user.admin?
-      = link_to "edit", edit_tconference_path(tconference)
-      | #{link_to "delete", tconference, method: :delete, data: { confirm: "You sure?" }}
+      = link_to "edit", edit_tconference_path(tconference), class: "admin-link"
+      #{link_to "delete", tconference, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}

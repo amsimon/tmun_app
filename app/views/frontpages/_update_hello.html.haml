@@ -1,0 +1,14 @@
+= form_tag(_update_hello_path, method: "put") do
+  = label_tag(:hello, "Greeting:")
+  %br/
+  = text_area_tag :hello, Frontpage.hello, :cols => 10, :rows => 5
+  %br/
+  %table
+    %tr
+      %td= label_tag(:hello_link_text, "Link text:")
+      %td= text_field_tag :hello_link_text, Frontpage.hello_link_text, style:"width: 100%"
+    %tr
+      %td= label_tag(:hello_link_url, "Link url:")
+      %td= text_field_tag :hello_link_url, Frontpage.hello_link_url, style:"width: 100%"
+  %br/
+  = submit_tag("Update Greeting")

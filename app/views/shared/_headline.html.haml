@@ -5,5 +5,5 @@
     .apply
       = headline.button_text
     %br/
-    = link_to "edit", edit_headline_path(headline), class: "admin-link"
+    = link_to "edit", edit_branch_headline_path(parent, headline), class: "admin-link"
     | #{link_to "delete", headline, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}

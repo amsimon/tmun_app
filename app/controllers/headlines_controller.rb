@@ -1,7 +1,7 @@
 class HeadlinesController < ApplicationController
   before_action :signed_in_user
   before_action :admin_user
-  layout '_application'
+  layout 'admin'
 
   # GET /headlines
   # GET /headlines.json
@@ -23,6 +23,8 @@ class HeadlinesController < ApplicationController
 
   # GET /headlines/1/edit
   def edit
+    @headline = Headline.find(params[:id])
+    @parent = Branch.friendly.find(params[:branch_id])
   end
 
   # POST /headlines
@@ -46,6 +48,9 @@ class HeadlinesController < ApplicationController
   # PATCH/PUT /headlines/1
   # PATCH/PUT /headlines/1.json
   def update
+    @headline = Headline.find(params[:id])
+    @parent = Branch.friendly.find(params[:branch_id])
+
     respond_to do |format|
       if @headline.update(headline_params)
         format.html { redirect_to @headline, notice: 'Headline was successfully updated.' }

@@ -2,6 +2,8 @@ class CconferencesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user, only: [:new, :create, :destroy, :edit,  :update]
 
+  layout "admin", only: [:all, :new, :edit]
+
 
   def upcoming
     @cconference = Cconference.friendly.find(params[:id])
@@ -77,6 +79,8 @@ class CconferencesController < ApplicationController
 
   def index
     @cconferences = Cconference.paginate(page: params[:page])
+
+    render :layout => 'admin'
   end
 
   private

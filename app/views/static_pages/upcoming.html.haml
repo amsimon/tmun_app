@@ -1,0 +1,118 @@
+- provide(:title, 'Travel Team')
+%h1.subhead
+  %span#main Upcoming Conferences
+
+
+.narrow
+  - if signed_in?
+    / Admin viewing others'
+    - if current_user.admin?
+      %span.admin
+        = link_to "Add new travel conference", new_tconference_path, class: "admin-link"
+  /
+    <#%= collection_select_tag(:user, :role, User.all,
+    \:id, :role, {}, {:name=>'user_filter'}) %>
+  %div.col-cont
+    %div.col
+      %h2 Fall 2014
+      %ul.users= render Tconference.fall
+    %div.col
+      %h2 Winter 2015
+      %ul.users= render Tconference.winter
+    %div.col
+      %h2 Spring 2015
+      %ul.users= render Tconference.spring
+
+-#
+  .upcoming-cont
+    .outer
+      .upcoming
+        / <h1 class="subhead"><span id="main">Upcoming Conferences</span></h1>
+        #trav1
+          .innerRom
+            .trav_cont
+              %h2.lowerhead
+                %span
+                  %i.flaticon-autumn1
+                  Fall 2014
+              %a{:href => "/tritonmun/X"}
+                .romanBox.disabled TritonMUN X
+              .desc
+                .title
+                  TritonMUN X Fall High School Conference
+                .details
+                  November 1, 2014
+                  %br/
+                  %a{:href => "https://docs.google.com/forms/d/1b9KIyqVBj1SntUnyCgYXM_E5km5Zgn0OQFFluKWh8pg/viewform", :style => "text-decoration: underline; color: #fffd00;"}
+                    Apply
+                  to be on the Dais, Crisis Staff, or Organizing Committee!
+                  %br/
+                %span.email_address tritonmun.ucsd@gmail.com
+            / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+            .trav_cont
+              %a{:href => "http://www.sbmun.org/committees.html"}
+                .romanBox.disabled SBIMUN
+              .desc
+                .title
+                  UC Santa Barbara Intercollegiate Model United Nations Conference
+                .details
+                  November 7-9, 2014
+                  %br/
+                  Santa Barbara, CA
+          / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+          .innerRom
+            .trav_cont
+              %h2.lowerhead
+                %span
+                  %i.flaticon-snowflake
+                  Winter 2015
+              %a{:href => "http://davismun.org/committees/"}
+                .romanBox.disabled Aggie MUN
+              .desc
+                .title
+                  UC Davis Collegiate Conference
+                .details
+                  January 23-25, 2015
+                  %br/
+                  The Citizen Hotel, Downtown Sacramento
+            / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+            .trav_cont
+              .romanBox.disabled UCSD Scrimmage
+              .desc
+                .title
+                  UC San Diego Model UN Scrimmage
+                .details
+                  February (TBA)
+                  %br/
+                  International House, UC San Diego
+            / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+            .trav_cont
+              %a{:href => "http://www.ucbmun.org/committees.php"}
+                .romanBox.disabled UCBMUN
+              .desc
+                .title
+                  UC Berkeley Collegiate Conference
+                .details
+                  February 28 - March 4, 2015
+                  %br/
+                  The Hilton, San Francisco
+          / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+          .innerRom
+            .trav_cont
+              %h2.lowerhead
+                %span
+                  %i.flaticon-flower18
+                  Spring 2015
+              %a{:href => "http://www.munemory.org/"}
+                .romanBox.disabled MUNE
+              .desc
+                .title
+                  Model United Nations at Emory III
+                .details
+                  April 16 - 19, 2015
+                  %br/
+                  Emory University
+                  %br/
+                  Atlanta, GA
+                    / Learn more: https://docs.google.com/document/d/1vZA4ELijAovqtCjM6C7ZfivcIHpXJmWrgzSn95JfaaI/edit
+                    / <a href="" class="past-confs">view past conferences</a>

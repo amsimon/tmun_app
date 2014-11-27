@@ -1,7 +1,9 @@
 class TrainingsController < ApplicationController
   before_action :signed_in_user
   before_action :admin_user
-  layout '_application'
+  layout 'admin'
+
+
 
   # GET /trainings
   # GET /trainings.json

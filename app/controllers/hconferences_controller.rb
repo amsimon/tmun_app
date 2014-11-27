@@ -2,7 +2,7 @@ class HconferencesController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user, only: [:new, :create, :destroy, :edit,  :update]
 
-
+  layout "admin", only: [:all, :new, :edit]
 
 
   def register
@@ -56,6 +56,8 @@ class HconferencesController < ApplicationController
     @hconference_fall = Hconference.all.second
     @hconference_spring = Hconference.first
     @hconferences = Hconference.paginate(page: params[:page])
+
+    render :layout => 'admin'
   end
 
   def new
@@ -81,13 +83,20 @@ class HconferencesController < ApplicationController
 
   def show
     @hconference = Hconference.friendly.find(params[:id])
+
+    @reg_faq = Faq.specific_faq(@hconference, "Registration")
+
+    @day1_sched = Schedule.specific_schedule(@hconference, "Day 1")
+    @day2_sched = Schedule.specific_schedule(@hconference, "Day 2")
+    @day3_sched = Schedule.specific_schedule(@hconference, "Day 3")
+
     render layout: 'home_conf_overview'
   end
 
   def destroy
     Hconference.friendly.find(params[:id]).destroy
     flash[:success] = "Home conference deleted."
-    redirect_to tritonmun_url
+    redirect_to hconferences_url
   end
 
   def edit

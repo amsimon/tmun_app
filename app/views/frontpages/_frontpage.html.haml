@@ -1,0 +1,17 @@
+%li
+  %div{:class => "phot-cont slide s-#{frontpage.side}"}
+    .overlay-cont
+      .overlay
+        - if frontpage.description.present?
+          .title
+            = frontpage.title
+        - else
+          .word
+            = frontpage.title
+        %span.small= frontpage.description
+        - if frontpage.link_href != ""
+          %a.butt{:href => frontpage.link_href}= frontpage.link_text
+    = image_tag frontpage.image_url, style:"width: 100%; vertical-align: middle"
+  %br/
+  #{link_to "edit", ("/frontpages/" + (frontpage.id).to_s + "/edit"), method: :get, class: "admin-link"}
+  #{link_to "delete", frontpage, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}

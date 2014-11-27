@@ -14,16 +14,22 @@ class StaticPagesController < ApplicationController
 
 
   def travelteam
-    @travel_branch = Branch.friendly.where(name: "Travel").first
+    @travel_branch = Branch.find(params[:id])
     @schedule = @travel_branch.schedules.first
-    @events = @schedule.events
-
-
+    if @schedule.present?
+      @events = @schedule.events
+    end
 
     render :layout => 'travel'
   end
 
   def past
+    render :layout => 'travel'
+  end
+
+  def upcoming
+    @tconferences = Tconference.paginate(page: params[:page])
+
     render :layout => 'travel'
   end
 

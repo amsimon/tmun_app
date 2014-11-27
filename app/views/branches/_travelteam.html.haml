@@ -30,11 +30,11 @@
 #trav-col1
   = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
   %ul
-    = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
+    = render partial: "shared/headline", collection: Branch.travel.first.headlines, as: :headline, locals: {parent: Branch.travel.first}
 #trav-col2
   %h2 Important Dates
-  = link_to "New Schedule", new_branch_schedule_path(@travel_branch, @schedule), class: "admin-link"
-  = render partial: "schedules/schedule", object: @schedule, locals: {conf: "false"}
+  = link_to "New Schedule", new_branch_schedule_path(Branch.travel.first), class: "admin-link"
+  = render partial: "schedules/schedule", object: Branch.travel.first.schedules.first, locals: {conf: "false"}
   %h2 Contact the Team
   #inner
     %span.email_address{:style => "color: #d7d7d7; font-size: 1.5em"} travelingtritons@gmail.com

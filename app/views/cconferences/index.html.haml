@@ -1,16 +1,16 @@
 - provide(:title, 'SDIMUN')
+%h1{class:"subhead"}
+  %span{id:"main"}
+    Manage Collegiate Conferences
 
-= parent_layout "application" do
-  %h1#tritonmun
-    %span#main
-      SDIMUN
+%div.admin-items-cont
+  - @cconferences.each do |c|
+    %div.item
+      %span.name
+        = c.number
+      %br/
+      = link_to 'Edit', edit_cconference_path(c), class: "admin-link"
+      = link_to 'Destroy', c, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
 
-  .introducing
-    .big
-      Introducing
-      %span
-        SDIMUN
-    .small San Diego Intercollegiate MUN Scrimmage
-
-    = link_to Cconference.last do
-      %span.learn LEARN MORE
+%br/
+= link_to 'New Collegiate Conference', new_cconference_path, class: 'admin-link'

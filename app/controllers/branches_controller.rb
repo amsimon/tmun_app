@@ -2,6 +2,8 @@ class BranchesController < ApplicationController
   before_action :signed_in_user
   before_action :admin_user
 
+  layout 'admin', except: [:show]
+
   # GET /branches
   # GET /branches.json
   def index
@@ -11,6 +13,11 @@ class BranchesController < ApplicationController
   # GET /branches/1
   # GET /branches/1.json
   def show
+    @branch = Branch.friendly.find(params[:id])
+
+    if @branch.name == "travelteam"
+      render layout: "travel"
+    end
   end
 
   # GET /branches/new
@@ -20,6 +27,7 @@ class BranchesController < ApplicationController
 
   # GET /branches/1/edit
   def edit
+    @branch = Branch.friendly.find(params[:id])
   end
 
   # POST /branches
@@ -41,6 +49,7 @@ class BranchesController < ApplicationController
   # PATCH/PUT /branches/1
   # PATCH/PUT /branches/1.json
   def update
+    @branch = Branch.friendly.find(params[:id])
     respond_to do |format|
       if @branch.update(branch_params)
         format.html { redirect_to @branch, notice: 'Branch was successfully updated.' }
@@ -70,7 +79,7 @@ class BranchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
-      params[:branch]
+      params.require(:branch).permit(:name)
     end
 
     def admin_user

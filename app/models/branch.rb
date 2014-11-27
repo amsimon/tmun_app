@@ -8,8 +8,9 @@ class Branch < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name
 
-  scope :travel, -> { where(name: "Travel") }
-  scope :home, -> { where(name: "Home") }
+  scope :travel, -> { where(name: "travelteam") }
+  scope :home, -> { where(name: "tritonmun") }
+  scope :college, -> { where(name: "sdimun") }
 
 
   def self.specific_branch(name)

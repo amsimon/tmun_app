@@ -1,0 +1,30 @@
+.forms
+  = form_for(@frontpage) do |f|
+    = render 'shared/error_messages', object: f.object
+    %table.sign
+      %tr
+        %td= f.label :side, "Left"
+        %td{:style => "text-align: left"}= f.radio_button :side, "left", :checked => "checked"
+      %tr
+        %td= f.label :side, "Right"
+        %td{:style => "text-align: left"}= f.radio_button :side, "right"
+      %tr
+        %td= f.label :bg_color
+        %td= f.text_field :bg_color
+      %tr
+        %td= f.label :title
+        %td= f.text_field :title
+      %tr
+        %td= f.label :description
+        %td= f.text_field :description
+      %tr
+        %td= f.label :link_href
+        %td= f.text_field :link_href
+      %tr
+        %td= f.label :link_text
+        %td= f.text_field :link_text
+      %tr
+        %td= f.label "Url to image (use imgur) [temporary]"
+        %td= f.text_field :image_url
+    %br/
+    = f.submit "Save Slide"

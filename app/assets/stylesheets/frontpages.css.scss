@@ -2,19 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.slides-cont {
+  overflow: hidden;
+  padding-top: 2em;
+  margin-top: 2em;
+
+  border-top: 1px solid gray;
+}
+
+
 h2.slide-head2 {
-  a {
-    text-decoration: none;
-    font-size: .6em;
-    color: gray;
 
-    margin-left: 1em;
-
-  }
-
-  a:hover {
-
-  }
 }
 
 .s-left {
@@ -42,10 +40,13 @@ h2.slide-head2 {
   float: left;
    li {
      overflow: auto;
-     padding: 10px 0;
-     border-top: 1px solid lightgray;
+     padding: 1em;
+     border-bottom: 1px solid gray;
+     background-color: white;
+     border-radius: 3px;
+     margin-bottom: 1em;
      &:last-child {
-       border-bottom: 1px solid lightgray;
+       //border-bottom: 1px solid gray;
 
      }
 

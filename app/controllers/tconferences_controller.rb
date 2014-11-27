@@ -3,6 +3,8 @@ class TconferencesController < ApplicationController
   before_action :admin_user, only: [:new, :create, :destroy, :edit,  :update]
 
 
+  layout "admin", only: [:new, :edit]
+
   def upcoming
     @tconference = Tconference.friendly.find(params[:id])
 
@@ -77,7 +79,7 @@ class TconferencesController < ApplicationController
   def index
     @tconferences = Tconference.paginate(page: params[:page])
 
-    render :layout => 'travel'
+    render :layout => 'admin'
   end
 
   private

@@ -1,6 +1,9 @@
 %p#notice= notice
 
 
-= link_to 'Edit', edit_branch_path(@branch)
-\|
-= link_to 'Back', branches_path
+- if @branch.name == "tritonmun"
+  = render partial: 'tritonmun'
+- elsif @branch.name == "travelteam"
+  = render partial: 'travelteam'
+- elsif @branch.name == "sdimun"
+  = render partial: 'branches/sdimun'

@@ -13,21 +13,19 @@
     = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
     .news-box
       %ul
-        = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline
+        = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
   .inner
     = link_to "New Home Headline", new_branch_headline_url(Branch.home.first), class: "admin-link"
     .news-box
       %ul
-        = render partial: "shared/headline", collection: Branch.home.first.headlines.limit(3), as: :headline
+        = render partial: "shared/headline", collection: Branch.home.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.home.first}
 .gde
   = image_tag "logo4.png", class: "bg"
+  = link_to "Edit this section", frontpages_path, class: "admin-link"
   %h1#home_h1
     %span#main Model United Nations at UCSD
   #copy
     = Frontpage.hello
-    /
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua.
     %br/
     %a{:href => Frontpage.hello_link_url, :style => "position: relative; z-index: 999999;"}
       %span#learn

@@ -2,6 +2,8 @@ class FrontpagesController < ApplicationController
   before_action :signed_in_user
   before_action :admin_user
 
+  layout "admin"
+
 
   def update_hello
 
@@ -19,12 +21,12 @@ class FrontpagesController < ApplicationController
 
   def new
     @frontpage = Frontpage.new
-    render :layout => 'sessions'
+
   end
 
   def show
     @frontpage = Frontpage.find(params[:id])
-    render :layout => 'sessions'
+
   end
 
   def create
@@ -43,7 +45,6 @@ class FrontpagesController < ApplicationController
     @left_slides = Frontpage.where(side: 'left').to_a
     @right_slides = Frontpage.where(side: 'right').to_a
 
-    render :layout => 'sessions'
   end
 
   def destroy
@@ -55,7 +56,6 @@ class FrontpagesController < ApplicationController
   def edit
     @frontpage = Frontpage.find(params[:id])
 
-    render :layout => 'sessions'
   end
 
   def update

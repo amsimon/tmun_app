@@ -62,17 +62,19 @@
     .innerBox
       %h2
         %span Registration FAQ
-      = link_to "New FAQ", new_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
-      = link_to "edit", edit_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
-      .faq.admin-editable
-        %ol.questions
-          - Faq.specific_faq(@hconference, "Registration").questions.each do |q|
-            %li
-              .question
-                = q.content.html_safe
-              - q.answers.each do |a|
-                .answer
-                  = a.content.html_safe
+      - if @reg_faq.present?
+        = link_to "edit", edit_hconference_faq_path(@hconference, @reg_faq), class: "admin-link"
+        .faq.admin-editable
+          %ol.questions
+            - @reg_faq.questions.each do |q|
+              %li
+                .question
+                  = q.content.html_safe
+                - q.answers.each do |a|
+                  .answer
+                    = a.content.html_safe
+      - else
+        = link_to "Create Registration FAQ", new_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
         -#.question Where do I register?
         -#.answer
         -#  Please register online #{link_to "here.", (conf_path(@hconference) + "/" + "register")}
@@ -166,9 +168,13 @@
     .innerBox
       %h2
         %span Schedule
-      = link_to "New Schedule", new_hconference_schedule_path(@hconference, Schedule.specific_schedule(@hconference, "Day 1")), class: "admin-link"
-      = render partial: "schedules/schedule", object: Schedule.specific_schedule(@hconference, "Day 1"), locals: {conf: "true"}
-      = render partial: "schedules/schedule", object: Schedule.specific_schedule(@hconference, "Day 2"), locals: {conf: "true"}
+      = link_to "New Schedule", new_hconference_schedule_path(@hconference), class: "admin-link"
+      - if @day1_sched.present?
+        = render partial: "schedules/schedule", object: @day1_sched, locals: {conf: "true"}
+      - if @day2_sched.present?
+        = render partial: "schedules/schedule", object: @day2_sched, locals: {conf: "true"}
+      - if @day3_sched.present?
+        = render partial: "schedules/schedule", object: @day3_sched, locals: {conf: "true"}
       -#
         %table.sched
           %caption
