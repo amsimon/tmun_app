@@ -16,7 +16,7 @@ class SchedulesController < ApplicationController
 
   def new
 
-    parent_klasses = %w[branch hconference]
+    parent_klasses = %w[branch hconference cconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
       @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
       @schedule = @parent.schedules.build
@@ -41,8 +41,8 @@ class SchedulesController < ApplicationController
 
   def edit
     @schedule = Schedule.find(params[:id])
-    parent_klasses = %w[branch hconference]
-    if klass == parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
       @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
@@ -50,8 +50,8 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    parent_klasses = %w[branch hconference]
-    if klass == parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
       @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
     @schedule = Schedule.find(params[:id])
@@ -72,9 +72,9 @@ class SchedulesController < ApplicationController
   private
 
   def set_parent
-    parent_klasses = %w[branch hconference]
-    if klass == parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
   end

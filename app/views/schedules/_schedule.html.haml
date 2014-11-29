@@ -4,9 +4,11 @@
       %table.branch-schedule
         %caption
           - if conf != "false"
-            = schedule.name
-            \ :
-            -#= schedule.date.strftime("%A, %b %-d, %Y")
+            %span.name
+              = schedule.name
+            %br/
+            %span.date
+              = schedule.date.strftime("%A, %b %-d, %Y")
         %tr
           - if conf != "true"
             %th Date
@@ -19,5 +21,5 @@
         / Admin viewing others'
         - if current_user.admin?
           %span.admin
-            = link_to "edit", edit_schedule_path(schedule.id), class: "admin-link"
-            | #{link_to "delete", schedule, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}
+            = link_to "edit", [:edit, parent, schedule], class: "admin-link"
+            = link_to "delete", schedule, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"

@@ -10,6 +10,30 @@ table.branch-schedule {
   border-collapse: collapse;
   border-spacing: 0;
 
+  caption {
+
+    //border-bottom: 1px solid #b1b1b1;
+    color: #181818;
+    padding: .5em 0;
+    margin-bottom: .1em;
+    font-size: 1em;
+    font-weight: bold;
+    vertical-align: middle;
+    span.name{
+      font-size: 2em;
+    }
+    span.date{
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+
+  th {
+    background: #aeaeae;
+    border: 1px solid #cccccc;
+    padding: .25em .5em;
+  }
+
   tr {
     td {
       border: 1px solid #cccccc;

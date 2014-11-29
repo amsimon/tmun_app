@@ -170,11 +170,11 @@
         %span Schedule
       = link_to "New Schedule", new_hconference_schedule_path(@hconference), class: "admin-link"
       - if @day1_sched.present?
-        = render partial: "schedules/schedule", object: @day1_sched, locals: {conf: "true"}
+        = render partial: "schedules/schedule", object: @day1_sched, locals: {parent: @hconference, conf: "true"}
       - if @day2_sched.present?
-        = render partial: "schedules/schedule", object: @day2_sched, locals: {conf: "true"}
+        = render partial: "schedules/schedule", object: @day2_sched, locals: {parent: @hconference, conf: "true"}
       - if @day3_sched.present?
-        = render partial: "schedules/schedule", object: @day3_sched, locals: {conf: "true"}
+        = render partial: "schedules/schedule", object: @day3_sched, locals: {parent: @hconference, conf: "true"}
       -#
         %table.sched
           %caption
