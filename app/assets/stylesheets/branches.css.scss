@@ -40,6 +40,9 @@ table.branch-schedule {
       margin: 0;
       padding: .5em;
     }
+    td:first-child {
+      white-space: nowrap;
+    }
   }
   tr:nth-child(even) {
     background-color: #dfdfdf;

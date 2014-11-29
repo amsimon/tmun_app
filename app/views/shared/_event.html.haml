@@ -4,7 +4,6 @@
       = event.date.try(:strftime, "%b %d %Y")
   %td
     = event.time_start.try(:strftime, "%-I:%M %p")
-    %br/
     \-
     = event.time_end.try(:strftime, "%-I:%M %p")
   %td
