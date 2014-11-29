@@ -1,6 +1,6 @@
 class BranchesController < ApplicationController
-  before_action :signed_in_user
-  before_action :admin_user
+  before_action :signed_in_user, except: [:show]
+  before_action :admin_user, except: [:show]
 
   layout 'admin', except: [:show]
 
