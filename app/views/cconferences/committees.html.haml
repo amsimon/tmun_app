@@ -2,4 +2,7 @@
   %div#comm_cont
     = link_to "Add New Topic", new_cconference_topic_path(@cconference), class: "admin-link"
 
-    = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @cconference}
+    - if @topics.present?
+      = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @cconference}
+    - else
+      Committees will be announced shortly.

@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
 
     parent_klasses = %w[cconference hconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
       @topic = @parent.topics.build
     end
 
@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
   def create
     parent_klasses = %w[cconference hconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
       @topic = @parent.topics.build(topic_params)
     end
 
@@ -73,7 +73,7 @@ class TopicsController < ApplicationController
   def set_parent
     parent_klasses = %w[cconference hconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
   end

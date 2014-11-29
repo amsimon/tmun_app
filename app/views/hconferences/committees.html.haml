@@ -1,2 +1,8 @@
-%div.conf_cont
-  Committees will be announced shortly.
+.narrow
+  %div#comm_cont
+    = link_to "Add New Topic", new_hconference_topic_path(@hconference), class: "admin-link"
+
+    - if @topics.present?
+      = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @hconference}
+    - else
+      Committees will be announced shortly.
