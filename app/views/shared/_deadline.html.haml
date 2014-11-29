@@ -1,0 +1,7 @@
+%tr
+  %td.label.date
+    = deadline.date.strftime("%B %d, %Y")
+  %td.info
+    = deadline.content
+    = link_to "edit", [:edit, parent, deadline], class: "admin-link"
+    = link_to "delete", deadline, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"

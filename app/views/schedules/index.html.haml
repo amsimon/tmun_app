@@ -1,10 +1,9 @@
-%h1 Listing Schedules
+%h1.subhead
+  %span#main Manage Schedules
+
+= link_to "New Schedule", url_for([:new, @parent, :schedule]), class: "admin-link"
+= render partial: "schedule", collection: @parent.schedules, as: :schedule, locals: {parent: @parent, conf: "all"}
 
 
-= render partial: "schedule", collection: @parent.schedules, locals: {parent: @parent, conf: "all"}
-
-%br
-
-= link_to 'New Schedule', new_hconference_schedule_path
 
 

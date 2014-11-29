@@ -1,17 +1,11 @@
-%h1 Listing headlines
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @headlines.each do |headline|
-    %tr
-      %td= link_to 'Show', headline
-      %td= link_to 'Edit', edit_headline_path(headline)
-      %td= link_to 'Destroy', headline, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+%h1{class:"subhead"}
+  %span{id:"main"}
+    Managing Headlines
+= link_to "New Headline", new_branch_headline_url(@parent), class: "admin-link"
+#news.outer{style: "width: 50%;"}
+  .inner
+  .news-box
+    %ul
+      = render partial: "shared/headline", collection: @headlines, as: :headline, locals: {parent: @parent}
 %br
 
-= link_to 'New Headline', new_headline_path

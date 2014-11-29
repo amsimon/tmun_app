@@ -1,6 +1,8 @@
 TmunApp::Application.routes.draw do
 
 
+  resources :deadlines
+
   resources :trainings
 
   resources :headlines
@@ -10,13 +12,28 @@ TmunApp::Application.routes.draw do
   resources :branches do
     resources :schedules
     resources :headlines
+
   end
-  resources :cconferences
+  resources :cconferences do
+    resources :faqs
+    resources :schedules
+    resources :topics
+    resources :deadlines
+
+    member do
+      get 'locations'
+      get 'committees'
+      get 'speakers'
+      get 'register'
+    end
+  end
   resources :tconferences
 
   resources :hconferences do
     resources :faqs
     resources :schedules
+    resources :topics
+    resources :deadlines
     member do
       get 'locations'
       get 'committees'

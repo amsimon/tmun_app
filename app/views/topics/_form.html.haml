@@ -1,4 +1,4 @@
-= form_for @topic do |f|
+= form_for [@parent, @topic] do |f|
   - if @topic.errors.any?
     #error_explanation
       %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
@@ -6,5 +6,32 @@
         - @topic.errors.full_messages.each do |msg|
           %li= msg
 
+  %fieldset
+    %table.field-table
+      %tr
+        %td
+          = f.label :committee
+        %td
+          = f.text_field :committee
+      %tr
+        %td
+          = f.label :topic
+        %td
+          = f.text_field :topic
+      %tr
+        %td
+          = f.label :image_url, "Image URL. Use imgur.com (images should be longer than tall)"
+        %td
+          = f.text_field :image_url
+      %tr
+        %td
+          = f.label :description
+        %td
+          = f.text_area :description
+      %tr
+        %td
+          = f.label :guide_filename, "Topic Guide Filename (e.g. 'WHO.pdf')"
+        %td
+          = f.text_field :guide_filename
   .actions
     = f.submit 'Save'

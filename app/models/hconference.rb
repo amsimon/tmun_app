@@ -6,6 +6,8 @@ class Hconference < ActiveRecord::Base
 
   #attr_accessible :q, :questions_attributes
   has_many :faqs
+  has_many :topics
+  has_many :deadlines
 
   accepts_nested_attributes_for :faqs, allow_destroy: true
 

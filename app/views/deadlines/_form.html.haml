@@ -1,0 +1,15 @@
+= form_for [@parent, @deadline] do |f|
+  - if @deadline.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@deadline.errors.count, "error")} prohibited this deadline from being saved:"
+      %ul
+        - @deadline.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.label :date
+  = f.date_field :date
+  %br/
+  = f.label :content, "Deadline description"
+  = f.text_area :content
+  .actions
+    = f.submit 'Save'

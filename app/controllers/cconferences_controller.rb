@@ -5,36 +5,31 @@ class CconferencesController < ApplicationController
   layout "admin", only: [:all, :new, :edit]
 
 
-  def upcoming
-    @cconference = Cconference.friendly.find(params[:id])
-
-    @cconferences = Cconference.paginate(page: params[:page])
-
-    render layout: 'travel', locals: {title: "Locations", cconference: @cconference}
+  def register
+    @cconference = Cconference.find(params[:id])
+    render layout: 'collegiate', locals: {title: "Register", cconference: @cconference}
   end
 
-  def resources
-    @cconference = Cconference.friendly.find(params[:id])
-
-    render layout: 'travel', locals: {title: "Committees", cconference: @cconference}
+  def locations
+    @cconference = Cconference.find(params[:id])
+    render layout: 'collegiate', locals: {title: "Location", cconference: @cconference}
   end
 
-  def training
-    @cconference = Cconference.friendly.find(params[:id])
+  def committees
+    @cconference = Cconference.find(params[:id])
+    @topics = @cconference.topics.all
 
-    render layout: 'travel', locals: {title: "Research", cconference: @cconference}
+    render layout: 'collegiate', locals: {title: "Committees", cconference: @cconference}
   end
+  
 
-  def awards
-    @cconference = Cconference.friendly.find(params[:id])
-
-    render layout: 'travel', locals: {title: "Speakers", cconference: @cconference}
+  def speakers
+    @cconference = Cconference.find(params[:id])
+    render layout: 'collegiate', locals: {title: "Speakers", cconference: @cconference}
   end
-
 
   def new
     @cconference = Cconference.new
-
   end
 
 
@@ -90,7 +85,7 @@ class CconferencesController < ApplicationController
   end
 
   def cconference_params
-    params.require(:cconference).permit(:number, :season, :year, :date)
+    params.require(:cconference).permit(:number, :season, :year, :date, :reg_url)
 
   end
 

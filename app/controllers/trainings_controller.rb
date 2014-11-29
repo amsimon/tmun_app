@@ -14,6 +14,7 @@ class TrainingsController < ApplicationController
   # GET /trainings/1
   # GET /trainings/1.json
   def show
+    @training = Training.find(params[:id])
   end
 
   # GET /trainings/new
@@ -23,6 +24,7 @@ class TrainingsController < ApplicationController
 
   # GET /trainings/1/edit
   def edit
+    @training = Training.find(params[:id])
   end
 
   # POST /trainings

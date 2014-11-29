@@ -6,7 +6,8 @@ class HeadlinesController < ApplicationController
   # GET /headlines
   # GET /headlines.json
   def index
-    @headlines = Headline.all
+    @parent = Branch.friendly.find(params[:branch_id])
+    @headlines = @parent.headlines.all
   end
 
   # GET /headlines/1
@@ -51,14 +52,11 @@ class HeadlinesController < ApplicationController
     @headline = Headline.find(params[:id])
     @parent = Branch.friendly.find(params[:branch_id])
 
-    respond_to do |format|
-      if @headline.update(headline_params)
-        format.html { redirect_to @headline, notice: 'Headline was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @headline.errors, status: :unprocessable_entity }
-      end
+    if @headline.update_attributes(headline_params)
+      flash[:success] = "Headline updated"
+      redirect_to branch_headlines_url(@parent)
+    else
+      render 'edit'
     end
   end
 

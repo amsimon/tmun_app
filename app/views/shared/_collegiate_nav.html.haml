@@ -1,3 +1,11 @@
 #buttonBox
-  = link_to cconference_path(@cconference) do
+  = link_to @cconference do
     .button Overview
+  = link_to locations_cconference_path(@cconference) do
+    .button Location
+  = link_to committees_cconference_path(@cconference) do
+    .button Committees
+  = link_to speakers_cconference_path(@cconference) do
+    .button Speakers
+  = link_to register_cconference_path(@cconference) do
+    #register.button Register

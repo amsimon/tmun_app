@@ -2,6 +2,14 @@ $bgColor: #d9d9d9;
 $grayMediumLight: #eaeaea;
 $headerHeight: 5em;
 
+
+$borderLight: #cccccc;
+
+$headerGray: #2b2b2b;
+
+$mediumGray: #848484;
+$tritonGold: #6fa3df;
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -19,6 +27,108 @@ body {
   background-color: $bgColor;
   height: 100%;
 }
+
+table.field-table {
+  text-align: right;
+  label{
+
+  }
+  input {
+    text-align: left;
+  }
+}
+
+div.two-half-cols {
+  font-size: 0;
+  height: 100%;
+
+  .col {
+    height: 100%;
+    font-size: 18px;
+    width: calc(50% - 1px);
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #cccccc;
+  }
+
+  div.item-cont {
+
+
+    margin: 0;
+
+
+
+    div.content {
+      padding: .5em 1.5em;
+    }
+
+    div.content.information {
+
+      td {
+        padding: .3em 0em;
+      }
+
+      td.label {
+        text-align: right;
+
+        width: 180px;
+        color: $mediumGray;
+        font-style: italic;
+        margin-bottom: 0em;
+
+        padding-right: 3em;
+      }
+
+
+      td.info {
+        float: left;
+        text-align: left;
+        min-width: 125px;
+        line-height: 100%;
+
+        span.date {
+
+          vertical-align: middle;
+          font-size: .6em;
+          text-transform: uppercase;
+          font-style: italic;
+          color: gray;
+          margin-left: 12px;
+
+        }
+      }
+    }
+
+    h2 {
+      background-image: url("line-pixel.png");
+      background-repeat:repeat-x;
+      text-align: center;
+      background-position:center;
+
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-weight: 1000;
+      color: #2a2a2a;
+      font-size: 2em;
+      text-shadow:  0px -1px 0px rgba(0, 0, 0, 1);
+      margin-bottom: 16px;
+
+      span {
+        background-color:  $bgColor;
+        padding: 0px 1em;
+      }
+    }
+  }
+  div.col:last-child {
+    border-right: none;
+    padding-right: 0px;
+    margin-right: 0px;
+  }
+
+
+}
+
+
+
 
 div#under-bar {
   text-align: center;

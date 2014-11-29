@@ -40,6 +40,7 @@
         :javascript
           $(document).ready( function() {
             $('.admin-link').show();
+            $('.admin-link-toggle').show();
           });
   %body
     = render 'layouts/header'
@@ -47,3 +48,6 @@
       - flash.each do |key, value|
         %div{:class => "alert alert-#{key}"}= value
       = yield
+    = link_to "javascript:;" do
+      %div.admin-link-toggle
+        TOGGLE ADMIN LINKS

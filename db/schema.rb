@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127043826) do
+ActiveRecord::Schema.define(version: 20141129011808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20141127043826) do
     t.string   "season"
     t.string   "year"
     t.string   "date"
+    t.text     "reg_url"
+  end
+
+  create_table "deadlines", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "cconference_id"
+    t.integer  "hconference_id"
+    t.integer  "tconference_id"
+    t.datetime "date"
+    t.text     "content"
   end
 
   create_table "events", force: true do |t|
@@ -113,6 +124,7 @@ ActiveRecord::Schema.define(version: 20141127043826) do
     t.string   "late_price"
     t.integer  "delegation_fee"
     t.string   "roman"
+    t.text     "reg_url"
   end
 
   add_index "hconferences", ["number"], name: "index_hconferences_on_number", unique: true, using: :btree

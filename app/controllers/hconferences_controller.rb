@@ -20,6 +20,7 @@ class HconferencesController < ApplicationController
 
   def committees
     @hconference = Hconference.friendly.find(params[:id])
+    @topics = @hconference.topics.all
 
     render layout: 'home', locals: {title: "Committees", hconference: @hconference}
   end

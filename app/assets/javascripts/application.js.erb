@@ -23,9 +23,15 @@ $(document).ready( function() {
     $(".answer").hide();
 
     $(".admin-link").hide();
+    $('.admin-link-toggle').hide();
 
     $(".question").click( function() {
        $(this).next().stop().slideToggle('fast');
+    });
+
+    $(".admin-link-toggle").click( function() {
+        //alert('sdfsdfsdfs');
+        $(".admin-link").toggle();
     });
 
     $(".question").prepend("<span class='arrow'>&#x25BC;</span>");

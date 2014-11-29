@@ -1,5 +1,5 @@
 $bgColor: #d9d9d9;
-$borderLight: #cccccc;
+$borderLight: #ffffff;
 
 $headerGray:  #424242;
 
@@ -268,23 +268,25 @@ div#comm_cont {
 
 
       h3 {
+        margin-top: 0;
         font-size: 1.6em;
-        position:absolute;
         width: 100%;
         text-align: center;
-        top: 404px;
         padding: 5px 0px;
         color: rgba(255,255,255,.9);
-
-        background-color: rgba(0,0,0,.7);
+        background-color: #323951;
         text-shadow: 0px 1px 2px rgba(0,0,0,.7);
-
       }
 
-      img.banner {
-        margin-top: 30px;
+      div.image-cont {
+        max-height: 300px;
+        overflow: hidden;
         box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        img.banner {
+          width: 100%;
+        }
       }
+
     }
 
     div.button {
@@ -292,7 +294,7 @@ div#comm_cont {
       text-align: center;
 
       padding: .2em .5em;
-      background-color: #909090;
+      background-color: #ffffff;
 
       display: inline-block;
 
@@ -302,14 +304,14 @@ div#comm_cont {
 
       margin-bottom: 16px;
       border-top: 1px solid $borderLight;
-      border-bottom: 1px solid white;
+      border-bottom: 2px solid #9f9f9f;
 
       margin-right: 12px;
+      color: #383838;
     }
 
     div.button:hover {
-      border-top: 1px solid black;
-      background-color: #252E61;
+      background-color: #323951;
       color: white;
     }
 

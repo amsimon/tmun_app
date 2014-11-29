@@ -10,7 +10,9 @@
       %br/
       = link_to 'Edit', edit_branch_path(branch), class: "admin-link"
       = link_to 'Destroy', branch, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
-
+      %br/
+      = link_to 'Headlines', branch_headlines_path(branch), class: "admin-link"
+      = link_to 'Schedules', branch_schedules_path(branch), class: "admin-link"
 %br
 
 = link_to 'New Branch', new_branch_path, class: 'admin-link'

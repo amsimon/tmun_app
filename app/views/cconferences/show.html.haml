@@ -1,4 +1,55 @@
 %p#notice= notice
 
-.narrow{ style: "text-align: center; font-size: 2em; font-style: italic;"}
+= link_to "Edit conference details", edit_cconference_path(@cconference), class: "admin-link"
+%div{ style: "text-align: center; font-size: 2em; font-style: italic;"}
   More information will be released shortly.
+
+
+.two-half-cols
+  -# Left column
+  .col
+    .item-cont
+      %h2
+        %span
+          Information
+      .content.information
+        %table.infos
+          %tr
+            %td.label Date:
+            %td.info= @cconference.date
+
+
+
+  -# Right column
+  .col
+    .item-cont
+      %h2
+        %span
+          Deadlines
+      .content.information
+        = link_to "Add deadline", url_for([:new, @cconference, :deadline]), class: "admin-link"
+        - if @cconference.deadlines.present?
+          %table.infos
+            = render collection: @cconference.deadlines, as: :deadline, partial: "shared/deadline", locals: {parent:@cconference}
+        - else
+          TBA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,21 +1,23 @@
 - if defined?(schedule)
-  %table.branch-schedule
-    %caption
-      - if conf != "false"
-        = schedule.name
-        \ :
-        = schedule.date.strftime("%A, %b %-d, %Y")
-    %tr
-      - if conf != "true"
-        %th Date
-      %th Time
-      %th Activity
-      %th Location
-    = render partial: "shared/event", collection: schedule.events, locals: {conf: conf}
+  - if schedule.present?
+    - if schedule.id != nil
+      %table.branch-schedule
+        %caption
+          - if conf != "false"
+            = schedule.name
+            \ :
+            -#= schedule.date.strftime("%A, %b %-d, %Y")
+        %tr
+          - if conf != "true"
+            %th Date
+          %th Time
+          %th Activity
+          %th Location
+        = render partial: "shared/event", collection: schedule.events, locals: {conf: conf}
 
-  - if signed_in?
-    / Admin viewing others'
-    - if current_user.admin?
-      %span.admin
-        = link_to "edit", edit_schedule_path(schedule), class: "admin-link"
-        | #{link_to "delete", schedule, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}
+      - if signed_in?
+        / Admin viewing others'
+        - if current_user.admin?
+          %span.admin
+            = link_to "edit", edit_schedule_path(schedule.id), class: "admin-link"
+            | #{link_to "delete", schedule, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}
