@@ -258,7 +258,7 @@ div#comm_cont {
     margin: 0 auto;
 
 
-    padding-bottom: 110px;
+    padding-bottom: 2em;
     border-bottom: 1px solid $borderLight;
     position: relative;
 
@@ -321,7 +321,7 @@ div#comm_cont {
     }
 
   div.chair {
-      margin-bottom: 1em;
+
       span.chair {
         color: gray;
         font-style: italic;
@@ -336,7 +336,7 @@ div#comm_cont {
   }
 
   .comm_box:not(:last-of-type) {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
 }

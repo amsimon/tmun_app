@@ -19,6 +19,7 @@
         Vice Chair:
       %span.name
         = topic.vice_chair
+  %br/
   = link_to "Edit", url_for([:edit, parent, topic]), class: "admin-link"
   = link_to "delete", topic, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"
   .ban-cont
