@@ -2,10 +2,11 @@
 .comm_box
   %h2.com_head
     = topic.committee
-  %a{:href => asset_path("bgs/#{topic.guide_filename}")}
-    .button
-      Topic
-      Guide
+  - if topic.guide_filename.present?
+    %a{:href => asset_path("bgs/#{topic.guide_filename}")}
+      .button
+        Topic
+        Guide
   - if topic.chair.present?
     .chair
       %span.chair
@@ -25,3 +26,5 @@
       = image_tag("#{topic.image_url}", class: "banner")
     %h3.topic
       = topic.topic
+  %div
+    = topic.description
