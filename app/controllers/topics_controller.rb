@@ -79,7 +79,7 @@ class TopicsController < ApplicationController
   end
 
   def topic_params
-    params.require(:topic).permit(:id, :committee, :topic,
+    params.require(:topic).permit(:id, :order, :committee, :topic,
                                   :image_url, :description,
                                   :guide_filename, :chair,
                                   :vice_chair, :training_id)

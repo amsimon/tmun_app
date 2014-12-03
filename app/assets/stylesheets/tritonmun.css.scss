@@ -321,6 +321,7 @@ div#comm_cont {
     }
 
   div.chair {
+      margin-bottom: 1em;
       span.chair {
         color: gray;
         font-style: italic;
@@ -335,7 +336,7 @@ div#comm_cont {
   }
 
   .comm_box:not(:last-of-type) {
-    margin-bottom: 70px;
+    margin-bottom: 2em;
   }
 
 }
