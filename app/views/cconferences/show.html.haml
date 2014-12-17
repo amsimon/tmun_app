@@ -2,7 +2,6 @@
 
 = link_to "Edit conference details", edit_cconference_path(@cconference), class: "admin-link"
 %div{ style: "text-align: center; font-size: 2em; font-style: italic;"}
-  More information will be released shortly.
 
 
 .two-half-cols
@@ -17,9 +16,21 @@
           %tr
             %td.label Date:
             %td.info= @cconference.date
-
-
-
+          %tr
+            %td.label Location:
+            %td.info= @cconference.location
+          %tr
+            %td.label Delegation Fee:
+            %td.info= @cconference.delegation_fee
+          %tr
+            %td.label Early Fee:
+            %td.info= @cconference.early
+          %tr
+            %td.label Regular Fee:
+            %td.info= @cconference.regular
+          %tr
+            %td.label Late Fee:
+            %td.info= @cconference.late
   -# Right column
   .col
     .item-cont

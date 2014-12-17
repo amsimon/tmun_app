@@ -86,7 +86,7 @@ class CconferencesController < ApplicationController
   end
 
   def cconference_params
-    params.require(:cconference).permit(:number, :season, :year, :date, :reg_url)
+    params.require(:cconference).permit(:number, :season, :year, :date, :reg_url, :regular, :early, :late, :delegation_fee, :location)
 
   end
 
