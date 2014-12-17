@@ -479,17 +479,34 @@ div.conf_cont {
   text-align: left;
 
 }
-
+div.letter-cont {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+div.photo {
+  float: right;
+  width: 40%;
+  img {
+    width: 90%;
+    float: right;
+    margin-top: 60px;
+  }
+}
 div#letter {
   font-family: Georgia, Times, "Times New Roman", serif;
   line-height: 130%;
-  margin: 0 auto;
-  max-width: 700px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 0px 25%;
+  /* margin: 0 auto; */
+  width: 60%;
+  /* max-width: 700px; */
+
+  /* padding: 0px 25%; */
   font-style: italic;
   font-size: 18px;
+  float: left;
+
 
   div#by {
     text-align: right;
