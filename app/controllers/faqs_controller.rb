@@ -13,8 +13,9 @@ class FaqsController < ApplicationController
   end
 
   def new
-    @hconference = Hconference.friendly.find(params[:hconference_id])
-    @faq = @hconference.faqs.build
+    set_parent
+
+    @faq = @parent.faqs.build
 
     3.times do
       question = @faq.questions.build
@@ -23,12 +24,12 @@ class FaqsController < ApplicationController
   end
 
   def create
-    @hconference = Hconference.friendly.find(params[:hconference_id])
-    @faq = @hconference.faqs.build(faq_params)
+    set_parent
+    @faq = @parent.faqs.build(faq_params)
 
     if @faq.save
       flash[:success] = "Successfully created faq."
-      redirect_to hconference_url(@hconference)
+      redirect_to @parent
     else
       render :new
     end
@@ -36,16 +37,20 @@ class FaqsController < ApplicationController
 
   def edit
     @faq = Faq.find(params[:id])
-    @hconference = Hconference.friendly.find(params[:hconference_id])
+
+    set_parent
+    @parent = Hconference.friendly.find(params[:hconference_id])
 
   end
 
   def update
-    @hconference = Hconference.friendly.find(params[:hconference_id])
+    set_parent
+
+    #@hconference = Hconference.friendly.find(params[:hconference_id])
     @faq = Faq.find(params[:id])
     if @faq.update(faq_params)
       flash[:success] = "Successfully updated faq."
-      redirect_to hconference_url(@hconference)
+      redirect_to @parent
     else
       render :edit
     end
@@ -63,6 +68,13 @@ class FaqsController < ApplicationController
         :name, :hconference_id,
         questions_attributes: [:id, :faq_id, :content, :_destroy,
                                answers_attributes: [:id, :question_id, :content, :_destroy]])
+  end
+
+  def set_parent
+    parent_klasses = %w[cconference hconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
+    end
   end
 
   def admin_user

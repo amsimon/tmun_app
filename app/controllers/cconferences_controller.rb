@@ -47,6 +47,7 @@ class CconferencesController < ApplicationController
 
   def show
     @cconference = Cconference.friendly.find(params[:id])
+    @reg_faq = Faq.specific_faq(@cconference, "Registration")
     render :layout => 'collegiate'
   end
 

@@ -33,7 +33,33 @@
             = render collection: @cconference.deadlines, as: :deadline, partial: "shared/deadline", locals: {parent:@cconference}
         - else
           TBA
-
+.outer
+  .innerBox
+    %h2
+      %span Registration FAQ
+    - if @reg_faq.present?
+      = link_to "edit", edit_cconference_faq_path(@cconference, @reg_faq), class: "admin-link"
+      .faq.admin-editable
+        %ol.questions
+          - @reg_faq.questions.each do |q|
+            %li
+              .question
+                = q.content.html_safe
+              - q.answers.each do |a|
+                .answer
+                  = a.content.html_safe
+    - else
+      = link_to "Create Registration FAQ", new_cconference_faq_path(@cconference, Faq.specific_faq(@cconference, "Registration")), class: "admin-link"
+  .innerBox
+    %h2
+      %span Schedule
+    = link_to "New Schedule", new_cconference_schedule_path(@cconference), class: "admin-link"
+    - if @day1_sched.present?
+      = render partial: "schedules/schedule", object: @day1_sched, locals: {parent: @cconference, conf: "true"}
+    - if @day2_sched.present?
+      = render partial: "schedules/schedule", object: @day2_sched, locals: {parent: @cconference, conf: "true"}
+    - if @day3_sched.present?
+      = render partial: "schedules/schedule", object: @day3_sched, locals: {parent: @cconference, conf: "true"}
 
 
 
