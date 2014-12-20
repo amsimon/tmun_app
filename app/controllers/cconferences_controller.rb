@@ -48,6 +48,12 @@ class CconferencesController < ApplicationController
   def show
     @cconference = Cconference.friendly.find(params[:id])
     @reg_faq = Faq.specific_faq(@cconference, "Registration")
+
+
+    @day1_sched = Schedule.specific_schedule(@cconference, "Day 1")
+    @day2_sched = Schedule.specific_schedule(@cconference, "Day 2")
+    @day3_sched = Schedule.specific_schedule(@cconference, "Day 3")
+
     render :layout => 'collegiate'
   end
 
