@@ -16,12 +16,8 @@ class SchedulesController < ApplicationController
 
   def new
 
-    parent_klasses = %w[branch hconference cconference]
-    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
-      @schedule = @parent.schedules.build
-    end
-
+    set_parent
+    @schedule = @parent.schedules.build
 
 
   end
@@ -74,14 +70,14 @@ class SchedulesController < ApplicationController
   def set_parent
     parent_klasses = %w[branch hconference cconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
     end
 
   end
 
   def schedule_params
     params.require(:schedule).permit(
-        :name, :date, :branch_id, :hconference_id,
+        :name, :date, :branch_id, :hconference_id, :cconference_id,
         events_attributes: [:id, :schedule_id, :time_start, :time_end, :place, :activity, :date, :_destroy])
   end
   def admin_user

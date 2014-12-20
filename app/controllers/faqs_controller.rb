@@ -39,7 +39,6 @@ class FaqsController < ApplicationController
     @faq = Faq.find(params[:id])
 
     set_parent
-    @parent = Hconference.friendly.find(params[:hconference_id])
 
   end
 
@@ -65,7 +64,7 @@ class FaqsController < ApplicationController
   private
   def faq_params
     params.require(:faq).permit(
-        :name, :hconference_id,
+        :name, :hconference_id, :cconference_id,
         questions_attributes: [:id, :faq_id, :content, :_destroy,
                                answers_attributes: [:id, :question_id, :content, :_destroy]])
   end
