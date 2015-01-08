@@ -7,8 +7,9 @@
             %span.name
               = schedule.name
             %br/
-            %span.date
-              = schedule.date.strftime("%A, %b %-d, %Y")
+            - if schedule.date != nil
+              %span.date
+                = schedule.date.strftime("%A, %b %-d, %Y")
         %tr
           - if conf != "true"
             %th Date
