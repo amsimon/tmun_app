@@ -70,7 +70,7 @@ class SchedulesController < ApplicationController
   def set_parent
     parent_klasses = %w[branch hconference cconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
   end
