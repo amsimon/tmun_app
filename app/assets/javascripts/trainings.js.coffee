@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
   $('form').on 'click', '.remove_fields', (event) ->
+    alert('here')
     $(this).prev('input[type=hidden]').val('1')
     $(this).closest('table').hide()
     event.preventDefault()

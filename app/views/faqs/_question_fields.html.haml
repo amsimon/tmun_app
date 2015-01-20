@@ -1,9 +1,11 @@
-%fieldset.q
-  = f.label :content, "Question"
-  = link_to "Remove Question", '#', class: "remove_fields admin-link"
-  %br/
-  = f.text_area :content
-  %br/
-  = f.hidden_field :_destroy
-  = f.fields_for :answers do |builder|
-    = render 'answer_fields', f: builder
+%table.q
+  %tr
+    %td
+      = f.label :content, "Question"
+      = link_to "Remove Question", '#', class: "remove_fields admin-link"
+    %td
+      = f.text_area :content
+    %td
+      = f.hidden_field :_destroy
+      = f.fields_for :answers do |builder|
+        = render 'answer_fields', f: builder
