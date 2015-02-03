@@ -3,7 +3,7 @@
   %h2.com_head
     = topic.committee
   - if topic.guide_filename.present?
-    = link_to asset_path(topic.guide_filename) do
+    = link_to asset_path('bgs/'+ topic.guide_filename) do
       .button
         Topic
         Guide
