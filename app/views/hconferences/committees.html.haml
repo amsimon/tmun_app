@@ -2,6 +2,8 @@
   %div#comm_cont
     = link_to "Add New Topic", new_hconference_topic_path(@hconference), class: "admin-link"
 
+    = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
+
     - if @topics.present?
       = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @hconference}
     - else

@@ -8,6 +8,8 @@
   #ir.inner
     / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") </haml_loud></a>
     = render :partial => "slide", :collection => right_slides
+    %div.gth
+      = image_tag 'bright-left.png', class: 'branch', id: 'left'
 #news.outer
   .inner
     = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"

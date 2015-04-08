@@ -12,6 +12,23 @@ html, body {
 
 }
 
+div.gth {
+  height: 100%;
+  width: 100%;
+  background-color: lime;
+  position: absolute;
+  z-index: 999999999999999999999999999;
+}
+
+img.branch {
+  position: absolute;
+  z-index: 99999;
+  width: 40%;
+  top:26em;
+  display: block;
+  margin: 0 auto;
+}
+
 .gde {
  //height: 100%;
   overflow: hidden;
@@ -212,7 +229,7 @@ div.news-box {
 }
 
 div.outer#news {
-  background: rgb(2, 8, 19);
+  background: #397BCE;
 }
 
 div.outer {
