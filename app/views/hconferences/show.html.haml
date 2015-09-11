@@ -4,6 +4,17 @@
 
 .column.half.left
   .module
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to edit_hconference_path(@hconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Edit conference
     .title
       %span
         INFORMATION
@@ -87,6 +98,17 @@
         %td.label.date April 12, 2015
         %td.info Position papers due at 11:59 pm PST.
   .module
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to new_hconference_schedule_path(@hconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add schedule
     .title
       %span
         SCHEDULE
