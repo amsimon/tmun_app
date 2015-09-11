@@ -1,13 +1,58 @@
-%li
-  = link_to tconference, class: "away" do
-    %div.away
-      = tconference.nick
-  %br/
-  = tconference.name
-  %br/
-  = tconference.date
-  %br/
+.sub-module.module
   - if signed_in?
     - if current_user.admin?
-      = link_to "edit", edit_tconference_path(tconference), class: "admin-link"
-      #{link_to "delete", tconference, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"}
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker A
+        %ul.admin-list
+          %li
+            = link_to edit_tconference_path(tconference), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Edit conference
+          %li
+            = link_to tconference, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/delete.png'
+                .words
+                  Destroy conference
+  = link_to tconference, class: "away" do
+    %span.button.light
+      = tconference.nick
+  %table
+    %tr
+      %td
+        NAME
+      %td
+        = tconference.name
+    %tr
+      %td
+        DATE
+      %td
+        = tconference.date
+    %tr
+      %td
+        HOST
+      %td
+        = tconference.host
+  %br/
+  -#- if signed_in?
+  -#  - if current_user.admin?
+  -#    %ul.admin-list
+  -#      %li
+  -#        = link_to edit_tconference_path(tconference), class: "admin-link" do
+  -#          .admin-line
+  -#            .icon
+  -#              = image_tag 'admin-icons/edit.png'
+  -#            .words
+  -#              Edit conference
+  -#      %li
+  -#        = link_to tconference, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+  -#          .admin-line
+  -#            .icon
+  -#              = image_tag 'admin-icons/delete.png'
+  -#            .words
+  -#              Destroy conference

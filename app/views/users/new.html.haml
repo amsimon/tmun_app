@@ -1,0 +1,57 @@
+.column.half.left
+  .module
+    .title
+      %span
+        REGISTRATION
+    = form_for(@user) do |f|
+      = render 'shared/error_messages', object: f.object
+      %table.sign
+        %tr
+          %td= f.label :name
+          %td= f.text_field :name
+        %tr
+          %td= f.label :email
+          %td= f.text_field :email
+        %tr
+          %td= f.label :password
+          %td= f.password_field :password
+        %tr
+          %td= f.label :password_confirmation, "Confirm"
+          %td
+            = f.password_field :password_confirmation
+        %tr
+          %td= f.label :major
+          %td= f.text_field :major
+        %tr
+          %td= f.label :grad_year
+          %td= f.text_field :grad_year
+        %tr
+          - if signed_in?
+            / Admin viewing others'
+            - if current_user.admin?
+              %tr
+                %td= f.label :travel_team, "Travel Team?"
+                %td= f.check_box :travel_team
+              %tr
+                %td= f.label :travel_team, "Home Conference?"
+                %td= f.check_box :home_team
+              %tr
+                %td= f.label :secretariat, "Secretariat?"
+                %td= f.check_box :secretariat
+              %tr
+                %td= f.label :secretariat, "Secretariat Position"
+                %td= f.text_field :sec_pos
+        %tr
+          %td
+            = f.label :bio, "Tell us about yourself."
+          %td
+            = f.text_area :bio, :cols => 50, :rows => 5
+        %tr
+          %td
+            = f.label :avatar, "Upload your photo."
+          %td
+            = f.file_field :avatar, class: "avatar"
+        %tr
+          %td
+          %td
+            = f.submit "Sign Up", class: "button light"

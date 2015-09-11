@@ -1,12 +1,24 @@
-%li
-  = link_to hconference.roman, hconference_path(hconference), class: "roman"
-  %br/
-  = hconference.season
-  = hconference.year
-  %br/
+.sub-module.module
   - if signed_in?
     - if current_user.admin?
-      = link_to "edit", conf_path(hconference) + "/edit"
-      | #{link_to "delete", hconference, method: :delete, data: { confirm: "You sure?" }}
-      | #{link_to "schedules",hconference_schedules_path(hconference)}
-      | #{link_to "faqs",hconference_faqs_path(hconference)}
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker A
+        %ul.admin-list
+          %li
+            = link_to edit_hconference_path(hconference), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Edit conference
+          %li
+            = link_to hconference, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/delete.png'
+                .words
+                  Destroy conference
+  = link_to hconference, class: "away" do
+    %span.button.light
+      = hconference.roman

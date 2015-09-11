@@ -1,14 +1,52 @@
 // Place all the styles related to the Branches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+div.event-a {
+  display: inline-block;
+  /* padding: .5em 1em; */
+  background-color: #00BA3E;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -1.1em;
+  left: 41.3vw;
+  text-align: center;
+  line-height: 37px;
+  font-size: 2em;
+  font-weight: 900;
+  border: 1px solid #00844E;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
 
 table.branch-schedule {
-  width: 90%;
-  max-width: 90%;
-  margin: 0 auto;
+  //width: 80%;
+  //max-width: 80%;
+  //margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
+  border: none;
+
+  div.event-x {
+    text-align: center;
+    display: inline-block;
+    /* padding: .5em; */
+    background-color: red;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 3em;
+    vertical-align: middle;
+    line-height: 38px;
+    color: white;
+    opacity: .5;
+  }
+  div.event-x:hover {
+    opacity: 1;
+  }
+
+
 
   caption {
 
@@ -36,9 +74,8 @@ table.branch-schedule {
 
   tr {
     td {
-      border: 1px solid #cccccc;
       margin: 0;
-      padding: .5em;
+      padding: .5em 1em!important;
     }
     td:first-child {
       white-space: nowrap;

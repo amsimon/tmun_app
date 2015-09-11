@@ -25,32 +25,50 @@
   </a>
   </div>
 
-%h1.subhead
-  %span#main Overview
-#trav-col1
-  = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
-  %ul
-    = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
-#trav-col2
-  %h2 Important Dates
-  = link_to "New Schedule", new_branch_schedule_path(@travel_branch, @schedule), class: "admin-link"
-  = render partial: "schedules/schedule", object: @schedule, locals: {conf: "false"}
-  %h2 Contact the Team
-  #inner
-    %span.email_address{:style => "color: #d7d7d7; font-size: 1.5em"} travelingtritons@gmail.com
-    .person
-      %ul
-        %li.name Zoe Cheung
-        %li.pos Director of Travel
-    .person
-      %ul
-        %li.name Reina Ishii
-        %li.pos Under-Secretary General of Training
-    .person
-      %ul
-        %li.name Pichaporn Kanjanakantorn
-        %li.pos Deputy Under-Secretary General of Training
-    .person
-      %ul
-        %li.name Ben Salter
-        %li.pos Deputy Under-Secretary General of Training
+
+.column#travel-left
+  .module
+    .title
+      UPCOMING
+    Emory XI
+  .module
+    .title
+      UPCOMING
+    Emory XI
+  .module
+    .title
+      UPCOMING
+    Emory XI
+.column#travel-right
+
+
+-#
+-#%h1.subhead
+-#  %span#main Overview
+-##trav-col1
+-#  = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
+-#  %ul
+-#    = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
+-##trav-col2
+-#  %h2 Important Dates
+-#  = link_to "New Schedule", new_branch_schedule_path(@travel_branch, @schedule), class: "admin-link"
+-#  = render partial: "schedules/schedule", object: @schedule, locals: {conf: "false"}
+-#  %h2 Contact the Team
+-#  #inner
+-#    %span.email_address{:style => "color: #d7d7d7; font-size: 1.5em"} travelingtritons@gmail.com
+-#    .person
+-#      %ul
+-#        %li.name Zoe Cheung
+-#        %li.pos Director of Travel
+-#    .person
+-#      %ul
+-#        %li.name Reina Ishii
+-#        %li.pos Under-Secretary General of Training
+-#    .person
+-#      %ul
+-#        %li.name Pichaporn Kanjanakantorn
+-#        %li.pos Deputy Under-Secretary General of Training
+-#    .person
+-#      %ul
+-#        %li.name Ben Salter
+-#        %li.pos Deputy Under-Secretary General of Training

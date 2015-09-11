@@ -1,9 +1,24 @@
-.narrow
-  %div#comm_cont
-    = link_to "Add New Topic", new_hconference_topic_path(@hconference), class: "admin-link"
 
-    = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
-
+-#%div
+-#  = link_to "Add New Topic", new_hconference_topic_path(@hconference), class: "admin-link"
+-#
+-#  = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
+.column.full
+  .module
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to new_hconference_topic_path(@hconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add topic
+    .title
+      %span
+        COMMITTEES
     - if @topics.present?
       = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @hconference}
     - else

@@ -1,16 +1,7 @@
 = parent_layout "application" do
-  %h1#tritonmun
-    %span#main
-      TritonMUN
-      %span#roman
-        = @hconference.roman
-  %h2#season
-    = @hconference.season
-    = @hconference.year
-  .main_cont
-    = render 'shared/home_nav'
+  = render 'shared/home_nav'
+  .main-cont
     = yield
-
 
 <!-- render roman, season, year here -->
 

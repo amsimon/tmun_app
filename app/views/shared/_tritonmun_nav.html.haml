@@ -1,0 +1,5 @@
+#branch-nav
+  = link_to '/branches/tritonmun#', class: "square" do
+    .box
+      = image_tag 'geisel.png'
+  = branch_nav_link 'Overview', branch_path(Branch.home.first)

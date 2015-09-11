@@ -1,12 +1,23 @@
-= form_for @branch do |f|
-  - if @branch.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@branch.errors.count, "error")} prohibited this branch from being saved:"
-      %ul
-        - @branch.errors.full_messages.each do |msg|
-          %li= msg
+.column.half.left
+  .module
+    .title
+      %span
+        EDIT BRANCH
+    = form_for @branch do |f|
+      - if @branch.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@branch.errors.count, "error")} prohibited this branch from being saved:"
+          %ul
+            - @branch.errors.full_messages.each do |msg|
+              %li= msg
 
-  = f.label :name
-  = f.text_field :name
-  .actions
-    = f.submit 'Save'
+      %table.sign
+        %tr
+          %td
+            = f.label :name
+          %td
+            = f.text_field :name
+        %tr
+          %td
+          %td
+            = f.submit 'Save', class: "button light"

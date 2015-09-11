@@ -17,4 +17,18 @@ class Branch < ActiveRecord::Base
     Branch.where(name: name).first
   end
 
+  def specific_branch?(name)
+    self.name == name
+  end
+
+  @@tritonmun_letter = "Welcome to TritonMUN!"
+
+  def self.tritonmun_letter
+    @@tritonmun_letter
+  end
+
+  def self.tritonmun_letter=(value)
+    @@tritonmun_letter = value
+  end
+
 end

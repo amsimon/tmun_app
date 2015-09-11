@@ -1,6 +1,5 @@
-%h1.subhead
-  %span#main New Schedule
-
-.sched-form
-  = render 'form'
+- if @parent.is_a? Branch
+  = render partial: 'form', locals: {conf: "false", parent_name: @parent.class.name.demodulize.downcase}
+- else
+  = render partial: 'form', locals: {conf: "true", parent_name: @parent.class.name.demodulize.downcase}
 

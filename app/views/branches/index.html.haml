@@ -1,18 +1,85 @@
-%h1{class:"subhead"}
-  %span{id:"main"}
-    Manage Branches
-
-%div.admin-items-cont
-  - @branches.each do |branch|
-    %div.item
-      %span.name
-        = branch.name
-      %br/
-      = link_to 'Edit', edit_branch_path(branch), class: "admin-link"
-      = link_to 'Destroy', branch, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
-      %br/
-      = link_to 'Headlines', branch_headlines_path(branch), class: "admin-link"
-      = link_to 'Schedules', branch_schedules_path(branch), class: "admin-link"
-%br
-
+- @branches.each do |branch|
+  .column.medium.right
+    .module.upcoming
+      .title
+        %span
+          = branch.name
+      - if branch.specific_branch?('tritonmun')
+        = link_to '/branches/tritonmun' do
+          = image_tag 'home-library.png', class: "branch-image"
+      - if branch.specific_branch?('travelteam')
+        = link_to '/branches/travelteam' do
+          = image_tag 'travel-balloon.png', class: "branch-image"
+      - if branch.specific_branch?('sdimun')
+        = link_to '/branches/sdimun' do
+          = image_tag 'collegiate-trident.png', class: "branch-image"
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker A
+        %ul.admin-list
+          %li
+            = link_to edit_branch_path(branch), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Edit branch
+          %li
+            = link_to branch, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/delete.png'
+                .words
+                  Destroy branch
+          %li
+            = link_to branch_headlines_path(branch), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/headline.png'
+                .words
+                  Manage branch headlines
+          %li
+            = link_to branch_schedules_path(branch), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/schedule.png'
+                .words
+                  Manage branch schedules
+          - if branch.specific_branch?('tritonmun')
+            %li
+              = link_to '/letter', class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/letter.png'
+                  .words
+                    Edit branch letter
 = link_to 'New Branch', new_branch_path, class: 'admin-link'
+-#
+-#
+-#
+-#.column.medium.right
+-#  .module.upcoming
+-#    .title
+-#      %span
+-#        HOME CONFERENCES
+-#    = render @hconferences
+-#.column.medium.right
+-#  .module.upcoming
+-#    .title
+-#      %span
+-#        COLLEGIATE CONFERENCES
+-#    = render @cconferences
+-#%div.admin-items-cont
+-#  - @branches.each do |branch|
+-#    %div.item
+-#      %span.name
+-#        = branch.name
+-#      %br/
+-#      = link_to 'Edit', edit_branch_path(branch), class: "admin-link"
+-#      = link_to 'Destroy', branch, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link"
+-#      %br/
+-#      = link_to 'Headlines', branch_headlines_path(branch), class: "admin-link"
+-#      = link_to 'Schedules', branch_schedules_path(branch), class: "admin-link"
+-#%br
+-#
+-#= link_to 'New Branch', new_branch_path, class: 'admin-link'

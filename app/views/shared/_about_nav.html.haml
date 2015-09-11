@@ -1,9 +1,8 @@
-#buttonBox
-  = link_to about_path do
-    .button Club Overview
-  = link_to secretariat_path do
-    .button Secretariat
-  = link_to history_path do
-    .button History
-  = link_to alumni_path do
-    .button Alumni
+#branch-nav
+  = link_to '/branches/tritonmun#', class: "square" do
+    .box
+      = image_tag 'geisel.png'
+  = branch_nav_link 'Club Overview', about_path
+  = branch_nav_link 'Participate', participate_path
+  = branch_nav_link 'Secretariat', secretariat_path
+  = branch_nav_link 'History', history_path

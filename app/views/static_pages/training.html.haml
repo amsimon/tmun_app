@@ -1,36 +1,40 @@
-%h1{class:"subhead"}
-  %span{id:"main"}
-    Training
-%div#trav-col1
-  = link_to "Add Training Session", new_training_path, class: "admin-link"
-  .two-col-cont<
-    - Training.all.each do |t|
-      .col>
-        .col-content
-          = link_to "Edit Session", edit_training_path(t), class: "admin-link"
-          %h1
-            = t.date.strftime("%A")
-            = t.date.strftime("%-m/%-d")
-          - t.topics.each do |topic|
-            .topic-cont
-              %h2
-                = topic.committee
-              %img{src: "#{topic.image_url}" }
-              %h3
-                = topic.topic
-              %p
-                = topic.description
-%div#trav-col2
 
-  %p
-    %table#training-details
+
+
+.column.big.left
+  -#= link_to "Add Training Session", new_training_path, class: "admin-link"
+  .module
+    .title
+      %span
+        TOPIC SCHEDULE
+    - Training.all.each do |t|
+      .sub-module.module
+        = link_to "Edit Session", edit_training_path(t), class: "admin-link"
+        %h1.date
+          = t.date.strftime("%A")
+          = t.date.strftime("%-m/%-d")
+        - t.topics.each do |topic|
+          .topic-cont
+            %h2
+              = topic.committee
+            -#%img{src: "#{topic.image_url}" }
+            %h3
+              = topic.topic
+            %p
+              = topic.description
+.column.small.right
+  .module
+    .title
+      %span
+        TRAINING INFO
+    %table
       %tr
-        %td.when-where
+        %td
           WHEN
         %td
           = Training.time
       %tr
-        %td.when-where
+        %td
           WHERE
         %td
           = Training.location

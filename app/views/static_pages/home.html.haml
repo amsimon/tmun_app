@@ -1,39 +1,118 @@
-#everything
+
+-##everything
 / <h1 id="tritonmun"><span id="main">Mission</span></h1>
 / <h1 id="home_h1">Model United Nations at UCSD </h1>
-#front.outer
-  #il.inner
-    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") </haml_loud></a>
-    = render :partial => "slide", :collection => left_slides
-  #ir.inner
-    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") </haml_loud></a>
-    = render :partial => "slide", :collection => right_slides
-    %div.gth
-      = image_tag 'bright-left.png', class: 'branch', id: 'left'
-#news.outer
-  .inner
-    = link_to "New Travel Headline", new_branch_headline_url(Branch.travel.first), class: "admin-link"
-    .news-box
-      %ul
-        = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
-  .inner
-    = link_to "New Home Headline", new_branch_headline_url(Branch.home.first), class: "admin-link"
-    .news-box
-      %ul
-        = render partial: "shared/headline", collection: Branch.home.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.home.first}
 .gde
-  = image_tag "logo4.png", class: "bg"
-  = link_to "Edit this section", frontpages_path, class: "admin-link"
-  %h1#home_h1
-    %span#main Model United Nations at UCSD
-  #copy
-    = Frontpage.hello
-    %br/
-    %a{:href => Frontpage.hello_link_url, :style => "position: relative; z-index: 999999;"}
-      %span#learn
-        = Frontpage.hello_link_text
-        %span#arrow
-          \➤
+  .bgs-cont
+    .bg{style: "background-image: url(http://i.imgur.com/T21lx1x.jpg?1);"}
+    .bg{style: "background-image: url(http://i.imgur.com/Fe2vhwb.jpg);"}
+    .bg{style: "background-image: url(http://i.imgur.com/F1XQ5sP.jpg?1);"}
+  .text
+    %h1#home_h1
+      %span#main Model United Nations at UCSD
+    #copy
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker A
+        %ul.admin-list
+          %li
+            = link_to frontpages_path, class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Edit front page
+      = Frontpage.hello
+      %br/
+      %a{:href => Frontpage.hello_link_url, :style => "position: relative; z-index: 999999;"}
+        %span#learn
+          = Frontpage.hello_link_text
+-##front.outer
+-#  #il.inner
+-#
+-#    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "left") </haml_loud></a>
+-#    = render :partial => "slide", :collection => left_slides
+-#    = image_tag 'FrontPage/left-travel.png', class: 'branch', id: 'left'
+-#  #ir.inner
+-#    / <a href="javascript:;"><haml_loud> image_tag("arrow-up.png", alt: "Next", class: "arrow", id: "right") </haml_loud></a>
+-#    = render :partial => "slide", :collection => right_slides
+#news.container
+  .column
+    = image_tag 'FrontPage/left-travel.png', class: 'branch', id: 'left'
+    .item-cont.left
+      .item
+        %h1.left
+          .admin-container
+            = link_to 'javascript:;' do
+              .clicker A
+            %ul.admin-list
+              %li
+                = link_to frontpages_path, class: "admin-link" do
+                  .admin-line
+                    .icon
+                      = image_tag 'admin-icons/edit.png'
+                    .words
+                      Edit front page
+          = Frontpage.travel_title
+        = Frontpage.travel_text
+        %br/
+        = link_to Frontpage.travel_link_url do
+          %span.button.dark.more
+            = Frontpage.travel_link_text
+            &#9654;
+
+    -#.news-box
+    -#  %ul
+    -#    = render partial: "shared/headline", collection: Branch.travel.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.travel.first}
+  .column
+    = image_tag 'FrontPage/right-collegiate.png', class: 'branch', id: 'middle'
+    .item-cont.middle
+      .item
+        %h1
+          .admin-container
+            = link_to 'javascript:;' do
+              .clicker A
+            %ul.admin-list
+              %li
+                = link_to frontpages_path, class: "admin-link" do
+                  .admin-line
+                    .icon
+                      = image_tag 'admin-icons/edit.png'
+                    .words
+                      Edit front page
+          = Frontpage.collegiate_title
+        = Frontpage.collegiate_text
+        %br/
+        = link_to Frontpage.collegiate_link_url do
+          %span.button.dark.more
+            = Frontpage.collegiate_link_text
+            &#9654;
+  .column
+    = image_tag 'FrontPage/right-home.png', class: 'branch', id: 'right'
+    .item-cont.right
+      .item
+        %h1.right
+          .admin-container
+            = link_to 'javascript:;' do
+              .clicker A
+            %ul.admin-list
+              %li
+                = link_to frontpages_path, class: "admin-link" do
+                  .admin-line
+                    .icon
+                      = image_tag 'admin-icons/edit.png'
+                    .words
+                      Edit front page
+          = Frontpage.home_title
+        = Frontpage.home_text
+        %br/
+        = link_to Frontpage.home_link_url do
+          %span.button.dark.more
+            = Frontpage.home_link_text
+            &#9654;
+    -#.news-box
+    -#  %ul
+    -#    = render partial: "shared/headline", collection: Branch.home.first.headlines.limit(3), as: :headline, locals: {parent:  Branch.home.first}
   -#
     <span class="slide-head" id="left">Travel Team</span>
     <span class="slide-head" id="right">TritonMUN</span>

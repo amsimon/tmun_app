@@ -15,12 +15,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @badges = @user.badges
     @microposts = @user.microposts.paginate(page: params[:page])
-    render :layout => 'sessions'
+    render :layout => 'users'
   end
 
   def new
     @user = User.new
-    render :layout => 'sessions'
+    render :layout => 'users'
   end
 
   def create
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    render :layout => 'users'
   end
 
   def update

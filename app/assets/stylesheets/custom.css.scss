@@ -1,4 +1,4 @@
-$bgColor: #d9d9d9;
+$bgColor: #E5E5E5;
 $grayMediumLight: #eaeaea;
 $headerHeight: 5em;
 
@@ -203,6 +203,7 @@ aside {
     font-size: 30px;
     padding: 10px 0px;
     color: white;
+    margin-top: 55px;
   }
 
 
@@ -266,10 +267,23 @@ textarea, select, .uneditable-input {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid gray;
+  font-size: 12px;
+  text-align: center;
+  /* margin-top: 45px; */
+  padding: 1em 2em;
+  /* padding-bottom: 1em; */
+  /* border-top: 1px solid gray; */
   color: lightgray;
+  background-color: #122A48;
+
+  .andy-logo {
+    width: 30px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  span.bullet {
+    margin: 0 4px;
+  }
   a {
     color: gray;
     &:hover {
@@ -343,7 +357,7 @@ html, body {
 
 header.navbar {
   width: 100%;
-  background: rgba(255, 255, 255, 0.84);
+  background: white;
   height: $headerHeight;
   /* border-bottom: 1px solid #e4e4e4; */
   position: absolute;
@@ -353,6 +367,16 @@ header.navbar {
   z-index: 99999;
 
   //padding: .1em 0;
+
+  img.avatar {
+    margin: 0;
+    height: 40px;
+    /* line-height: 80px; */
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
 
 
 }
@@ -375,15 +399,16 @@ nav {
   }
 
   img#logo {
-    height: 90%;
+    height: 70px;
     position: absolute;
     margin: auto;
-    //top: 50px;
+    top: 5px;
     left: 0;
     right: 0;
     //bottom: 0;
     z-index: 996;
     opacity: 1;
+    box-shadow: 0px 0px 0px black;
   }
 
   ul{
@@ -396,12 +421,22 @@ nav {
 
     li {
       display: inline-block;
-      padding: 0px 1em;
+      margin: 0px 1em;
       height: $headerHeight;
 
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      /* width: 100px; */
+      /* height: 100px; */
+      /* border: 1px solid red; */
     }
     li:first-child {
       padding-left: 0em;
+    }
+
+    li.active {
+      border-bottom: 4px solid rgb(57, 123, 206);
     }
 
     li:last-child {
@@ -428,36 +463,21 @@ nav {
 }
 
 a.nav-link {
-  // color: #A4A4A4;
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   font-weight: 700;
-  font-size: 18px;
-  text-transform:uppercase;
-  // text-shadow:  0px -.3px 0px rgba(0, 0, 0, .8);
+  font-size: 14px;
+  text-transform: uppercase;
   letter-spacing: 0em;
   height: 100%;
   margin-top: 0px;
   display: inline-block;
-
-
-    /* Shadows are visible under slightly transparent text color */
-    color: rgba(148, 148, 148, 0.7);
-    text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def;
-
-  /*
-    background-color: #565656;
-    color: transparent;
-    text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-*/
+  color: rgba(129, 129, 129, 1);
+  /* text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def; */
 
 }
 a.nav-link#signin {
-  text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def;
-  color: rgba(180, 150, 28, 0.70);
+  color: rgba(10, 1, 70, 1);
 }
 
 ol.ad {
@@ -475,24 +495,41 @@ a.nav-link#admin {
   text-shadow: none;
 }
 a.nav-link:hover {
-  color: rgba(0, 34, 128, 0.70);
-  text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def;
+  color: rgba(57, 123, 206, 1);
+  /* text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def; */
 }
 a.nav-link#signin:hover {
-  text-shadow: 0px 1px 1px #def, 0 0 0 #202020, 0px 1px 1px #def;
-  color: rgba(255, 205, 0, 0.70);
+  color: rgba(57, 123, 206, 1);
+  /* text-shadow: 0px 1px 1px #def, 0 0 0 #000, 0px 1px 1px #def; */
 }
 
 div.container {
-
-  //padding:4em 0em;
+  //height: 100%;
   padding-top: 80px;
-  padding-bottom: 100px;
-  min-height: 100%;
-
-  background: #d9d9d9;
+  /* padding-bottom: 100px; */
+  /* min-height: 100%; */
+  background: #E5E5E5;
   margin: 0 auto;
 }
+
+.container {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+  height: 50px; /* .push must be the same height as .footer */
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.push {
+  height: 0;
+}
+
+
+
 
 img#map {
   opacity: .9;

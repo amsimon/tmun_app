@@ -1,12 +1,8 @@
-#buttonBox
-  MANAGE:
-  = link_to branches_path do
-    .button Branches
-  = link_to frontpages_path do
-    .button Frontpage
-  = link_to tconferences_path do
-    .button Travel Conferences
-  = link_to hconferences_path do
-    .button Home Conferences
-  = link_to cconferences_path do
-    .button Collegiate Conferences
+#branch-nav
+  = link_to '/admintools#', class: "square" do
+    .red.box#roman
+      A
+  = branch_nav_link 'Branches', branches_path
+  = branch_nav_link 'Front Page', admintools_frontpages_path
+  = branch_nav_link 'Conferences', admintools_conferences_path
+  = branch_nav_link 'Users', users_path

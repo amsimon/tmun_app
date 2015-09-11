@@ -1,35 +1,42 @@
+- provide(:title, "Travel Team")
+/
+  render season, year here
 
-
-.outer
-  .innerBox
-    %h2
-      %span Information
-    .infosBox
-      %table.infos
-        %tr
-          %td.label Date:
-          %td.info= @tconference.date
-        %tr
-          %td.label Location:
-          %td.info= @tconference.location
-      %br/
-      %br/
-      %br/
-  -#
-    .innerBox
-      %h2
-        %span Deadlines
-      .infosBox
-        %table.infos
-          %tr
-            %td.label.date December 12, 2014
-            %td.info Early registration deadline to postmark payment.
-          %tr
-            %td.label.date February 6, 2015
-            %td.info Regular registration deadline to postmark payment.
-          %tr
-            %td.label.date March 6, 2015
-            %td.info Late registration deadline to postmark payment.
-          %tr
-            %td.label.date April 12, 2014
-            %td.info Position papers due at 11:59 pm PST.
+.column.half.left
+  .module
+    - if signed_in?
+      - if current_user.admin?
+        .admin-container
+          = link_to 'javascript:;' do
+            .clicker A
+          %ul.admin-list
+            %li
+              = link_to edit_tconference_path(@tconference), class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/edit.png'
+                  .words
+                    Edit conference
+            %li
+              = link_to @tconference, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/delete.png'
+                  .words
+                    Destroy conference
+    .title
+      %span
+        INFORMATION
+    %table
+      %tr
+        %td.label Name:
+        %td.info= @tconference.name
+      %tr
+        %td.label Date:
+        %td.info= @tconference.date
+      %tr
+        %td.label Location:
+        %td.info= @tconference.location
+      %tr
+        %td.label Host:
+        %td.info= @tconference.host

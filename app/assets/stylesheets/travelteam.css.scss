@@ -5,6 +5,17 @@ $headerGray:  #424242;
 
 $mediumGray: #848484;
 
+
+.upcoming {
+  text-align: center;
+
+  span.button {
+    margin-bottom: 1em;
+    //margin-top: 1em;
+    font-size: 1.5em;
+  }
+}
+
 div.next-trav-conf {
   //width: 100%;
   background-color: gray;
@@ -273,11 +284,9 @@ ul.resources {
   }
 }
 div.past-conf {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
   text-align: left;
-  margin-bottom: .75em;
-  padding-bottom: .75em;
 
   padding-left: .25em;
 
@@ -287,14 +296,18 @@ div.past-conf {
 
 
   div.award {
+    font-size: 1em;
+    font-weight: normal;
     margin-top: .75em;
-    font-size: .5em;
+    //font-size: .5em;
     font-style: italic;
-    color: #745500;
+    color: #397BCE;
   }
 
   div.award:before {
     content: "\2605";
+    margin-right: .75em;
+    font-style: normal;
   }
 }
 
@@ -312,8 +325,11 @@ i {
 }
 
 div.past-cont {
-  width: 70%;
+
   margin: 0 auto;
+  .module {
+    font-size: 2em;
+  }
 }
 
 div.col-cont {

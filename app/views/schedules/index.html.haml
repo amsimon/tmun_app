@@ -1,9 +1,38 @@
-%h1.subhead
-  %span#main Manage Schedules
-
-= link_to "New Schedule", url_for([:new, @parent, :schedule]), class: "admin-link"
-= render partial: "schedule", collection: @parent.schedules, as: :schedule, locals: {parent: @parent, conf: "all"}
-
-
-
-
+.column.medium.right
+  .module.upcoming
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @parent, :schedule]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/schedule.png'
+              .words
+                Add schedule
+    .title
+      %span
+        = @parent.name
+        = @parent.class.name.demodulize
+        schedules
+    = render partial: "conference_schedule", collection: @parent.schedules, as: :schedule, locals: {parent: @parent, conf: "false", parent_name: @parent.class.name.demodulize.downcase}
+-#.column.medium.right
+-#  .module.upcoming
+-#    .title
+-#      %span
+-#        HOME CONFERENCES
+-#    = render @hconferences
+-#.column.medium.right
+-#  .module.upcoming
+-#    .title
+-#      %span
+-#        COLLEGIATE CONFERENCES
+-#    = render @cconferences
+-#
+-#= link_to "New Schedule", url_for([:new, @parent, :schedule]), class: "admin-link"
+-#= render partial: "schedule", collection: @parent.schedules, as: :schedule, locals: {parent: @parent, conf: "all"}
+-#
+-#
+-#
+-#

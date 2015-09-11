@@ -1,11 +1,10 @@
 # Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.erb.
+# All this logic will automatically be available in application.js.erb.erb.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
   $('form').on 'click', '.remove_fields', (event) ->
-    alert('here')
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('table').hide()
+    $(this).closest('.sub-module').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->

@@ -1,15 +1,13 @@
-#buttonBox
-  = link_to @hconference do
-    .button Overview
-  = link_to locations_hconference_path(@hconference) do
-    .button Location
-  = link_to committees_hconference_path(@hconference) do
-    .button Committees
-  = link_to speakers_hconference_path(@hconference) do
-    .button Speakers
-  = link_to research_hconference_path(@hconference) do
-    .button Research
-  = link_to position_papers_hconference_path(@hconference) do
-    .button Position Papers
-  = link_to register_hconference_path(@hconference) do
-    #register.button Register
+#branch-nav
+  = link_to '/branches/tritonmun#', class: "square" do
+    .box
+      = image_tag 'geisel.png'
+  = link_to @hconference, class: "square" do
+    .box#roman
+      = @hconference.roman
+  = branch_nav_link 'Overview', @hconference
+  = branch_nav_link 'Committees', committees_hconference_path(@hconference)
+  = branch_nav_link 'Speakers', speakers_hconference_path(@hconference)
+  = branch_nav_link 'Research', research_hconference_path(@hconference)
+  = branch_nav_link 'Position Papers', position_papers_hconference_path(@hconference)
+  = branch_nav_link 'Register', register_hconference_path(@hconference)

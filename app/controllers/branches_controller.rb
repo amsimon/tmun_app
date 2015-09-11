@@ -10,6 +10,18 @@ class BranchesController < ApplicationController
     @branches = Branch.all
   end
 
+  def update_letter
+    Branch.tritonmun_letter = params[:tritonmun_letter]
+
+    flash[:success] = "Letter updated"
+
+    redirect_to action: "index"
+  end
+
+  def letter
+
+  end
+
   # GET /branches/1
   # GET /branches/1.json
   def show
@@ -17,6 +29,12 @@ class BranchesController < ApplicationController
 
     if @branch.name == "travelteam"
       render layout: "travel"
+    end
+    if @branch.name == "tritonmun"
+      render layout: "tritonmun"
+    end
+    if @branch.name == "sdimun"
+      render layout: "sdimun"
     end
   end
 

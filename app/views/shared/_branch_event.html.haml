@@ -1,0 +1,14 @@
+%tr.tog
+  %td
+    %span.triangle
+      &#9658;
+    = event.date.try(:strftime, "%b %d %Y")
+  %td
+    = event.activity
+%tr.time
+  %td
+    = event.time_start.try(:strftime, "%-I:%M %p")
+    \-
+    = event.time_end.try(:strftime, "%-I:%M %p")
+  %td
+    = event.place

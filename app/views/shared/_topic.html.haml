@@ -1,31 +1,54 @@
-
-.comm_box
-  %h2.com_head
-    = topic.committee
-  - if topic.guide_filename.present?
-    = link_to asset_path('bgs/'+ topic.guide_filename) do
-      .button
-        Topic
-        Guide
-  - if topic.chair.present?
-    .chair
-      %span.chair
-        Chair:
-      %span.name
-        = topic.chair
-  - if topic.vice_chair.present?
-    .chair
-      %span.chair
-        Vice Chair:
-      %span.name
-        = topic.vice_chair
-  %br/
-  = link_to "Edit", url_for([:edit, parent, topic]), class: "admin-link"
-  = link_to "delete", topic, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"
-  .ban-cont
-    .image-cont
-      = image_tag("#{topic.image_url}", class: "banner")
-    %h3.topic
-      = topic.topic
-  %div
-    = topic.description
+.module.sub-module
+  .admin-container
+    = link_to 'javascript:;' do
+      .clicker A
+    %ul.admin-list
+      %li
+        = link_to url_for([:edit, parent, topic]), class: "admin-link" do
+          .admin-line
+            .icon
+              = image_tag 'admin-icons/edit.png'
+            .words
+              Edit topic
+      %li
+        = link_to topic, method: :delete, data: { confirm: "You sure?" }, class: "admin-link" do
+          .admin-line
+            .icon
+              = image_tag 'admin-icons/delete.png'
+            .words
+              Delete topic
+  .committees-cont
+    %h1
+      = topic.committee
+    .sub-head
+      - if topic.guide_filename.present?
+        = link_to asset_path('bgs/'+ topic.guide_filename) do
+          .button
+            Topic
+            Guide
+      %table
+        - if topic.chair.present?
+          %tr
+            %td
+              %span.chair
+                Chair:
+            %td
+              %span.name
+                = topic.chair
+        - if topic.vice_chair.present?
+          %tr
+            %td
+              %span.chair
+                Vice Chair:
+            %td
+              %span.name
+                = topic.vice_chair
+      -#= link_to "Edit", url_for([:edit, parent, topic]), class: "admin-link"
+      -#= link_to "delete", topic, method: :delete, data: { confirm: "You sure?" }, class: "admin-link"
+    %div
+      %div.banner-cont
+        = image_tag("#{topic.image_url}")
+        %h3
+          = topic.topic
+    %div.description
+      = topic.description

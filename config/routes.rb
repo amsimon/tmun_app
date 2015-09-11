@@ -62,13 +62,18 @@ TmunApp::Application.routes.draw do
 
   root 'static_pages#home'
 
+  match '/admintools/frontpages', to: 'frontpages#index', via: 'get'
 
+  match '/_update_frontpage', to: 'frontpages#update_frontpage', via: 'put'
+  match '/_update_letter', to: 'branches#update_letter', via: 'put'
   match '/_update_hello', to: 'frontpages#update_hello', via: 'put'
   match '/branches/travelteam/guides/', to: 'static_pages#guides', via: 'get'
+  match '/letter/', to: 'branches#letter', via: 'get'
   match '/branches/travelteam/training/', to: 'static_pages#training', via: 'get'
   match '/branches/travelteam/upcoming/', to: 'static_pages#upcoming', via: 'get'
   match '/branches/travelteam/resources/', to: 'static_pages#resources', via: 'get'
   match '/branches/travelteam/past/', to: 'static_pages#past', via: 'get'
+  match '/branches/tritonmun/staff/', to: 'static_pages#staff', via: 'get'
 
   match '/admintools',  to: 'users#admintools',         via: 'get'
 
@@ -95,6 +100,8 @@ TmunApp::Application.routes.draw do
   match '/staff',    to: 'static_pages#staff',    via: 'get'
   match '/register',    to: 'static_pages#register',    via: 'get'
 
+
+  match '/admintools/conferences',    to: 'static_pages#conferences',    via: 'get'
   match '/travelteam',    to: 'static_pages#travelteam',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
 

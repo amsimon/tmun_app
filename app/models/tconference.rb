@@ -12,6 +12,7 @@ class Tconference < ActiveRecord::Base
 
   def slug_candidates
     [
+        :nick,
         [:nick, :year]
     ]
   end

@@ -39,6 +39,7 @@ div.bio-box {
 
     img.bio-photo {
       width: 200px;
+      border-radius: 50%;
     }
   }
 
@@ -51,18 +52,19 @@ div.bio-box {
     div.bio-header {
       font-size: 16px;
       color: #4f4f4f;
-      font-style: italic;
+      //font-style: italic;
 
 
       div.position {
         font-size: 40px;
-        color: black;
+        color: rgb(27, 56, 95);
         font-style: normal;
         margin-bottom: 10px;
       }
       div.name {
         font-weight: bold;
         font-size: 18px;
+        color: rgb(58, 124, 207);
       }
       div.college {
 
@@ -75,8 +77,13 @@ div.bio-box {
 
     div.bio {
       margin-top: 20px;
-      line-height: 140%;
-      font-family: Georgia, Times, "Times New Roman", serif;
+      color: rgb(12, 12, 12);
+      line-height: 1.5em;
+      font-size: 1.2em;
+      /* font-family: Georgia, Times, "Times New Roman", serif; */
+      padding: 1em;
+      border-left: 10px solid lightgray;
+      /* background-color: rgba(255, 255, 255, 0.27); */
 
       span.quote {
         font-size: 70px;

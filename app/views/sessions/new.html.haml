@@ -1,0 +1,26 @@
+.column.half.left
+  .module
+    .title
+      %span
+        LOG IN
+    = form_for(:session, url: sessions_path) do |f|
+      %table.sign
+        %tr
+          %td= f.label :email
+          %td= f.text_field :email
+        %tr
+          %td= f.label :password
+          %td= f.password_field :password
+        %tr
+          %td
+          %td.submit
+            = f.submit "Log in", class: "button light"
+.column.small.right
+  .module
+    .title
+      %span
+        REGISTER
+    #new-member
+      #new
+        New member?
+      = link_to "Sign up now!", signup_path, class: "button light"

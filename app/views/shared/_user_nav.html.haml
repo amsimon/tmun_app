@@ -1,0 +1,15 @@
+#branch-nav
+  = link_to '/branches/travelteam#', class: "square" do
+    .box
+      = image_tag @user.avatar.url(:small), style:"vertical-align: middle"
+  - if current_user?(@user)
+    = branch_nav_link 'Edit Profile', (edit_user_path)
+    = link_to 'Sign out', signout_path, method: 'delete', class: 'section'
+  - else
+    = link_to "Sign In", signin_path, class: 'section'
+
+  -#- if signed_in?
+  -#  - if current_user.admin?
+  -#    = link_to "Admin: edit user details", (edit_user_path), class: "section"
+  -#    = link_to "Admin: remove user", @user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'section'
+  -#    = link_to "Admin: give badge", (new_user_badge_path(@user)), class: "section"

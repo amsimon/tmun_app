@@ -17,6 +17,8 @@ gem 'haml'
 gem "haml-rails"
 gem 'html2haml'
 
+gem 'jquery-ui-rails'
+
 gem 'pg'
 
 gem 'jscolor-rails'

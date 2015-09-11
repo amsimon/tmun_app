@@ -1,0 +1,54 @@
+.module.sub-module
+  - if defined?(schedule)
+    - if schedule.present?
+      - if schedule.id != nil
+        .schedule-cont
+          - if signed_in?
+            - if current_user.admin?
+              .admin-container
+                = link_to 'javascript:;' do
+                  .clicker A
+                %ul.admin-list
+                  %li
+                    = link_to [:edit, parent, schedule], class: "admin-link" do
+                      .admin-line
+                        .icon
+                          = image_tag 'admin-icons/edit.png'
+                        .words
+                          Edit
+                          = parent_name
+                          schedule
+                  %li
+                    = link_to  [:new, parent, schedule], class: "admin-link" do
+                      .admin-line
+                        .icon
+                          = image_tag 'admin-icons/create.png'
+                        .words
+                          New
+                          = parent_name
+                          schedule
+                  %li
+                    = link_to schedule, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+                      .admin-line
+                        .icon
+                          = image_tag 'admin-icons/delete.png'
+                        .words
+                          Destroy
+                          = parent_name
+                          schedule
+          %table
+            %caption.date
+              %span.name
+                = schedule.name
+              - if conf != "false"
+                %br/
+                - if schedule.date != nil
+                  %span.date
+                    = schedule.date.strftime("%A, %b %-d, %Y")
+            %tr
+              - if conf != "true"
+                %th Date
+              %th Time
+              %th Activity
+              %th Location
+            = render partial: "shared/event", collection: schedule.events, locals: {conf: conf}

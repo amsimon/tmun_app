@@ -1,11 +1,11 @@
-#buttonBox
-  = link_to @cconference do
-    .button Overview
-  = link_to locations_cconference_path(@cconference) do
-    .button Location
-  = link_to committees_cconference_path(@cconference) do
-    .button Committees
-  = link_to speakers_cconference_path(@cconference) do
-    .button Speakers
-  = link_to register_cconference_path(@cconference) do
-    #register.button Register
+#branch-nav
+  = link_to '/branches/tritonmun#', class: "square" do
+    .box
+      = image_tag 'geisel.png'
+  = link_to @cconference, class: "square" do
+    .box#roman
+      I
+  = branch_nav_link 'Overview', @cconference
+  = branch_nav_link 'Committees', committees_cconference_path(@cconference)
+  = branch_nav_link 'Speakers', speakers_cconference_path(@cconference)
+  = branch_nav_link 'Register', register_cconference_path(@cconference)

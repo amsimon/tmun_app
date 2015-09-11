@@ -29,7 +29,7 @@ class SchedulesController < ApplicationController
 
     if @schedule.save
       flash[:success] = "Successfully created schedule."
-      redirect_to @parent
+      redirect_to branch_schedules_path(@parent)
     else
       render :new
     end
@@ -53,7 +53,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       flash[:success] = "Successfully updated schedule."
-      redirect_to @parent
+      redirect_to branch_schedules_path(@parent)
     else
       render :edit
     end

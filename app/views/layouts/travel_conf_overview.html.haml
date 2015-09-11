@@ -1,14 +1,6 @@
 = parent_layout "application" do
-  %h1#tritonmun
-    %span#main
-      = @tconference.name
-  %h2#season
-    = @tconference.season
-    = @tconference.year
-  .main_cont
-    = render 'shared/tconf_nav'
+  = render 'shared/travel_nav'
+  .main-cont
     = yield
 
-
 <!-- render roman, season, year here -->
-

@@ -1,26 +1,35 @@
-= form_for(@tconference) do |f|
-  = render 'shared/error_messages', object: f.object
-  %table.sign
-    %tr
-      %td= f.label :name
-      %td= f.text_field :name
-    %tr
-      %td= f.label :nick,"Short name (e.g. AggieMUN)"
-      %td= f.text_field :nick
-    %tr
-      %td= f.label :season
-      %td= f.text_field :season
-    %tr
-      %td= f.label :year
-      %td= f.text_field :year
-    %tr
-      %td= f.label :date
-      %td= f.text_field :date
-    %tr
-      %td= f.label :location
-      %td= f.text_field :location
-    %tr
-      %td= f.label :host
-      %td= f.text_field :host
-  %br/
-  %p= f.submit "Submit"
+
+- provide(:title, "Edit travel conference")
+.column.half.left
+  .module
+    .title
+      %span
+        EDIT TRAVEL CONFERENCE
+    = form_for(@tconference) do |f|
+      = render 'shared/error_messages', object: f.object
+      %table.sign
+        %tr
+          %td= f.label :name
+          %td= f.text_field :name
+        %tr
+          %td= f.label :nick,"Short name (e.g. AggieMUN)"
+          %td= f.text_field :nick
+        %tr
+          %td= f.label :season
+          %td= f.text_field :season
+        %tr
+          %td= f.label :year
+          %td= f.text_field :year
+        %tr
+          %td= f.label :date
+          %td= f.text_field :date
+        %tr
+          %td= f.label :location
+          %td= f.text_field :location
+        %tr
+          %td= f.label :host
+          %td= f.text_field :host
+        %tr
+          %td
+          %td
+            = f.submit "Submit", class: "button light", data: { disable_with: "Please wait..." }

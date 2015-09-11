@@ -1,6 +1,4 @@
 = parent_layout "application" do
-  %h1#tritonmun
-    %span#main{style: "color: red"} Admin Tools
-  .main_cont
-    = render 'shared/admin_nav'
+  = render 'shared/admin_nav'
+  .main-cont
     = yield

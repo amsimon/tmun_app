@@ -1,53 +1,58 @@
-= form_for [@parent, @topic] do |f|
-  - if @topic.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
-      %ul
-        - @topic.errors.full_messages.each do |msg|
-          %li= msg
-
-  %fieldset
-    Leave fields blank if not applicable.
-    %table.field-table
-      %tr
-        %td
-          = f.label :order
-        %td
-          = f.text_field :order
-      %tr
-        %td
-          = f.label :committee
-        %td
-          = f.text_field :committee
-      %tr
-        %td
-          = f.label :topic
-        %td
-          = f.text_field :topic
-      %tr
-        %td
-          = f.label :chair
-        %td
-          = f.text_field :chair
-      %tr
-        %td
-          = f.label :vice_chair
-        %td
-          = f.text_field :vice_chair
-      %tr
-        %td
-          = f.label :image_url, "Image URL. Use imgur.com (images should be longer than tall)"
-        %td
-          = f.text_field :image_url
-      %tr
-        %td
-          = f.label :description
-        %td
-          = f.text_area :description
-      %tr
-        %td
-          = f.label :guide_filename, "Topic Guide Filename (e.g. 'WHO.pdf')"
-        %td
-          = f.text_field :guide_filename
-  .actions
-    = f.submit 'Save'
+.column.big
+  .module
+    .title
+      %span
+        Conference Topics
+    = form_for [@parent, @topic] do |f|
+      - if @topic.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
+          %ul
+            - @topic.errors.full_messages.each do |msg|
+              %li= msg
+      Leave fields blank if not applicable.
+      %table.field-table
+        %tr
+          %td
+            = f.label :order
+          %td
+            = f.text_field :order
+        %tr
+          %td
+            = f.label :committee
+          %td
+            = f.text_field :committee
+        %tr
+          %td
+            = f.label :topic
+          %td
+            = f.text_field :topic
+        %tr
+          %td
+            = f.label :chair
+          %td
+            = f.text_field :chair
+        %tr
+          %td
+            = f.label :vice_chair
+          %td
+            = f.text_field :vice_chair
+        %tr
+          %td
+            = f.label :image_url, "Image URL. Use imgur.com (images should be longer than tall)"
+          %td
+            = f.text_field :image_url
+        %tr
+          %td
+            = f.label :description
+          %td
+            = f.text_area :description
+        %tr
+          %td
+            = f.label :guide_filename, "Topic Guide Filename (e.g. 'WHO.pdf')"
+          %td
+            = f.text_field :guide_filename
+        %tr
+          %td
+          %td
+            = f.submit 'Save', class: "button light"

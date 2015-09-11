@@ -1,27 +1,53 @@
 - provide(:title, 'Travel Team')
-%h1.subhead
-  %span#main Upcoming Conferences
+-#%h1.subhead
+-#  %span#main Upcoming Conferences
+-#
+-#
+-#.narrow
+-#  - if signed_in?
+-#    / Admin viewing others'
+-#    - if current_user.admin?
+-#      %span.admin
+-#        = link_to "Add new travel conference", new_tconference_path, class: "admin-link"
+-#  /
+-#    <#%= collection_select_tag(:user, :role, User.all,
+-#    \:id, :role, {}, {:name=>'user_filter'}) %>
+-#  %div.col-cont
+-#    %div.col
+-#      %h2 Fall 2014
+-#      %ul.users= render Tconference.fall
+-#    %div.col
+-#      %h2 Winter 2015
+-#      %ul.users= render Tconference.winter
+-#    %div.col
+-#      %h2 Spring 2015
+-#      %ul.users= render Tconference.spring
 
 
-.narrow
-  - if signed_in?
-    / Admin viewing others'
-    - if current_user.admin?
-      %span.admin
-        = link_to "Add new travel conference", new_tconference_path, class: "admin-link"
-  /
-    <#%= collection_select_tag(:user, :role, User.all,
-    \:id, :role, {}, {:name=>'user_filter'}) %>
-  %div.col-cont
-    %div.col
-      %h2 Fall 2014
-      %ul.users= render Tconference.fall
-    %div.col
-      %h2 Winter 2015
-      %ul.users= render Tconference.winter
-    %div.col
-      %h2 Spring 2015
-      %ul.users= render Tconference.spring
+- if signed_in?
+  / Admin viewing others'
+  - if current_user.admin?
+    %span.admin
+      = link_to "Add new travel conference", new_tconference_path, class: "admin-link"
+.column.medium.left
+  .module.upcoming
+    .title
+      %span
+        Fall 2014
+    = render Tconference.fall
+.column.medium.right
+  .module.upcoming
+    .title
+      %span
+        Winter 2015
+    = render Tconference.winter
+.column.medium.right
+  .module.upcoming
+    .title
+      %span
+        Spring 2015
+    = render Tconference.spring
+
 
 -#
   .upcoming-cont

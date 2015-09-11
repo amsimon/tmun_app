@@ -1,0 +1,14 @@
+= form_tag(_update_letter_path, method: "put") do
+  .column.big.left
+    .module
+      .title
+        %span
+          Letter
+      %table.sign
+        %tr
+          %td= label_tag(:tritonmun_letter, "Letter:")
+          %td= text_area_tag :tritonmun_letter, Branch.tritonmun_letter
+        %tr
+          %td
+          %td
+            = submit_tag "Submit", class: "button light", data: { disable_with: "Please wait..." }

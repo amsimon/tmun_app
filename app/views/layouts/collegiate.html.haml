@@ -1,9 +1,4 @@
 = parent_layout "application" do
-  %h1#tritonmun
-    %span#main SDIMUN
-  %h2#season
-    = @cconference.season
-    = @cconference.year
-  .main_cont
-    = render 'shared/collegiate_nav'
+  = render 'shared/collegiate_nav'
+  .main-cont
     = yield

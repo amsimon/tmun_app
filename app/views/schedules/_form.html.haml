@@ -1,19 +1,48 @@
-= form_for [@parent, @schedule] do |f|
-  - if @schedule.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@schedule.errors.count, "error")} prohibited this schedule from being saved:"
-      %ul
-        - @schedule.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :name
-    = f.text_field :name
-    = f.label :date
-    = f.date_field :date
-  = f.fields_for :events do |builder|
-    = render 'event_fields',f: builder
-  = link_to_add_fields "Add Event", f, :events
+.column.full.left
+  .module
+    .title
+      %span
+        EDIT
+        = @parent.name
+        BRANCH SCHEDULE
+    = form_for [@parent, @schedule] do |f|
+      = render 'shared/error_messages', object: f.object
+      %table
+        %tr
+          %td
+            = f.label :name
+          %td
+            = f.text_field :name
+        - if conf == 'true'
+          %tr
+            %td
+              = f.label :date
+            %td
+              = f.date_field :date
+      %br/
+      %br/
+      = f.fields_for :events do |builder|
+        = render 'event_fields',f: builder
+      = link_to_add_fields "+", f, :events
 
-  .actions
-    %br/
-    = f.submit 'Save'
+      %div{style: 'margin-top: 2em'}
+        = f.submit 'Save schedule', class: 'button light'
+-#= form_for [@parent, @schedule] do |f|
+-#  - if @schedule.errors.any?
+-#    #error_explanation
+-#      %h2= "#{pluralize(@schedule.errors.count, "error")} prohibited this schedule from being saved:"
+-#      %ul
+-#        - @schedule.errors.full_messages.each do |msg|
+-#          %li= msg
+-#  .field
+-#    = f.label :name
+-#    = f.text_field :name
+-#    = f.label :date
+-#    = f.date_field :date
+-#  = f.fields_for :events do |builder|
+-#    = render 'event_fields',f: builder
+-#  = link_to_add_fields "Add Event", f, :events
+-#
+-#  .actions
+-#    %br/
+-#    = f.submit 'Save'

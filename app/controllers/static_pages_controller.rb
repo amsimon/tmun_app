@@ -38,12 +38,24 @@ class StaticPagesController < ApplicationController
     render :layout => 'travel'
   end
 
+  def conferences
+    @hconferences = Hconference.all
+    @tconferences = Tconference.all
+    @cconferences = Cconference.all
+
+    render :layout => 'admin'
+  end
+
   def training
     render :layout => 'travel'
   end
 
   def app
 
+  end
+
+  def staff
+    render :layout => 'tritonmun'
   end
 
   def guides

@@ -1,11 +1,8 @@
-%h1{class:"subhead"}
-  %span{id:"main"}
-    Managing Headlines
-= link_to "New Headline", new_branch_headline_url(@parent), class: "admin-link"
-#news.outer{style: "width: 50%;"}
-  .inner
-  .news-box
-    %ul
-      = render partial: "shared/headline", collection: @headlines, as: :headline, locals: {parent: @parent}
-%br
-
+.column.medium.right
+  .module.upcoming
+    .title
+      %span
+        = @parent.name
+        = @parent.class.name.demodulize
+        headline
+      = render partial: "headline", collection: @parent.headlines, as: :headline, locals: {parent: @parent}

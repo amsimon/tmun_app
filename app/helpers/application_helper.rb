@@ -1,6 +1,31 @@
+
+
 module ApplicationHelper
 
 
+  def nav_link(link_text, link_path)
+
+    master = link_path.split('/').last
+    values = request.original_url.split('/')
+    class_name = values.include?(master) ? 'current' : nil
+    content_tag(:li, :class => class_name) do
+      link_to link_text, link_path, class: 'nav-link'
+    end
+  end
+
+  def branch_nav_link(link_text, link_path)
+
+    class_name = current_page?(link_path) ? 'section sub-current' : 'section'
+
+    link_to link_text, link_path, class: class_name
+  end
+
+  def branch_nav_link_put(link_text, link_path)
+
+    class_name = current_page?(link_path) ? 'section sub-current' : 'section'
+
+    link_to link_text, link_path, class: class_name, method: :put
+  end
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
@@ -24,7 +49,9 @@ module ApplicationHelper
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
       render(association.to_s.singularize + "_fields", f: builder)
     end
-    link_to(name, '#', class: "add_fields admin-link", data: {id: id, fields: fields.gsub("\n", "")})
+    link_to('#', class: "add_fields admin-link", data: {id: id, fields: fields.gsub("\n", "")}) do
+      content_tag(:div, name, class: 'event-a')
+    end
   end
 
   def parent_schedule_path(prefix, parent, schedule)

@@ -1,7 +1,13 @@
-.narrow
-  %div#comm_cont
-    = link_to "Add New Topic", new_cconference_topic_path(@cconference), class: "admin-link"
 
+%div
+  = link_to "Add New Topic", new_cconference_topic_path(@cconference), class: "admin-link"
+
+  = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
+.column.full
+  .module
+    .title
+      %span
+        COMMITTEES
     - if @topics.present?
       = render collection: @topics, as: :topic, partial: "shared/topic", locals: {parent: @cconference}
     - else

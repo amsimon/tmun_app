@@ -1,0 +1,48 @@
+#- provide(:title, @user.name)
+.column.full
+  .module
+    .title
+      %span
+        PROFILE
+
+    - if signed_in?
+      - if current_user.admin?
+        .admin-container
+          = link_to 'javascript:;' do
+            .clicker A
+          %ul.admin-list
+            %li
+              = link_to edit_user_path(@user), class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/edit.png'
+                  .words
+                    Edit user
+            %li
+              = link_to @user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/delete.png'
+                  .words
+                    Destroy user
+    .bio-box
+      .photo
+        %img.bio-photo{:src => @user.avatar.url(:small)}/
+        -#.badges
+        -#  = render partial: "badges/badge", collection: @badges
+      .bio-right
+        .bio-header
+          - if @user.secretariat?
+            .position
+              = @user.sec_pos
+          .name
+            = @user.name
+          .email
+            = link_to @user.email, ("mailto:"+@user.email)
+          -#.college Eleanor Roosevelt College
+          .major
+            = @user.major
+        - if @user.bio.present?
+          .bio
+            = @user.bio
+    #badge_info blank

@@ -1,0 +1,73 @@
+
+= form_tag(_update_frontpage_path, method: "put") do
+  .column.big.left
+    .module
+      .title
+        %span
+          GREETING
+      %table.sign
+        %tr
+          %td= label_tag(:hello, "Greeting:")
+          %td= text_area_tag :travel_title, Frontpage.hello
+        %tr
+          %td= label_tag(:hello_link_url, "Button Link URL:")
+          %td= text_field_tag :hello_link_url, Frontpage.hello_link_url
+        %tr
+          %td= label_tag(:hello_link_text, "Button Link Text:")
+          %td= text_field_tag :hello_link_text, Frontpage.hello_link_text
+  .column.medium.left
+    .module
+      .title
+        %span
+          Travel
+      %table.sign
+        %tr
+          %td= label_tag(:travel_title, "Title:")
+          %td= text_field_tag :travel_title, Frontpage.travel_title
+        %tr
+          %td= label_tag(:travel_text, "Text:")
+          %td= text_area_tag :travel_text, Frontpage.travel_text
+        %tr
+          %td= label_tag(:travel_link_url, "Link URL:")
+          %td= text_field_tag :travel_link_url, Frontpage.travel_link_url
+        %tr
+          %td= label_tag(:travel_link_text, "Link text:")
+          %td= text_field_tag :travel_link_text, Frontpage.travel_link_text
+  .column.medium.right
+    .module
+      .title
+        %span
+          COLLEGIATE
+      %table.sign
+        %tr
+          %td= label_tag(:collegiate_title, "Title:")
+          %td= text_field_tag :collegiate_title, Frontpage.collegiate_title
+        %tr
+          %td= label_tag(:collegiate_text, "Text:")
+          %td= text_area_tag :collegiate_text, Frontpage.home_text
+        %tr
+          %td= label_tag(:collegiate_link_url, "Link URL:")
+          %td= text_field_tag :collegiate_link_url, Frontpage.collegiate_link_url
+        %tr
+          %td= label_tag(:collegiate_link_text, "Link text:")
+          %td= text_field_tag :collegiate_link_text, Frontpage.collegiate_link_text
+  .column.medium.right
+    .module
+      .title
+        %span
+          Home
+      %table.sign
+        %tr
+          %td= label_tag(:home_title, "Title:")
+          %td= text_field_tag :home_title, Frontpage.home_title
+        %tr
+          %td= label_tag(:home_text, "Text:")
+          %td= text_area_tag :home_text, Frontpage.home_text
+        %tr
+          %td= label_tag(:home_link_url, "Link URL:")
+          %td= text_field_tag :home_link_url, Frontpage.home_link_url
+        %tr
+          %td= label_tag(:home_link_text, "Link text:")
+          %td= text_field_tag :home_link_text, Frontpage.home_link_text
+
+  = submit_tag "Update Frontpage", class: "button light", data: { disable_with: "Please wait..." }

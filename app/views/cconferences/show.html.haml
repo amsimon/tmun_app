@@ -1,92 +1,115 @@
-%p#notice= notice
+- provide(:title, "SDIMUN")
+/
+  render season, year here
 
-= link_to "Edit conference details", edit_cconference_path(@cconference), class: "admin-link"
-%div{ style: "text-align: center; font-size: 2em; font-style: italic;"}
+.column.half.left
+  .module
+    .title
+      %span
+        INFORMATION
+    %table
+      %tr
+        %td.label Date:
+        %td.info= @cconference.date
+      %tr
+        %td.label Location:
+        %td.info= @cconference.location
+      %tr
+        %td.label Delegation Fee:
+        %td.info
+          $#{@cconference.delegation_fee} / school
+      %tr
+        %td.label Early:
+        %td.info
+          $#{@cconference.early} / delegate
+          %span.date
+            (by #{@cconference.early})
+      %tr
+        %td.label Regular:
+        %td.info
+          $#{@cconference.regular} / delegate
+          %span.date
+            (by #{@cconference.regular})
+      %tr
+        %td.label Late:
+        %td.info
+          $#{@cconference.late} / delegate
+          %span.date
+            (by #{@cconference.late})
 
-
-.two-half-cols
-  -# Left column
-  .col
-    .item-cont
-      %h2
-        %span
-          Information
-      .content.information
-        %table.infos
-          %tr
-            %td.label Date:
-            %td.info= @cconference.date
-          %tr
-            %td.label Location:
-            %td.info= @cconference.location
-          %tr
-            %td.label Delegation Fee:
-            %td.info= @cconference.delegation_fee
-          %tr
-            %td.label Early Fee:
-            %td.info= @cconference.early
-          %tr
-            %td.label Regular Fee:
-            %td.info= @cconference.regular
-          %tr
-            %td.label Late Fee:
-            %td.info= @cconference.late
-  -# Right column
-  .col
-    .item-cont
-      %h2
-        %span
-          Deadlines
-      .content.information
-        = link_to "Add deadline", url_for([:new, @cconference, :deadline]), class: "admin-link"
-        - if @cconference.deadlines.present?
-          %table.infos
-            = render collection: @cconference.deadlines, as: :deadline, partial: "shared/deadline", locals: {parent:@cconference}
-        - else
-          TBA
-.outer
-  .innerBox
-    %h2
-      %span Registration FAQ
+  .module
+    .title
+      %span
+        REGISTRATION FAQ
     - if @reg_faq.present?
       = link_to "edit", edit_cconference_faq_path(@cconference, @reg_faq), class: "admin-link"
       .faq.admin-editable
-        %ol.questions
+        %ul.questions
           - @reg_faq.questions.each do |q|
             %li
-              .question
-                = q.content.html_safe
-              - q.answers.each do |a|
-                .answer
-                  = a.content.html_safe
+              .module.sub-module
+                .question
+                  = q.content.html_safe
+                - q.answers.each do |a|
+                  .answer
+                    = a.content.html_safe
     - else
       = link_to "Create Registration FAQ", new_cconference_faq_path(@cconference, Faq.specific_faq(@cconference, "Registration")), class: "admin-link"
-  .innerBox
-    %h2
-      %span Schedule
+.column.half.right
+  .module
+    .title
+      %span
+        DEADLINES
+    %table.infos
+      %tr
+        %td.label.date December 12, 2014
+        %td.info Early registration deadline to postmark payment.
+      %tr
+        %td.label.date February 6, 2015
+        %td.info Regular registration deadline to postmark payment.
+      %tr
+        %td.label.date March 6, 2015
+        %td.info Late registration deadline to postmark payment.
+      %tr
+        %td.label.date April 12, 2015
+        %td.info Position papers due at 11:59 pm PST.
+  .module
+    .title
+      %span
+        SCHEDULE
     = link_to "New Schedule", new_cconference_schedule_path(@cconference), class: "admin-link"
     - if @day1_sched.present?
-      = render partial: "schedules/schedule", object: @day1_sched, locals: {parent: @cconference, conf: "true"}
+      = render partial: "schedules/conference_schedule", object: @day1_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
     - if @day2_sched.present?
-      = render partial: "schedules/schedule", object: @day2_sched, locals: {parent: @cconference, conf: "true"}
+      = render partial: "schedules/conference_schedule", object: @day2_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
     - if @day3_sched.present?
-      = render partial: "schedules/schedule", object: @day3_sched, locals: {parent: @cconference, conf: "true"}
+      = render partial: "schedules/conference_schedule", object: @day3_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
+  .module
+    .title
+      %span
+        REGULATIONS
+    %p Please follow all committee rules and regulations. Failure to do so may result in loss of diplomacy points and in severe cases, expulsion from committee.
 
+    %p
+      %strong> No cellphones
+      , iPads, tablets, or other electronic devices in committee. If a delegate wishes to
+      use their cellphone in an emergency, they may respectfully exit the room. Delegates who make a habit of this may be asked to leave.
 
+    %p
+      Delegates MAY use their
+      %strong laptops
+      to type resolutions during unmoderated caucus only. Draft
+      resolutions will be submitted to their Chair via email or a flash drive. Under no circumstances may delegates use their laptops for other purposes. Delegates will be provided with a sample resolution and list of preoperative and operative clauses.
 
+    %p
+      %strong Pre-written resolutions
+      are forbidden and are grounds for disqualification of committee awards.
+      This
+      includes operative clauses, preoperative clauses, or any variation thereof, written out before committee session begins or the topic is introduced.
 
+    %p
+      %strong Plagiarism
+      is a serious offense and may be grounds for disqualification of committee awards. All
+      Chairs will be checking for plagiarism through various devices. In order to avoid plagiarism, cite all sources in your position paper, and avoid quoting or paraphrasing. You may instead combine or restructure information to come to a different conclusion, using entirely different words and phrases.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Delegates are expected to cease their conversation at the bang of the gavel. The gavel signifies the end of a moderated or unmoderated caucus and the end of a speech. During speeches, Chairs will tap the gavel with 10 seconds left, and bang the gavel at the end of your speech. During comments, Chairs will tap the gavel with 5 seconds left, and bang the gavel at the end of your comment. The taps signifies to a delegate to wrap up their point. After the bang of the gavel, they may finish their phrase but may not start a new sentence or conjunction.

@@ -1,27 +1,28 @@
 %header.navbar
   #navbar-inner
     %nav
-      = link_to image_tag("logo4.png", alt: "Model United Nations at UCSD", |
+      = link_to image_tag("logo8.png", alt: "Model United Nations at UCSD", |
         id: "logo"), root_path, id: "logo"                                  |
       .half
         %ul#left
-          %li= link_to "Travel",    branch_path(Branch.travel.first), class: "nav-link"
-          %li= link_to "TritonMUN",    branch_path(Branch.home.first), class: "nav-link"
-          %li= link_to "SDIMUN", branch_path(Branch.college.first), class: "nav-link"
+          = nav_link "Travel",    branch_path(Branch.travel.first)
+          = nav_link "TritonMUN",    branch_path(Branch.home.first)
+          = nav_link "SDIMUN", branch_path(Branch.college.first)
       .half
         %ul#right
-          %li= link_to "About", about_path, class: "nav-link"
+          = nav_link "About", about_path
           - if signed_in?
             %li
-              = link_to current_user.name, current_user, method: "get", |
-                class: "nav-link", id: "signin"                         |
+              = link_to current_user, method: "get", class: "nav-link", id: "signin"  do
+                = image_tag current_user.avatar.url(:small), class: 'avatar'
+                = current_user.name                       |
           - else
-            %li= link_to "Sign In", signin_path, class: "nav-link", id: "signin"
-          - if signed_in?
-            - if current_user.admin?
-              %li
-                = link_to "ADMIN TOOLS", admintools_path, class: "nav-link", id: "admin"
-          %li= link_to image_tag("calendar-icon.png", alt: "Calendar", id: "calendar"), calendar_path
+            %li= link_to "Sign In", signin_path, class: "nav-link"
+          -#- if signed_in?
+          -#  - if current_user.admin?
+          -#    %li
+          -#      = link_to "ADMIN TOOLS", admintools_path, class: "nav-link", id: "admin"
+          -#%li= link_to image_tag("calendar-icon.png", alt: "Calendar", id: "calendar"), calendar_path
           %li= link_to image_tag("fb-icon.png", alt: "Facebook", id: "calendar"), "https://www.facebook.com/ModelUnitedNationsAtUcsd"
   /
     <div id="under-bar">

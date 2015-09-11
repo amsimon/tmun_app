@@ -1,0 +1,24 @@
+.sub-module.module
+  - if signed_in?
+    - if current_user.admin?
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker A
+        %ul.admin-list
+          %li
+            = link_to edit_cconference_path(cconference), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Edit conference
+          %li
+            = link_to cconference, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/delete.png'
+                .words
+                  Destroy conference
+  = link_to cconference, class: "away" do
+    %span.button.light
+      = cconference.number

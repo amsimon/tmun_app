@@ -1,0 +1,5 @@
+#branch-nav
+  = link_to '/branches/sdimun#', class: "square" do
+    .box
+      = image_tag 'trident.png'
+  = branch_nav_link 'Overview', branch_path(Branch.travel.first)

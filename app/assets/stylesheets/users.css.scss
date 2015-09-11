@@ -2,13 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 input:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+  -webkit-box-shadow: 0 0 0 50px #dfe4ea inset;
   -webkit-text-fill-color: #333;
 }
 
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 50px white inset;
+  -webkit-box-shadow: 0 0 0 50px #dfe4ea inset;
   -webkit-text-fill-color: #333;
+  border: 1px solid rgb(57, 123, 206);
+}
+
+textarea {
+  border-radius: 3px;
+  background-color: #dfe4ea;
+  min-height: 100px;
+  max-width: 100%;
+}
+textarea:focus {
+  border: 1px solid rgb(57, 123, 206);
 }
 
 ul.ad {
@@ -176,7 +187,11 @@ div#sub-cont {
 
 }
 input[type=submit] {
+  font-size: 22px;
+  cursor: pointer;
+  display: inline-block;
 
+/*
   background-color: #252E61;
   color: white;
 
@@ -190,9 +205,14 @@ input[type=submit] {
   padding: 10px 20px;
 
   margin: 0 auto;
+*/
 
 
 }
+input[type=submit]:disabled {
+  opacity: .3 !important;
+}
+/*
 input[type=submit]:hover {
   background-color: #333e88;
 }
@@ -202,6 +222,7 @@ input[type=submit]:active {
   border: none;
   margin-top: 4px;
 }
+*/
 
 
 
@@ -215,7 +236,6 @@ div.lower-sign {
   padding-top: 30px;
 
   text-align: left;
-  padding-bottom: 200px;
 
 }
 
@@ -226,12 +246,24 @@ label {
   color: #212121;
 }
 
-input {
+input[type=text] {
+  border: 1px solid rgb(188, 188, 188);
+  /* border-bottom: 1px solid white; */
   text-align: left;
   font-size: 1.5em;
   margin-bottom: 4px;
-  //width: calc(100% - 10px);
+  /* background: rgb(190, 52, 52); */
+  /* border: none; */
+  border-radius: 3px;
+  padding: .5em;
+  background-color: #dfe4ea;
+  box-sizing: border-box;
+  width: 100%;
 
+}
+
+input:focus {
+  border: 1px solid rgb(57, 123, 206);
 }
 
 div#desc {
