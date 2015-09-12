@@ -22,6 +22,8 @@ $(window).load(function() {
 
     function slideLeftImg() {
 
+
+
         var $b0 = $(bgs[0]);
         var $b1 = $(bgs[1]);
 
@@ -144,15 +146,15 @@ $(window).load(function() {
             setTimeout(slideLeftImg, del);
         });
     }*/
-   var yo = $('.gde').offset().top;
-    //alert("Off: " + yo + "   H: " + $(window).height() );
-
-    //$('.gde').height( $(document).height() -  yo  );
-    $('#everything').height($('.gde').height() + $('footer').height()  + $('.container#news').outerHeight() );
+   //var yo = $('.gde').offset().top;
+   // //alert("Off: " + yo + "   H: " + $(window).height() );
+   //
+   // //$('.gde').height( $(document).height() -  yo  );
+   // $('#everything').height($('.gde').height() + $('footer').height()  + $('.container#news').outerHeight() );
 });
 
 $(window).resize(function() {
-    var yo = $('.gde').offset().top;
-   //$('.gde').height( $(document).height() -  yo  );
-    $('#everything').height($('.gde').height() + $('footer').height()   + $('.container#news').outerHeight() );
+   // var yo = $('.gde').offset().top;
+   ////$('.gde').height( $(document).height() -  yo  );
+   // $('#everything').height($('.gde').height() + $('footer').height()   + $('.container#news').outerHeight() );
 });
