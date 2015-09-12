@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.transit
 //= require jquery-ui
+//= require jquery.transit
 //= require cocoon
 //= require jscolor
 
