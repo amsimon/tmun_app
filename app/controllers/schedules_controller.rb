@@ -29,7 +29,7 @@ class SchedulesController < ApplicationController
 
     if @schedule.save
       flash[:success] = "Successfully created schedule."
-      redirect_to branch_schedules_path(@parent)
+      redirect_to @parent
     else
       render :new
     end
