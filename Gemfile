@@ -23,6 +23,7 @@ gem 'pg'
 
 gem 'jscolor-rails'
 gem 'jquery-minicolors-rails'
+gem 'jquery-rails', '3.0.4'
 
 group :development, :test do
 

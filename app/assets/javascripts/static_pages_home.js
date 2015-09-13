@@ -1,3 +1,6 @@
+
+
+
 $(document).ready( function() {
 
 
@@ -14,6 +17,8 @@ $(document).ready( function() {
 $(window).load(function() {
 
 
+
+
     var bgs = $(".bg").toArray();
     var bgtop;
     var dir = -1;
@@ -21,6 +26,8 @@ $(window).load(function() {
     slideLeftImg();
 
     function slideLeftImg() {
+
+
 
 
 
@@ -48,6 +55,7 @@ $(window).load(function() {
                 bgs.push(bgtop);
 
                 dir = dir * -1;
+
                 slideLeftImg();
 
         }});

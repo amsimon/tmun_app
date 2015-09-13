@@ -13,9 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery.transit
+//= require jquery.transit.js
 //= require cocoon
 //= require jscolor
+
+
+
+
+
+
+
+
+
+
 
 var navPos;
 $(document).ready( function() {
@@ -70,7 +80,10 @@ $(document).ready( function() {
         $(this).parent().next().stop().slideToggle('fast');
     });
 
-  navPos = $('#branch-nav').offset().top;
+    if ( $( "#branch-nav" ).length ) {
+
+        navPos = $('#branch-nav').offset().top;
+    }
 
 });
 
