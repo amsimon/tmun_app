@@ -21,7 +21,12 @@
     .module.sub-module
 
       .letter
-        = simple_format Branch.tritonmun_letter
+        .letter-greeting
+          = simple_format Branch.tritonmun_letter_top
+        .letter-body{style: 'white-space: pre-wrap;'}
+          = Branch.tritonmun_letter
+        .letter-salutation
+          = simple_format Branch.tritonmun_letter_bottom
         -#%p Honorable Delegates and Advisers,
         -#%p
         -#  Welcome to the eleventh session of Triton Model United Nations, Spring 2015. This year's

@@ -6,8 +6,14 @@
           Letter
       %table.sign
         %tr
-          %td= label_tag(:tritonmun_letter, "Letter:")
+          %td= label_tag(:tritonmun_letter_top, "Greeting")
+          %td= text_area_tag :tritonmun_letter_top, Branch.tritonmun_letter_top
+        %tr
+          %td= label_tag(:tritonmun_letter, "Body")
           %td= text_area_tag :tritonmun_letter, Branch.tritonmun_letter
+        %tr
+          %td= label_tag(:tritonmun_letter_bottom, "Salutation")
+          %td= text_area_tag :tritonmun_letter_bottom, Branch.tritonmun_letter_bottom
         %tr
           %td
           %td

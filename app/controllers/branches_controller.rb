@@ -12,6 +12,8 @@ class BranchesController < ApplicationController
 
   def update_letter
     Branch.tritonmun_letter = params[:tritonmun_letter]
+    Branch.tritonmun_letter_top = params[:tritonmun_letter_top]
+    Branch.tritonmun_letter_bottom = params[:tritonmun_letter_bottom]
 
     flash[:success] = "Letter updated"
 

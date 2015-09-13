@@ -22,13 +22,27 @@ class Branch < ActiveRecord::Base
   end
 
   @@tritonmun_letter = "Welcome to TritonMUN!"
+  @@tritonmun_letter_top = "Welcome to TritonMUN!"
+  @@tritonmun_letter_bottom = "Welcome to TritonMUN!"
 
   def self.tritonmun_letter
     @@tritonmun_letter
   end
+  def self.tritonmun_letter_top
+    @@tritonmun_letter_top
+  end
+  def self.tritonmun_letter_bottom
+    @@tritonmun_letter_bottom
+  end
 
   def self.tritonmun_letter=(value)
     @@tritonmun_letter = value
+  end
+  def self.tritonmun_letter_top=(value)
+    @@tritonmun_letter_top = value
+  end
+  def self.tritonmun_letter_bottom=(value)
+    @@tritonmun_letter_bottom = value
   end
 
 end

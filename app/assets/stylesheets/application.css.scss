@@ -779,7 +779,9 @@ div.event-x {
 div.event-x:hover {
   opacity: 1;
 }
-
+.letter-body {
+  line-height: 2em;
+}
 #branch-nav {
   position: absolute;
   top: 80px;
