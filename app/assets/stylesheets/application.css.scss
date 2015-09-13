@@ -125,7 +125,7 @@ tr.time {
   top: 8px;
   left: -16px;
   border-radius: 3px;
-  z-index: 99999;
+  //z-index: 1000;
  // overflow: hidden;
 
   .clicker {
@@ -139,7 +139,7 @@ tr.time {
     color: white;
     font-weight: bold;
     position: relative;
-    z-index: 99;
+    z-index: 100;
     text-align: center;
     box-sizing: border-box;
     line-height: 30px;
@@ -151,91 +151,95 @@ tr.time {
     opacity: 1;
   }
 
-}
-ul.admin-list {
-  opacity: 0;
-  list-style: none;
-  padding: 0;
-  /* width: 200px; */
-  /* padding-right: 8px; */
-  text-align: left;
-  position: relative;
-  top: -25px;
-  z-index: 0;
-  margin: 0;
+  ul.admin-list {
+    opacity: 0;
+    list-style: none;
+    padding: 0;
+    /* width: 200px; */
+    /* padding-right: 8px; */
+    text-align: left;
+    position: relative;
+    top: -25px;
+    //z-index: 0;
+    margin: 0;
 
-  display: none;
-
-
-  position: relative;
-  top: -25px;
-  z-index: 0;
+    display: none;
 
 
-  li {
+    position: relative;
+    top: -25px;
+    z-index: 200;
+
+
+    li {
 
 
 
-    .admin-line {
-      /* overflow: hidden; */
-      /* margin: 0 auto; */
-      height: 32px;
-      line-height: 32px;
-      /* border: 1px solid #a90000; */
-      /* margin-bottom: 1px; */
-      color: white;
-      border-radius: 3px;
-      display: block;
-      text-align: left;
-      box-sizing: border-box;
-      white-space: nowrap;
-      margin: 6px 0;
-
-      .icon {
-        border-radius: 50%;
-        background: #910000;
-        display: inline-block;
-        width: 32px;
+      .admin-line {
+        /* overflow: hidden; */
+        /* margin: 0 auto; */
         height: 32px;
-        /* border: rgba(0, 0, 0, 0.04) solid 1px; */
         line-height: 32px;
-        /* vertical-align: middle; */
-        height: 32px;
-        width: 32px;
-        position: relative;
-        z-index: 20;
-        /* border: 1px solid #c50000; */
-        box-sizing: border-box;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.42);
-
-      }
-      .words {
-        border-radius: 999px;
-        //opacity: 0;
-        display: none;
-        /* line-height: 32px; */
-        vertical-align: middle;
-        height: 32px;
-        /* border: 1px solid #000000; */
-        vertical-align: top;
+        /* border: 1px solid #a90000; */
+        /* margin-bottom: 1px; */
         color: white;
-        padding-left: 8px;
-        padding-right: 16px;
-        white-space: nowrap;
-        background: #560000;
+        border-radius: 3px;
+        display: block;
+        text-align: left;
         box-sizing: border-box;
-        position: relative;
-        left: -32px;
-        padding-left: 40px;
-        z-index: 10;
-        /* vertical-align: middle; */
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.42);
-        text-shadow: none;
-        font-size: 16px;
+        white-space: nowrap;
+        margin: 6px 0;
+
+        .icon {
+          border-radius: 50%;
+          background: #910000;
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          /* border: rgba(0, 0, 0, 0.04) solid 1px; */
+          line-height: 32px;
+          /* vertical-align: middle; */
+          height: 32px;
+          width: 32px;
+          position: relative;
+          //z-index: 20;
+          /* border: 1px solid #c50000; */
+          box-sizing: border-box;
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.42);
+          z-index: 150;
+
+        }
+        .words {
+          z-index: 130;
+          border-radius: 999px;
+          //opacity: 0;
+          display: none;
+          /* line-height: 32px; */
+          vertical-align: middle;
+          height: 32px;
+          /* border: 1px solid #000000; */
+          vertical-align: top;
+          color: white;
+          padding-left: 8px;
+          padding-right: 16px;
+          white-space: nowrap;
+          background: #560000;
+          box-sizing: border-box;
+          position: relative;
+          left: -32px;
+          padding-left: 40px;
+          //z-index: 10;
+          /* vertical-align: middle; */
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.42);
+          text-shadow: none;
+          font-size: 16px;
+        }
       }
     }
   }
+
 }
+
 
 #new-member {
   text-align: center;
