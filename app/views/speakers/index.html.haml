@@ -1,0 +1,27 @@
+%h1 Listing speakers
+
+%table
+  %thead
+    %tr
+      %th Portrait url
+      %th Name
+      %th Committee name
+      %th Bio
+      %th
+      %th
+      %th
+
+  %tbody
+    - @speakers.each do |speaker|
+      %tr
+        %td= speaker.portrait_url
+        %td= speaker.name
+        %td= speaker.committee_name
+        %td= speaker.bio
+        %td= link_to 'Show', speaker
+        %td= link_to 'Edit', edit_speaker_path(speaker)
+        %td= link_to 'Destroy', speaker, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Speaker', new_speaker_path

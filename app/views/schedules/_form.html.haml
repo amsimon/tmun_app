@@ -2,8 +2,6 @@
   .module
     .title
       %span
-        EDIT
-        = @parent.name
         BRANCH SCHEDULE
     = form_for [@parent, @schedule] do |f|
       = render 'shared/error_messages', object: f.object

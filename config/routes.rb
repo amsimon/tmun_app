@@ -2,6 +2,8 @@ TmunApp::Application.routes.draw do
 
 
 
+  resources :speakers
+
   resources :deadlines
 
   resources :trainings

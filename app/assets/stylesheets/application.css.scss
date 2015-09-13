@@ -762,6 +762,24 @@ ul.admin-list {
   position: fixed;
 }
 
+div.event-x {
+  text-align: center;
+  display: inline-block;
+  /* padding: .5em; */
+  background-color: red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 3em;
+  vertical-align: middle;
+  line-height: 38px;
+  color: white;
+  opacity: .5;
+}
+div.event-x:hover {
+  opacity: 1;
+}
+
 #branch-nav {
   position: absolute;
   top: 80px;

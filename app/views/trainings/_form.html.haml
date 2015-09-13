@@ -1,16 +1,27 @@
-= form_for @training do |f|
-  - if @training.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@training.errors.count, "error")} prohibited this training from being saved:"
-      %ul
-        - @training.errors.full_messages.each do |msg|
-          %li= msg
-  .faq-field
-    = f.label :date
-    = f.date_field :date
-    %br
-    = f.fields_for :topics do |builder|
-      = render 'topic_fields',f: builder
-    = link_to_add_fields "Add Topic", f, :topics
-  .actions
-    = f.submit 'Save'
+.column.full.right
+  .module
+    .title
+      %span
+        Training Session
+
+    = form_for @training do |f|
+      - if @training.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@training.errors.count, "error")} prohibited this training from being saved:"
+          %ul
+            - @training.errors.full_messages.each do |msg|
+              %li= msg
+      %table
+        %tr
+          %td
+            = f.label :date
+          %td
+            = f.date_field :date
+        %br/
+        %br/
+      = f.fields_for :topics do |builder|
+        = render 'topic_fields',f: builder
+      = link_to_add_fields "+", f, :topics
+
+      %div{style: 'margin-top: 2em'}
+        = f.submit 'Save', class: 'button light'

@@ -2,14 +2,43 @@
 
 
 .column.big.left
-  -#= link_to "Add Training Session", new_training_path, class: "admin-link"
   .module
+    -#= link_to "Add Training Session", new_training_path, class: "admin-link"
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to new_training_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add training session
     .title
       %span
         TOPIC SCHEDULE
     - Training.all.each do |t|
       .sub-module.module
-        = link_to "Edit Session", edit_training_path(t), class: "admin-link"
+        -#= link_to "Edit Session", edit_training_path(t), class: "admin-link"
+        .admin-container
+          = link_to 'javascript:;' do
+            .clicker A
+          %ul.admin-list
+            %li
+              = link_to edit_training_path(t), class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/edit.png'
+                  .words
+                    Edit training session
+            %li
+              = link_to t, method: :delete, data: { confirm: "You sure?" }, class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/delete.png'
+                  .words
+                    Delete topic
         %h1.date
           = t.date.strftime("%A")
           = t.date.strftime("%-m/%-d")

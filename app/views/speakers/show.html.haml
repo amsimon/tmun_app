@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Portrait url:
+  = @speaker.portrait_url
+%p
+  %b Name:
+  = @speaker.name
+%p
+  %b Committee name:
+  = @speaker.committee_name
+%p
+  %b Bio:
+  = @speaker.bio
+
+= link_to 'Edit', edit_speaker_path(@speaker)
+\|
+= link_to 'Back', speakers_path

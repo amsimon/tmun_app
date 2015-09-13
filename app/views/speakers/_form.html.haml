@@ -1,0 +1,22 @@
+= form_for @speaker do |f|
+  - if @speaker.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@speaker.errors.count, "error")} prohibited this speaker from being saved:"
+      %ul
+        - @speaker.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :portrait_url
+    = f.text_area :portrait_url
+  .field
+    = f.label :name
+    = f.text_area :name
+  .field
+    = f.label :committee_name
+    = f.text_area :committee_name
+  .field
+    = f.label :bio
+    = f.text_area :bio
+  .actions
+    = f.submit 'Save'
