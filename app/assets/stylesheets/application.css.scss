@@ -857,6 +857,22 @@ div.event-x:hover {
     display: inline-block;
   }
 
+  .box#ad {
+    vertical-align: middle;
+    line-height: 57px;
+    text-align: center;
+    padding: 0 10px;
+    /* padding-left: 4px; */
+    font-size: 20px;
+    color: #dedede;
+    font-weight: 900;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #1B385F;
+
+  }
+
   .box#roman {
     vertical-align: middle;
     line-height: 57px;
