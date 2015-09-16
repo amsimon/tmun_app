@@ -1,74 +1,87 @@
 class SpeakersController < ApplicationController
-  before_action :set_speaker, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user
+  before_action :admin_user
+  layout 'admin'
 
-  # GET /speakers
-  # GET /speakers.json
   def index
     @speakers = Speaker.all
+
+    set_parent
+    # @speaker = @parent.speakers.build
+    @hconference = @parent
+    @cconference = @parent
+    render layout: 'home', locals: {title: "Speakers"}
   end
 
-  # GET /speakers/1
-  # GET /speakers/1.json
   def show
+    @speaker = Speaker.find(params[:id])
   end
 
-  # GET /speakers/new
   def new
-    @speaker = Speaker.new
+
+    set_parent
+    @speaker = @parent.speakers.build
+
   end
 
-  # GET /speakers/1/edit
-  def edit
-  end
-
-  # POST /speakers
-  # POST /speakers.json
   def create
-    @speaker = Speaker.new(speaker_params)
 
-    respond_to do |format|
-      if @speaker.save
-        format.html { redirect_to @speaker, notice: 'Speaker was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @speaker }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @speaker.errors, status: :unprocessable_entity }
-      end
+    set_parent
+    @speaker = @parent.speakers.build(speaker_params)
+
+
+    if @speaker.save
+      flash[:success] = "Successfully created speaker."
+      redirect_to @parent
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /speakers/1
-  # PATCH/PUT /speakers/1.json
+  def edit
+    @speaker = Speaker.find(params[:id])
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
+    end
+
+
+  end
+
   def update
-    respond_to do |format|
-      if @speaker.update(speaker_params)
-        format.html { redirect_to @speaker, notice: 'Speaker was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @speaker.errors, status: :unprocessable_entity }
-      end
+    set_parent
+
+    @speaker = Speaker.find(params[:id])
+    if @speaker.update(speaker_params)
+      flash[:success] = "Successfully updated speaker."
+      redirect_to @parent
+    else
+      render :edit
     end
   end
 
-  # DELETE /speakers/1
-  # DELETE /speakers/1.json
   def destroy
-    @speaker.destroy
-    respond_to do |format|
-      format.html { redirect_to speakers_url }
-      format.json { head :no_content }
-    end
+    Speaker.find(params[:id]).destroy
+    flash[:success] = "Speaker deleted."
+    redirect_to admintools_url
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_speaker
-      @speaker = Speaker.find(params[:id])
+
+  def set_parent
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def speaker_params
-      params.require(:speaker).permit(:portrait_url, :name, :committee_name, :bio)
-    end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def speaker_params
+    params.require(:speaker).permit(:name, :committee_name, :title, :portrait_url, :bio)
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

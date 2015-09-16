@@ -51,6 +51,9 @@
           %td
             Before: #{f.text_field :late_date}
         %tr
+          %td= f.label :reg_url, "Registration Embed URL"
+          %td= f.text_field :reg_url
+        %tr
           %td
           %td
             = f.submit "Submit", class: "button light", data: { disable_with: "Please wait..." }

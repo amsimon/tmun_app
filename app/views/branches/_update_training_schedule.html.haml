@@ -1,0 +1,17 @@
+= form_tag(_update_training_schedule_path, method: "put") do
+  .column.big.left
+    .module
+      .title
+        %span
+          Training Schedule
+      %table.sign
+        %tr
+          %td= label_tag(:training_when, "When")
+          %td= text_area_tag :training_when, Branch.training_when
+        %tr
+          %td= label_tag(:training_where, "Where")
+          %td= text_area_tag :training_where, Branch.training_where
+        %tr
+          %td
+          %td
+            = submit_tag "Submit", class: "button light", data: { disable_with: "Please wait..." }

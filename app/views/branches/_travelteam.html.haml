@@ -3,6 +3,17 @@
     .title
       %span
         UPCOMING CONFERENCE
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to admintools_conferences_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/tools.png'
+              .words
+                Manage travel team conferences
     = render Tconference.first
   -#  .title
   -#    %span
@@ -44,6 +55,17 @@
     .title
       %span
         BRANCH SCHEDULES
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @branch, :schedule]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add branch schedule
     .content#important
       = render partial: 'schedules/branch_schedule', collection: @branch.schedules, as: 'schedule', locals: {parent: @branch, conf: "false", parent_name: @branch.class.name.demodulize.downcase}
       -#%table
@@ -78,7 +100,19 @@
     .title
       %span
         ANNOUNCEMENTS
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @branch, :headline]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add headline
     .content#announcements
+      = render partial: 'headlines/headline', collection: @branch.headlines, as: 'headline', locals: {parent: @branch, conf: "false", parent_name: @branch.class.name.demodulize.downcase}
       -#.announcement-cont.sub-module.module
       -#  %h2
       -#    Apply to be on the committee thing
@@ -91,7 +125,7 @@
       -#    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales nibh mi, id lacinia sem euismod bibendum. Pellentesque venenatis mi in aliquam tincidunt. Duis purus mauris, bibendum nec nunc a, sollicitudin maximus tellus. Sed consectetur rhoncus fermentum. Quisque ut quam ligula. Duis pharetra efficitur aliquet. Cras rutrum urna enim. Duis eu molestie elit, ac dapibus mi. Nullam augue sapien, malesuada eu finibus sit amet, venenatis sit amet turpis.
       -#.announcement-cont.sub-module.module
       -#  %h2
-      -#    Apply to be on the committee thing
+      -#    Apply to be on the co    .admin-container.add
       -#  .body
       -#    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales nibh mi, id lacinia sem euismod bibendum. Pellentesque venenatis mi in aliquam tincidunt. Duis purus mauris, bibendum nec nunc a, sollicitudin maximus tellus. Sed consectetur rhoncus fermentum. Quisque ut quam ligula. Duis pharetra efficitur aliquet. Cras rutrum urna enim. Duis eu molestie elit, ac dapibus mi. Nullam augue sapien, malesuada eu finibus sit amet, venenatis sit amet turpis.
       -#.announcement-cont.sub-module.module

@@ -33,7 +33,7 @@ class HconferencesController < ApplicationController
 
   def speakers
     @hconference = Hconference.friendly.find(params[:id])
-
+    @speakers = @hconference.speakers
     render layout: 'home', locals: {title: "Speakers", hconference: @hconference}
   end
 
@@ -127,7 +127,7 @@ class HconferencesController < ApplicationController
 
     def hconference_params
       params.require(:hconference).permit(:number, :season, :year, :location, :date, :early_price, :normal_price,
-                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman)
+                                          :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :roman, :reg_url)
 
     end
 

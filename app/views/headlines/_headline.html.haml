@@ -1,37 +1,44 @@
 - if defined?(headline)
   - if headline.present?
-    - if schedule.id != nil
-      - if signed_in?
-        - if current_user.admin?
-          .admin-container
-            = link_to 'javascript:;' do
-              .clicker A
-            %ul.admin-list
-              %li
-                = link_to [:edit, parent, headline], class: "admin-link" do
-                  .admin-line
-                    .icon
-                      = image_tag 'admin-icons/edit.png'
-                    .words
-                      Edit
-                      = parent_name
-                      headline
-              %li
-                = link_to  [:new, parent, headline], class: "admin-link" do
-                  .admin-line
-                    .icon
-                      = image_tag 'admin-icons/create.png'
-                    .words
-                      New
-                      = parent_name
-                      headline
-              %li
-                = link_to headline, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
-                  .admin-line
-                    .icon
-                      = image_tag 'admin-icons/delete.png'
-                    .words
-                      Destroy
-                      = parent_name
-                      headline
-      %table
+    - if headline.id != nil
+      .module.sub-module.announcement-cont
+        - if signed_in?
+          - if current_user.admin?
+            .admin-container
+              = link_to 'javascript:;' do
+                .clicker A
+              %ul.admin-list
+                %li
+                  = link_to [:edit, parent, headline], class: "admin-link" do
+                    .admin-line
+                      .icon
+                        = image_tag 'admin-icons/edit.png'
+                      .words
+                        Edit
+                        = parent_name
+                        headline
+                %li
+                  = link_to  [:new, parent, headline], class: "admin-link" do
+                    .admin-line
+                      .icon
+                        = image_tag 'admin-icons/create.png'
+                      .words
+                        New
+                        = parent_name
+                        headline
+                %li
+                  = link_to headline, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "admin-link" do
+                    .admin-line
+                      .icon
+                        = image_tag 'admin-icons/delete.png'
+                      .words
+                        Destroy
+                        = parent_name
+                        headline
+        %h2
+          = headline.title
+        .body
+          = headline.content
+        = link_to headline.button_url do
+          .button.light
+            = headline.button_text

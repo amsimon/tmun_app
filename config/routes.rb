@@ -1,8 +1,11 @@
 TmunApp::Application.routes.draw do
 
 
+  get '/branches/hconferences/:id/speakers', to: 'hconference#speakers'
+  get '/branches/cconferences/:id/speakers', to: 'cconference#speakers'
 
-  resources :speakers
+  get '/branches/hconferences/:id/manage-speakers', to: 'speakers#index'
+  get '/branches/cconferences/:id/manage-speakers', to: 'speakers#index'
 
   resources :deadlines
 
@@ -22,6 +25,7 @@ TmunApp::Application.routes.draw do
     resources :schedules
     resources :topics
     resources :deadlines
+    resources :speakers, except: :index
 
     member do
       get 'locations'
@@ -37,6 +41,8 @@ TmunApp::Application.routes.draw do
     resources :schedules
     resources :topics
     resources :deadlines
+    resources :speakers, except: :index
+
     member do
       get 'locations'
       get 'committees'
@@ -67,10 +73,12 @@ TmunApp::Application.routes.draw do
   match '/admintools/frontpages', to: 'frontpages#index', via: 'get'
 
   match '/_update_frontpage', to: 'frontpages#update_frontpage', via: 'put'
+  match '/_update_training_schedule', to: 'branches#update_training_schedule', via: 'put'
   match '/_update_letter', to: 'branches#update_letter', via: 'put'
   match '/_update_hello', to: 'frontpages#update_hello', via: 'put'
   match '/branches/travelteam/guides/', to: 'static_pages#guides', via: 'get'
   match '/letter/', to: 'branches#letter', via: 'get'
+  match '/training_schedule/', to: 'branches#training_schedule', via: 'get'
   match '/branches/travelteam/training/', to: 'static_pages#training', via: 'get'
   match '/branches/travelteam/upcoming/', to: 'static_pages#upcoming', via: 'get'
   match '/branches/travelteam/resources/', to: 'static_pages#resources', via: 'get'

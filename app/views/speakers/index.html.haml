@@ -1,27 +1,20 @@
-%h1 Listing speakers
-
-%table
-  %thead
-    %tr
-      %th Portrait url
-      %th Name
-      %th Committee name
-      %th Bio
-      %th
-      %th
-      %th
-
-  %tbody
-    - @speakers.each do |speaker|
-      %tr
-        %td= speaker.portrait_url
-        %td= speaker.name
-        %td= speaker.committee_name
-        %td= speaker.bio
-        %td= link_to 'Show', speaker
-        %td= link_to 'Edit', edit_speaker_path(speaker)
-        %td= link_to 'Destroy', speaker, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Speaker', new_speaker_path
+.column.full
+  .module
+    .title
+      %span
+        SPEAKERS
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add A
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @parent, :speaker]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add speaker
+    -#Speakers will be announced at a later date.
+    %div.conf_cont
+      .speaker-cont
+        = render partial: "speakers/speaker", collection: @parent.speakers, as: :speaker, locals: {parent: @parent, conf: "false", parent_name: @parent.class.name.demodulize.downcase}

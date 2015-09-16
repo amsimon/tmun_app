@@ -5,9 +5,9 @@
 -#  = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
 .column.full
   .module
-    .admin-container
+    .admin-container.add
       = link_to 'javascript:;' do
-        .clicker A
+        .clicker.add +
       %ul.admin-list
         %li
           = link_to new_hconference_topic_path(@hconference), class: "admin-link" do

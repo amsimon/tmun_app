@@ -4,9 +4,9 @@
 .column.big.left
   .module
     -#= link_to "Add Training Session", new_training_path, class: "admin-link"
-    .admin-container
+    .admin-container.add
       = link_to 'javascript:;' do
-        .clicker A
+        .clicker.add +
       %ul.admin-list
         %li
           = link_to new_training_path, class: "admin-link" do
@@ -17,7 +17,7 @@
                 Add training session
     .title
       %span
-        TOPIC SCHEDULE
+        TRAINING SCHEDULE
     - Training.all.each do |t|
       .sub-module.module
         -#= link_to "Edit Session", edit_training_path(t), class: "admin-link"
@@ -56,17 +56,28 @@
     .title
       %span
         TRAINING INFO
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to '/training_schedule', class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/schedule.png'
+              .words
+                Edit when and where
     %table
       %tr
         %td
           WHEN
         %td
-          = Training.time
+          = Branch.training_when
       %tr
         %td
           WHERE
         %td
-          = Training.location
+          = Branch.training_where
     %p
       Our trainings are public and topics vary on a weekly basis.  The overall purpose of our training meetings
       is to build on an individual’s public speaking abilities while at the same time improving their awareness

@@ -7,7 +7,7 @@ class DeadlinesController < ApplicationController
     @deadlines = Deadline.all
 
     set_parent
-    @deadline = @parent.deadlines.build
+    # @deadline = @parent.deadlines.build
   end
 
   def show
@@ -16,22 +16,15 @@ class DeadlinesController < ApplicationController
 
   def new
 
-    parent_klasses = %w[cconference hconference]
-    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
-      @deadline = @parent.deadlines.build
-    end
-
+    set_parent
+    @deadline = @parent.deadlines.build
 
   end
 
   def create
-    parent_klasses = %w[cconference hconference]
-    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
-      @deadline = @parent.deadlines.build(deadline_params)
-    end
 
+    set_parent
+    @deadline = @parent.deadlines.build(deadline_params)
 
 
     if @deadline.save
@@ -44,8 +37,10 @@ class DeadlinesController < ApplicationController
 
   def edit
     @deadline = Deadline.find(params[:id])
-
-    set_parent
+    parent_klasses = %w[branch hconference cconference]
+    if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
+    end
 
 
   end
@@ -71,9 +66,9 @@ class DeadlinesController < ApplicationController
   private
 
   def set_parent
-    parent_klasses = %w[cconference hconference]
+    parent_klasses = %w[branch hconference cconference]
     if klass = parent_klasses.detect { |pk| params[:"#{pk}_id"].present? }
-      @parent = klass.camelize.constantize.find params[:"#{klass}_id"]
+      @parent = klass.camelize.constantize.friendly.find params[:"#{klass}_id"]
     end
 
   end

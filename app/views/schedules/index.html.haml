@@ -1,22 +1,24 @@
-.column.medium.right
+.column.half.right
   .module.upcoming
-    .admin-container
+    .admin-container.add
       = link_to 'javascript:;' do
-        .clicker A
+        .clicker.add A
       %ul.admin-list
         %li
           = link_to url_for([:new, @parent, :schedule]), class: "admin-link" do
             .admin-line
               .icon
-                = image_tag 'admin-icons/schedule.png'
+                = image_tag 'admin-icons/create.png'
               .words
                 Add schedule
     .title
       %span
-        = @parent.name
         = @parent.class.name.demodulize
         schedules
     = render partial: "conference_schedule", collection: @parent.schedules, as: :schedule, locals: {parent: @parent, conf: "false", parent_name: @parent.class.name.demodulize.downcase}
+    = link_to @parent do
+      .button.light
+        < Back to conference
 -#.column.medium.right
 -#  .module.upcoming
 -#    .title

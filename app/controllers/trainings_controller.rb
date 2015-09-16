@@ -46,12 +46,11 @@ class TrainingsController < ApplicationController
   # PATCH/PUT /trainings/1
   # PATCH/PUT /trainings/1.json
   def update
-    Frontpage.hello = params[:hello]
-    Frontpage.hello_link_text = params[:hello_link_text]
+    @training = Training.find(params[:id])
 
     respond_to do |format|
       if @training.update(training_params)
-        format.html { redirect_to @training, notice: 'Training was successfully updated.' }
+        format.html { redirect_to '/branches/travelteam/training', notice: 'Training was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

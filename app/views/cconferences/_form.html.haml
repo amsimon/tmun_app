@@ -17,17 +17,33 @@
       %td= f.label :location
       %td= f.text_field :location
     %tr
-      %td= f.label :delegation_fee
-      %td= f.text_field :delegation_fee
+      %td= f.label :delegation_fee, "Delegation Fee"
+      %td
+        $#{f.text_field :delegation_fee}
     %tr
-      %td= f.label :early, "Early Fee"
-      %td= f.text_field :early
+      %td= f.label :early_price, "Early Price"
+      %td
+        $#{f.text_field :early_price}
     %tr
-      %td= f.label :regular, "Regular Fee"
-      %td= f.text_field :regular
+      %td= f.label :early_date, "Early Price Deadline"
+      %td
+        Before: #{f.text_field :early_date}
     %tr
-      %td= f.label :late, "Late Fee"
-      %td= f.text_field :late
+      %td= f.label :normal_price, "Normal Price"
+      %td
+        $#{f.text_field :normal_price}
+    %tr
+      %td= f.label :normal_date, "Normal Price Deadline"
+      %td
+        Before: #{f.text_field :normal_date}
+    %tr
+      %td= f.label :late_price, "Late Price"
+      %td
+        $#{f.text_field :late_price}
+    %tr
+      %td= f.label :late_date, "Late Price Deadline"
+      %td
+        Before: #{f.text_field :late_date}
     %tr
       %td= f.label :reg_url, "Reg Embed URL"
       %td= f.text_field :reg_url

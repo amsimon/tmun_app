@@ -53,7 +53,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       flash[:success] = "Successfully updated schedule."
-      redirect_to branch_schedules_path(@parent)
+      redirect_to @parent
     else
       render :edit
     end

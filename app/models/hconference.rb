@@ -8,6 +8,7 @@ class Hconference < ActiveRecord::Base
   has_many :faqs
   has_many :topics
   has_many :deadlines
+  has_many :speakers
 
   accepts_nested_attributes_for :faqs, allow_destroy: true
 

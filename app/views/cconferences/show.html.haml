@@ -4,6 +4,17 @@
 
 .column.half.left
   .module
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to edit_cconference_path(@cconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Edit conference
     .title
       %span
         INFORMATION
@@ -21,28 +32,41 @@
       %tr
         %td.label Early:
         %td.info
-          $#{@cconference.early} / delegate
+          $#{@cconference.early_price} / delegate
           %span.date
-            (by #{@cconference.early})
+            (by #{@cconference .early_date})
       %tr
         %td.label Regular:
         %td.info
-          $#{@cconference.regular} / delegate
+          $#{@cconference.normal_price} / delegate
           %span.date
-            (by #{@cconference.regular})
+            (by #{@cconference .normal_date})
       %tr
         %td.label Late:
         %td.info
-          $#{@cconference.late} / delegate
+          $#{@cconference.late_price} / delegate
           %span.date
-            (by #{@cconference.late})
+            (by #{@cconference .late_date})
 
   .module
     .title
       %span
         REGISTRATION FAQ
     - if @reg_faq.present?
-      = link_to "edit", edit_cconference_faq_path(@cconference, @reg_faq), class: "admin-link"
+      - if signed_in?
+        - if current_user.admin?
+          .admin-container
+            = link_to 'javascript:;' do
+              .clicker A
+            %ul.admin-list
+              %li
+                = link_to edit_cconference_faq_path(@cconference, @reg_faq), class: "admin-link" do
+                  .admin-line
+                    .icon
+                      = image_tag 'admin-icons/edit.png'
+                    .words
+                      Edit registration
+                      FAQ
       .faq.admin-editable
         %ul.questions
           - @reg_faq.questions.each do |q|
@@ -54,36 +78,51 @@
                   .answer
                     = a.content.html_safe
     - else
-      = link_to "Create Registration FAQ", new_cconference_faq_path(@cconference, Faq.specific_faq(@cconference, "Registration")), class: "admin-link"
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker +
+        %ul.admin-list
+          %li
+            = link_to new_cconference_faq_path(@cconference, Faq.specific_faq(@cconference, "Registration")), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Create registration FAQ
 .column.half.right
   .module
     .title
       %span
         DEADLINES
     %table.infos
-      %tr
-        %td.label.date December 12, 2014
-        %td.info Early registration deadline to postmark payment.
-      %tr
-        %td.label.date February 6, 2015
-        %td.info Regular registration deadline to postmark payment.
-      %tr
-        %td.label.date March 6, 2015
-        %td.info Late registration deadline to postmark payment.
-      %tr
-        %td.label.date April 12, 2015
-        %td.info Position papers due at 11:59 pm PST.
+      = render partial: 'deadlines/deadline', collection: @cconference.deadlines, as: 'deadline', locals: {parent: @cconference, conf: "true", parent_name: 'TritonMUN'}
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to cconference_deadlines_path(@cconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Manage conference deadlines
   .module
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_cconference_schedule_path(@cconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add schedule
     .title
       %span
         SCHEDULE
-    = link_to "New Schedule", new_cconference_schedule_path(@cconference), class: "admin-link"
-    - if @day1_sched.present?
-      = render partial: "schedules/conference_schedule", object: @day1_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
-    - if @day2_sched.present?
-      = render partial: "schedules/conference_schedule", object: @day2_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
-    - if @day3_sched.present?
-      = render partial: "schedules/conference_schedule", object: @day3_sched, locals: {parent: @cconference, conf: "true", parent_name: @parent.class.name.demodulize.downcase}
+    = render partial: 'schedules/conference_schedule', collection: @cconference.schedules, as: 'schedule', locals: {parent: @cconference, conf: "true", parent_name: 'Conference'}
   .module
     .title
       %span

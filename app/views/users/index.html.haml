@@ -2,6 +2,13 @@
   .module
     .title
       %span
-        MANAGE USERS
-    = render @users
+        MANAGE SECRETARIAT
+    = render User.secretariat_members
+    = will_paginate
+.column.full.left
+  .module
+    .title
+      %span
+        MANAGE OTHER MEMBERS
+    = render User.non_secretariat_members
     = will_paginate

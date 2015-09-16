@@ -25,6 +25,13 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 },
             :if => :password
 
+  def self.secretariat_members
+    User.where(secretariat: true)
+  end
+
+  def self.non_secretariat_members
+    User.where(secretariat: false)
+  end
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -44,4 +51,6 @@ class User < ActiveRecord::Base
   def create_remember_token
     self.remember_token = User.digest(User.new_remember_token)
   end
+
+
 end

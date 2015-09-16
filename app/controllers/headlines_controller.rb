@@ -76,7 +76,7 @@ class HeadlinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def headline_params
-    params.require(:headline).permit(:title, :order, :button_text, :button_url)
+    params.require(:headline).permit(:title, :content, :order, :button_text, :button_url)
   end
 
   def admin_user

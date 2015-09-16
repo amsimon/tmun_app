@@ -33,19 +33,52 @@
   .module.upcoming
     .title
       %span
-        Fall 2014
+        Fall 2015
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_tconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New travel team conference
     = render Tconference.fall
 .column.medium.right
   .module.upcoming
     .title
       %span
-        Winter 2015
+        Winter 2016
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_tconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New travel team conference
     = render Tconference.winter
 .column.medium.right
   .module.upcoming
     .title
       %span
-        Spring 2015
+        Spring 2016
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_tconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New travel team conference
     = render Tconference.spring
 
 

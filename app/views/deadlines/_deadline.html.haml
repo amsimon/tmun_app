@@ -1,0 +1,19 @@
+%tr
+  %td{style: 'position: relative;'}
+    .admin-container
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to url_for([:edit, parent, deadline]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Edit deadline
+  - if deadline.date.present?
+    %td.label.date
+      = deadline.date.strftime("%B %d, %Y")
+  - if deadline.content.present?
+    %td.info
+      = deadline.content

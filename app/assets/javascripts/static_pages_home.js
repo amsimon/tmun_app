@@ -5,16 +5,47 @@ $(document).ready( function() {
 
 
 
-
-
-
+    $('.bg').css({
+        opacity: 0
+    });
 
 
 });
 
 
 
+
+
+
+
 $(window).load(function() {
+
+    var aniDone = false;
+
+    $('.bg').each(function(i) {
+        $(this).delay(500*i).transition({
+            opacity: 1
+        }, {duration: 1000, easing: 'easeOutQuad', queue: true, complete: function(i) {
+            $(this).delay(1000*i).transition({
+                opacity:.2
+            }, 1000, 'easeInOutQuad');
+        }});
+    });
+
+    $(".bg").promise().done(function() {
+        aniDone = true;
+    });
+
+   // if (aniDone == true) {
+        $( ".bg" ).hover(
+            function() {
+                $( this ).stop().animate({opacity:1}, 1000);
+            }, function() {
+                $( this).stop().animate({opacity:.2}, 1000);
+            }
+        );
+   // }
+
 
 
 
@@ -23,7 +54,7 @@ $(window).load(function() {
     var bgtop;
     var dir = -1;
 
-    slideLeftImg();
+    //slideLeftImg();
 
     function slideLeftImg() {
 
@@ -39,15 +70,21 @@ $(window).load(function() {
 
         var parsed3 = (-4 * dir) + '%';
 
-        $b0.fadeTo(4000, .4).transition({
+        $b0.fadeTo(1000, .4).transition({
             scale: 1.1
         }, {duration: 4000, easing: 'linear', queue: false, complete: function() {
-            $b0.stop().fadeOut(4000).transition({
-                scale: 1.2
-            }, {duration: 4000, easing: 'linear', queue: false, complete: function() {
+            $b0.css({
+                //display: 'inline-block'
+            });
+
+            $b0.stop().transition({
+                scale:.33333,
+                position: 'relative',
+                display: 'inline-block'
+            }, {duration: 400, easing: 'linear', queue: false, complete: function() {
 
                 $b0.css({
-                    scale: 1
+                    scale: .33333
                 });
             }});
 

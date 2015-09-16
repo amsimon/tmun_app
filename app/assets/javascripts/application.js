@@ -135,8 +135,17 @@ function adminClose() {
     $(this).parent().next().animate({opacity: 0, top:'-25px'}, 100, function() {
         $(this).css({display: 'none'});
     });
-    $(this).html('A');
-    $(this).css({backgroundColor: 'red'});
+
+    if ($(this).hasClass('add')) {
+        $(this).html('+');
+        //$(this).css({backgroundColor: 'green'});
+    }
+    else {
+        $(this).html('A');
+    }
+
+    $(this).css({backgroundColor: 'rgb(231, 0, 43)'});
+
     $(this).one("click", adminExpand);
 }
 

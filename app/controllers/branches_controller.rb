@@ -10,6 +10,11 @@ class BranchesController < ApplicationController
     @branches = Branch.all
   end
 
+  def update_training_schedule
+    Branch.training_when = params[:training_when]
+    Branch.training_where = params[:training_where]
+  end
+
   def update_letter
     Branch.tritonmun_letter = params[:tritonmun_letter]
     Branch.tritonmun_letter_top = params[:tritonmun_letter_top]
@@ -21,6 +26,10 @@ class BranchesController < ApplicationController
   end
 
   def letter
+
+  end
+
+  def training_schedule
 
   end
 

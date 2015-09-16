@@ -1,4 +1,4 @@
-.module.sub-module.grid-module
+.module.sub-module.grid-module.center
   - if signed_in?
     - if current_user.admin?
       .admin-container
@@ -19,5 +19,9 @@
                   = image_tag 'admin-icons/delete.png'
                 .words
                   Destroy user
-  = image_tag user.avatar.url(:small), style:"width: 50px; vertical-align: middle"
+  = link_to user do
+    - if user.portrait_url.present?
+      = image_tag user.portrait_url, class: 'bio-photo'
+    - else
+      = image_tag 'default_avatar.png', class: 'bio-photo'
   = link_to user.name, user

@@ -45,30 +45,38 @@
         -#  %br/
         -#  %em Secretary General
 .column.small.right
-  .module
+  .module.upcoming
     .title
       %span
-        NEXT CONFERENCE
-    .content#next
-      = link_to "/hconferences/XII" do
-        %span.button.light
-          TritonMUN XII
-
-  .module
-    .admin-container
+        UPCOMING CONFERENCE
+    .admin-container.add
       = link_to 'javascript:;' do
-        .clicker A
+        .clicker.add +
       %ul.admin-list
         %li
-          = link_to branch_schedules_path(@branch), class: "admin-link" do
+          = link_to admintools_conferences_path, class: "admin-link" do
             .admin-line
               .icon
-                = image_tag 'admin-icons/schedule.png'
+                = image_tag 'admin-icons/tools.png'
               .words
-                Manage branch schedules
+                Manage TritonMUN conferences
+    = render Hconference.first
+
+  .module
     .title
       %span
         BRANCH SCHEDULES
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @branch, :schedule]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add branch schedule
     .content#important
       = render partial: 'schedules/branch_schedule', collection: @branch.schedules, as: 'schedule', locals: {parent: @branch, conf: "false", parent_name: @branch.class.name.demodulize.downcase}
   .module

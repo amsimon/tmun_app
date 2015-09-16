@@ -1,7 +1,7 @@
-.module.sub-module
-  - if defined?(schedule)
-    - if schedule.present?
-      - if schedule.id != nil
+- if defined?(schedule)
+  - if schedule.present?
+    - if schedule.id != nil
+      .module.sub-module
         .schedule-cont
           - if signed_in?
             - if current_user.admin?
@@ -16,15 +16,6 @@
                           = image_tag 'admin-icons/edit.png'
                         .words
                           Edit
-                          = parent_name
-                          schedule
-                  %li
-                    = link_to  [:new, parent, schedule], class: "admin-link" do
-                      .admin-line
-                        .icon
-                          = image_tag 'admin-icons/create.png'
-                        .words
-                          New
                           = parent_name
                           schedule
                   %li

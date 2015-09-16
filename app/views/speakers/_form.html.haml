@@ -1,22 +1,42 @@
-= form_for @speaker do |f|
-  - if @speaker.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@speaker.errors.count, "error")} prohibited this speaker from being saved:"
-      %ul
-        - @speaker.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :portrait_url
-    = f.text_area :portrait_url
-  .field
-    = f.label :name
-    = f.text_area :name
-  .field
-    = f.label :committee_name
-    = f.text_area :committee_name
-  .field
-    = f.label :bio
-    = f.text_area :bio
-  .actions
-    = f.submit 'Save'
+.column.half.left
+  .module
+    .title
+      %span
+        SPEAKERS
+    = form_for [@parent, @speaker] do |f|
+      - if @speaker.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@speaker.errors.count, "error")} prohibited this headline from being saved:"
+          %ul
+            - @speaker.errors.full_messages.each do |msg|
+              %li= msg
+      %table
+        %tr
+          %td
+            = f.label :name
+          %td
+            = f.text_field :name
+        %tr
+          %td
+            = f.label :committee_name
+          %td
+            = f.text_field :committee_name
+        %tr
+          %td
+            = f.label :title
+          %td
+            = f.text_field :title
+        %tr
+          %td
+            = f.label :bio
+          %td
+            = f.text_area :bio
+        -#%tr
+        -#  %td
+        -#    = f.label :portrait_url
+        -#  %td
+        -#    = f.text_field :portrait_url
+        %tr
+          %td
+          %td
+            = f.submit 'Save', class: 'button light'

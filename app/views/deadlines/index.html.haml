@@ -1,17 +1,23 @@
-%h1 Listing deadlines
+.column.half.right
+  .module.upcoming
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to url_for([:new, @parent, :deadline]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/schedule.png'
+              .words
+                Add deadline
+    .title
+      %span
+        = @parent.class.name.demodulize.downcase
+        = @parent.roman
 
-%table
-  %tr
-    %th
-    %th
-    %th
+    = render partial: "deadline", collection: @parent.deadlines, as: :deadline, locals: {parent: @parent, conf: "false", parent_name: @parent.class.name.demodulize.downcase}
 
-  - @deadlines.each do |deadline|
-    %tr
-      %td= link_to 'Show', deadline
-      %td= link_to 'Edit', edit_deadline_path(deadline)
-      %td= link_to 'Destroy', deadline, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Deadline', new_deadline_path
+    = link_to @parent do
+      .button.light
+        < Back to conference

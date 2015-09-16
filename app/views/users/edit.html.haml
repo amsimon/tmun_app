@@ -29,6 +29,9 @@
         %tr
           %td= f.label :grad_year
           %td= f.text_field :grad_year
+        %tr
+          %td= f.label :college
+          %td= f.text_field :college
         - if signed_in?
           / Admin viewing others'
           - if current_user.admin?
@@ -49,11 +52,16 @@
             = f.label :bio, "Tell us about yourself."
           %td
             = f.text_area :bio, :cols => 50, :rows => 5
+        -#%tr
+        -#  %td
+        -#    = f.label :avatar, "Upload your photo."
+        -#  %td
+        -#    = f.file_field :avatar, class: "avatar"
         %tr
           %td
-            = f.label :avatar, "Upload your photo."
+            = f.label :portrait_url, "Profile Photo URL"
           %td
-            = f.file_field :avatar, class: "avatar"
+            = f.text_field :portrait_url
         %tr
           %td
           %td

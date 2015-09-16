@@ -12,7 +12,10 @@
  *= require_self
  *= require jquery.minicolors
  */
+$adminRed: rgb(231, 0, 43);
+$adminDarkRed: #B00021;
 
+$adminGreen: #6DC50B;
 
 a {
   color: inherit;
@@ -55,7 +58,7 @@ tr.time {
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background-color: red;
+    background-color: $adminRed;
     line-height: 32px;
     text-align: center;
     font-size: 12px;
@@ -70,7 +73,7 @@ tr.time {
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background-color: red;
+    background-color: $adminRed;
     text-align: center;
     line-height: 28px;
     vertical-align: middle;
@@ -117,6 +120,17 @@ tr.time {
   }
 }
 
+.admin-container.add {
+  top: -16px;
+
+  .clicker {
+    //font-size: 24px;
+    //background-color: rgb(0, 118, 16);
+  }
+
+
+}
+
 .admin-container {
 
   opacity: 1;
@@ -129,15 +143,15 @@ tr.time {
  // overflow: hidden;
 
   .clicker {
-    opacity: .75;
+    opacity: .5;
     line-height: 32px;
     vertical-align: middle;
     height: 32px;
     width: 32px;
     /* border-bottom: 2px solid maroon; */
-    background-color: red;
+    background-color: $adminRed;
     color: white;
-    font-weight: bold;
+    //font-weight: bold;
     position: relative;
     z-index: 100;
     text-align: center;
@@ -145,7 +159,7 @@ tr.time {
     line-height: 30px;
     border-radius: 50%;
     text-shadow: none;
-    font-size: 16px;
+    font-size: 24px;
   }
   .clicker:hover {
     opacity: 1;
@@ -192,7 +206,7 @@ tr.time {
 
         .icon {
           border-radius: 50%;
-          background: #910000;
+          background: $adminRed;
           display: inline-block;
           width: 32px;
           height: 32px;
@@ -223,7 +237,7 @@ tr.time {
           padding-left: 8px;
           padding-right: 16px;
           white-space: nowrap;
-          background: #560000;
+          background: $adminDarkRed;
           box-sizing: border-box;
           position: relative;
           left: -32px;
@@ -254,7 +268,9 @@ tr.time {
 }
 
 
-
+.center {
+  text-align: center;
+}
 .dark-bg {
   height: 100%;
   width: 100%;
@@ -266,8 +282,10 @@ tr.time {
 
 
 .current {
+  //border-bottom: 29px solid rgba(57, 123, 206, 0.25);
   a {
-    color: rgb(57, 123, 206) !important;
+    font-weight: 900 !important;
+    color: #397bce !important;
   }
 }
 .sub-current {
@@ -510,8 +528,13 @@ tr.time {
       .grid-module {
         vertical-align: top;
         display: inline-block;
-        width: 10%;
+        width: 14.6%;
+        min-width: 100px;
         margin-right: 20px;
+
+        a {
+          font-weight: bold;
+        }
       }
 
       .sub-module:last-of-type {
@@ -560,6 +583,17 @@ tr.time {
       h3 {
         text-transform: uppercase;
         color: rgb(57, 123, 206);
+      }
+
+      table.infos {
+        td:first-of-type {
+          font-weight: normal;
+          padding-left: 0;
+        }
+        td:nth-of-type(2) {
+          font-weight: bold;
+          padding-left: 0;
+        }
       }
 
       table {
@@ -702,6 +736,10 @@ tr.time {
         .announcement-cont {
           padding-bottom: 2em;
 
+          .body {
+            margin-bottom: 2em;
+          }
+
           h2 {
             margin-top:0;
           }
@@ -770,7 +808,7 @@ div.event-x {
   text-align: center;
   display: inline-block;
   /* padding: .5em; */
-  background-color: red;
+  background-color: $adminRed;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -823,7 +861,7 @@ div.event-x:hover {
     vertical-align: middle;
     line-height: 57px;
     text-align: center;
-    /* margin-left: 10px; */
+    padding: 0 10px;
     /* padding-left: 4px; */
     font-size: 20px;
     color: #dedede;
@@ -831,10 +869,11 @@ div.event-x:hover {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background-color: rgb(40, 86, 145);
+    background-color: #1B385F;
+    width: auto;
   }
   .red {
-    background-color: red !important;
+    background-color: $adminRed !important;
   }
 
   .box:hover {
@@ -897,7 +936,7 @@ div.event-x:hover {
     position: fixed;
     bottom: 0;
     right: 0;
-    background: red;
+    background: $adminRed;
     color: white;
     padding: 1em;
     font-size: 1em;

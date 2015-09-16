@@ -1,10 +1,16 @@
-
-%div
-  = link_to "Add New Topic", new_cconference_topic_path(@cconference), class: "admin-link"
-
-  = link_to "Conference Country Matrix", asset_path('matrix.pdf'), class: "link-button"
 .column.full
   .module
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_cconference_topic_path(@cconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                Add topic
     .title
       %span
         COMMITTEES

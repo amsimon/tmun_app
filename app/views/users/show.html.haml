@@ -26,23 +26,39 @@
                   .words
                     Destroy user
     .bio-box
-      .photo
-        %img.bio-photo{:src => @user.avatar.url(:small)}/
-        -#.badges
-        -#  = render partial: "badges/badge", collection: @badges
-      .bio-right
-        .bio-header
-          - if @user.secretariat?
-            .position
-              = @user.sec_pos
-          .name
-            = @user.name
-          .email
-            = link_to @user.email, ("mailto:"+@user.email)
-          -#.college Eleanor Roosevelt College
-          .major
-            = @user.major
-        - if @user.bio.present?
-          .bio
-            = @user.bio
+      -#.admin-container
+      -#  = link_to 'javascript:;' do
+      -#    .clicker.add A
+      -#  %ul.admin-list
+      -#    %li
+      -#      = link_to edit_user_path(@user), class: "admin-link" do
+      -#        .admin-line
+      -#          .icon
+      -#            = image_tag 'admin-icons/edit.png'
+      -#          .words
+      -#            Edit user
+    
+      %table
+        %tr
+          %td
+            .photo
+              - if @user.portrait_url.present?
+                = image_tag @user.portrait_url, class: 'bio-photo'
+              - else
+                = image_tag 'default_avatar.png', class: 'bio-photo'
+          %td
+            .bio-right
+              .bio-header
+                .position
+                  = @user.sec_pos
+                .name
+                  = @user.name
+                .college
+                  = @user.college
+                -#Eleanor Roosevelt College
+                .major
+                  = @user.major
+              -#International Studies: Economics and Political Science
+              .bio
+                = @user.bio
     #badge_info blank

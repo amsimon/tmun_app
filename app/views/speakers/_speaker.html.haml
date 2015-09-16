@@ -1,0 +1,23 @@
+.speaker-box
+  .portrait
+    = image_tag( asset_url('speakers/' + speaker.first_name + '_' + speaker.last_name + '.jpg'))
+  %h1.speaker{style: 'margin-bottom: 0em; position: relative;'}
+    .admin-container{style: 'left: -40px'}
+      = link_to 'javascript:;' do
+        .clicker A
+      %ul.admin-list
+        %li
+          = link_to url_for([:edit, parent, speaker]), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Edit speaker
+    = speaker.committee_name
+    %span.slash
+      \/
+    %span.name
+      = speaker.name
+  %h2{style: 'color: #666666; font-size: 16px; margin-top: 0; margin-bottom: 2em; text-transform: uppercase;'}
+    = speaker.title
+  = speaker.bio

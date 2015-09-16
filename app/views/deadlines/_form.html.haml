@@ -1,15 +1,23 @@
-= form_for [@parent, @deadline] do |f|
-  - if @deadline.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@deadline.errors.count, "error")} prohibited this deadline from being saved:"
-      %ul
-        - @deadline.errors.full_messages.each do |msg|
-          %li= msg
+.column.half.left
+  .module
+    .title
+      %span
+        EDIT CONFERENCE DEADLINES
+    = form_for [@parent, @deadline] do |f|
+      = render 'shared/error_messages', object: f.object
 
-  = f.label :date
-  = f.date_field :date
-  %br/
-  = f.label :content, "Deadline description"
-  = f.text_area :content
-  .actions
-    = f.submit 'Save'
+      %table
+        %tr
+          %td
+            = f.label :date
+          %td
+            = f.date_field :date
+        %tr
+          %td
+            = f.label :content, "Deadline description"
+          %td
+            = f.text_area :content
+        %tr
+          %td
+          %td
+            = f.submit "Submit", class: "button light", data: { disable_with: "Please wait..." }

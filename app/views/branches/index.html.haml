@@ -53,6 +53,14 @@
                     = image_tag 'admin-icons/letter.png'
                   .words
                     Edit branch letter
+          - if branch.specific_branch?('travelteam')
+            %li
+              = link_to '/training_schedule', class: "admin-link" do
+                .admin-line
+                  .icon
+                    = image_tag 'admin-icons/letter.png'
+                  .words
+                    Edit training when & where
 = link_to 'New Branch', new_branch_path, class: 'admin-link'
 -#
 -#

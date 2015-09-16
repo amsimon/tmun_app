@@ -14,8 +14,13 @@
           - if signed_in?
             %li
               = link_to current_user, method: "get", class: "nav-link", id: "signin"  do
-                = image_tag current_user.avatar.url(:small), class: 'avatar'
-                = current_user.name                       |
+                - if current_user.portrait_url.present?
+                  = image_tag current_user.portrait_url, class: 'avatar'
+                - else
+                  = image_tag 'default_avatar.png', class: 'avatar'
+                -#= link_to current_user, method: "get", class: "nav-link", id: "signin"  do
+                -#  = image_tag current_user.avatar.url(:small), class: 'avatar'
+                  -#= current_user.name                       |
           - else
             %li= link_to "Sign In", signin_path, class: "nav-link"
           -#- if signed_in?

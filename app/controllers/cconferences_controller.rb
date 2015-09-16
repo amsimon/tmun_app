@@ -25,6 +25,7 @@ class CconferencesController < ApplicationController
 
   def speakers
     @cconference = Cconference.find(params[:id])
+    @speakers = @cconference.speakers
     render layout: 'collegiate', locals: {title: "Speakers", cconference: @cconference}
   end
 
@@ -92,8 +93,7 @@ class CconferencesController < ApplicationController
   end
 
   def cconference_params
-    params.require(:cconference).permit(:number, :season, :year, :date, :reg_url, :regular, :early, :late, :delegation_fee, :location)
-
+    params.require(:cconference).permit(:number, :season, :year, :date, :reg_url, :early_price, :normal_price, :early_date, :normal_date, :late_date, :late_price, :delegation_fee, :location)
   end
 
 

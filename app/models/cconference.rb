@@ -11,6 +11,9 @@ class Cconference < ActiveRecord::Base
   has_many :topics
   has_many :deadlines
 
+  has_many :speakers
+
+
   extend FriendlyId
   friendly_id :number
 

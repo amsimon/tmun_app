@@ -1,12 +1,15 @@
 #branch-nav
   = link_to '/branches/travelteam#', class: "square" do
     .box
-      = image_tag @user.avatar.url(:small), style:"vertical-align: middle"
+      - if @user.portrait_url.present?
+        = image_tag @user.portrait_url, class: ''
+      - else
+        = image_tag 'default_avatar.png', class: ''
   - if current_user?(@user)
     = branch_nav_link 'Edit Profile', (edit_user_path)
     = link_to 'Sign out', signout_path, method: 'delete', class: 'section'
-  - else
-    = link_to "Sign In", signin_path, class: 'section'
+  -#- if signed_in?
+  -#  = link_to "Sign In", signin_path, class: 'section'
 
   -#- if signed_in?
   -#  - if current_user.admin?

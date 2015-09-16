@@ -1,21 +1,42 @@
-= form_for [@parent, @headline] do |f|
-  - if @headline.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@headline.errors.count, "error")} prohibited this headline from being saved:"
-      %ul
-        - @headline.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :title
-    = f.text_area :title
-    %br/
-    = f.label :order
-    = f.number_field :order
-    %br/
-    = f.label :button_text
-    = f.text_field :button_text
-    %br/
-    = f.label :button_url
-    = f.text_field :button_url
-  .actions
-    = f.submit 'Save'
+.column.half.left
+  .module
+    .title
+      %span
+        BRANCH HEADLINE
+    = form_for [@parent, @headline] do |f|
+      - if @headline.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@headline.errors.count, "error")} prohibited this headline from being saved:"
+          %ul
+            - @headline.errors.full_messages.each do |msg|
+              %li= msg
+      %table
+        %tr
+          %td
+            = f.label :title
+          %td
+            = f.text_field :title
+        %tr
+          %td
+            = f.label :content
+          %td
+            = f.text_area :content
+        %tr
+          %td
+            = f.label :order
+          %td
+            = f.number_field :order
+        %tr
+          %td
+            = f.label :button_text
+          %td
+            = f.text_field :button_text
+        %tr
+          %td
+            = f.label :button_url
+          %td
+            = f.text_field :button_url
+        %tr
+          %td
+          %td
+            = f.submit 'Save', class: 'button light'

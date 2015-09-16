@@ -1,5 +1,5 @@
 .column.full.left
-  .module
+  .module.center
     .title
       %span
         EDIT
@@ -11,15 +11,18 @@
           %ul
             - @faq.errors.full_messages.each do |msg|
               %li= msg
-      .faq-field
-        = f.label :name, "FAQ Title: Registration, Location, etc."
-        %br/
-        = f.text_field :name
-        %br/
-        %br/
-        = f.fields_for :questions do |builder|
-          = render 'question_fields',f: builder
-        = link_to_add_fields "+", f, :questions
+      -#.faq-field
+      %table
+        %tr
+          %td
+            = f.label :name, "FAQ Title: Registration, Location, etc."
+          %td
+            = f.text_field :name
+      %br/
+      %br/
+      = f.fields_for :questions do |builder|
+        = render 'question_fields',f: builder
+      = link_to_add_fields "+", f, :questions
 
       %div{style: 'margin-top: 2em'}
         = f.submit 'Save', class: 'button light'

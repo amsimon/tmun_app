@@ -65,7 +65,7 @@
                     .icon
                       = image_tag 'admin-icons/edit.png'
                     .words
-                      Edit
+                      Edit registration
                       FAQ
       .faq.admin-editable
         %ul.questions
@@ -78,29 +78,39 @@
                   .answer
                     = a.content.html_safe
     - else
-      = link_to "Create Registration FAQ", new_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link"
+      .admin-container
+        = link_to 'javascript:;' do
+          .clicker +
+        %ul.admin-list
+          %li
+            = link_to new_hconference_faq_path(@hconference, Faq.specific_faq(@hconference, "Registration")), class: "admin-link" do
+              .admin-line
+                .icon
+                  = image_tag 'admin-icons/edit.png'
+                .words
+                  Create registration FAQ
 .column.half.right
   .module
     .title
       %span
         DEADLINES
     %table.infos
-      %tr
-        %td.label.date October 2, 2015
-        %td.info Regular registration deadline to postmark payment.
-      %tr
-        %td.label.date October 14, 2015
-        %td.info Late registration deadline to postmark payment.
-      %tr
-        %td.label.date October 16, 2015
-        %td.info Position papers due.
-      -#%tr
-      -#  %td.label.date April 12, 2015
-      -#  %td.info Position papers due at 11:59 pm PST.
-  .module
-    .admin-container
+      = render partial: 'deadlines/deadline', collection: @hconference.deadlines, as: 'deadline', locals: {parent: @hconference, conf: "true", parent_name: 'TritonMUN'}
+    .admin-container.add
       = link_to 'javascript:;' do
-        .clicker A
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to hconference_deadlines_path(@hconference), class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/edit.png'
+              .words
+                Manage conference deadlines
+  .module
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
       %ul.admin-list
         %li
           = link_to new_hconference_schedule_path(@hconference), class: "admin-link" do

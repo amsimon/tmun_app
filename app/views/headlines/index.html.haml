@@ -1,8 +1,8 @@
-.column.medium.right
-  .module.upcoming
+.column.big.right
+  .module
     .title
       %span
         = @parent.name
         = @parent.class.name.demodulize
         headline
-      = render partial: "headline", collection: @parent.headlines, as: :headline, locals: {parent: @parent}
+    = render partial: "headline", collection: @parent.headlines, as: :headline, locals: {parent: @parent ,parent_name: @parent.class.name.demodulize.downcase}

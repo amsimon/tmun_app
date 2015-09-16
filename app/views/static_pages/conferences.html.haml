@@ -3,16 +3,49 @@
     .title
       %span
         TRAVEL CONFERENCES
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_tconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New travel team conference
     = render @tconferences
 .column.medium.right
   .module.upcoming
     .title
       %span
         HOME CONFERENCES
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_hconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New TritonMUN conference
     = render @hconferences
 .column.medium.right
   .module.upcoming
     .title
       %span
         COLLEGIATE CONFERENCES
+    .admin-container.add
+      = link_to 'javascript:;' do
+        .clicker.add +
+      %ul.admin-list
+        %li
+          = link_to new_cconference_path, class: "admin-link" do
+            .admin-line
+              .icon
+                = image_tag 'admin-icons/create.png'
+              .words
+                New home collegiate conference
     = render @cconferences
