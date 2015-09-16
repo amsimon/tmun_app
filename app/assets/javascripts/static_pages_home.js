@@ -27,7 +27,7 @@ $(window).load(function() {
             opacity: 1
         }, {duration: 1000, easing: 'easeOutQuad', queue: true, complete: function(i) {
             $(this).delay(1000*i).transition({
-                opacity:.2
+                opacity:.1
             }, 1000, 'easeInOutQuad');
         }});
     });
@@ -41,7 +41,7 @@ $(window).load(function() {
             function() {
                 $( this ).stop().animate({opacity:1}, 1000);
             }, function() {
-                $( this).stop().animate({opacity:.2}, 1000);
+                $( this).stop().animate({opacity:.1}, 1000);
             }
         );
    // }
