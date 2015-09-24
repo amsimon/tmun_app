@@ -132,6 +132,9 @@ tr.time {
 }
 
 .admin-container {
+  font-weight: normal !important;
+
+  font-size: 1em !important;
 
   opacity: 1;
   display: inline-block;
@@ -160,6 +163,7 @@ tr.time {
     border-radius: 50%;
     text-shadow: none;
     font-size: 24px;
+
   }
   .clicker:hover {
     opacity: 1;
