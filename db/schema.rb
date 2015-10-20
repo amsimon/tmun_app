@@ -40,6 +40,20 @@ ActiveRecord::Schema.define(version: 20150916212301) do
     t.text     "letter"
   end
 
+  create_table "categories", force: true do |t|
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  create_table "categorizations", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "cconferences", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -157,6 +171,33 @@ ActiveRecord::Schema.define(version: 20150916212301) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.text     "title"
+    t.text     "content"
+    t.text     "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.boolean  "design"
+    t.boolean  "develop"
+    t.string   "client"
+    t.string   "year"
+    t.string   "tile"
+    t.string   "detail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "ps"
+    t.boolean  "ai"
+    t.boolean  "ae"
+    t.boolean  "html"
+    t.boolean  "java"
+    t.boolean  "ruby"
   end
 
   create_table "questions", force: true do |t|

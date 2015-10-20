@@ -20,23 +20,32 @@ $(document).ready( function() {
 
 $(window).load(function() {
 
-    var aniDone = false;
+    var aniDonexx = false;
+
+    console.log(aniDonexx);
+
+    var numBgs = $('.bg').length;
+
+    var count = 0;
 
     $('.bg').each(function(i) {
-        $(this).delay(500*i).transition({
+
+        $(this).delay(50*i).transition({
             opacity: 1
-        }, {duration: 1000, easing: 'easeOutQuad', queue: true, complete: function(i) {
-            $(this).delay(1000*i).transition({
+        }, 900, 'easeOutQuad', function(i) {
+
+            $(this).delay(50*i).transition({
                 opacity:.1
-            }, 1000, 'easeInOutQuad');
-        }});
+            }, 900, 'easeInOutQuad', function(i) {
+
+            });
+        });
     });
 
     $(".bg").promise().done(function() {
-        aniDone = true;
-    });
+        aniDonexx = true;
+        console.log(aniDonexx);
 
-   // if (aniDone == true) {
         $( ".bg" ).hover(
             function() {
                 $( this ).stop().animate({opacity:1}, 1000);
@@ -44,7 +53,19 @@ $(window).load(function() {
                 $( this).stop().animate({opacity:.1}, 1000);
             }
         );
-   // }
+    });
+
+
+
+    if (aniDonexx == true) {
+        $( ".bg" ).hover(
+            function() {
+                $( this ).stop().animate({opacity:1}, 1000);
+            }, function() {
+                $( this).stop().animate({opacity:.1}, 1000);
+            }
+        );
+    }
 
 
 
